@@ -1,3 +1,12 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
 :root {
 	--ink: #17130f;
 	--gold: #d6b36a;
@@ -20,6 +29,7 @@ body {
 	color: var(--ink);
 	font-family: "Manrope", sans-serif;
 	font-size: 1.05rem;
+    font-weight: 400;
 }
 
 body.menu-is-open {
@@ -177,12 +187,12 @@ body.menu-is-open {
 	max-width: 18rem;
 	margin: 0 0 4rem;
 	font-family: "Cormorant Garamond", serif;
-	font-size: clamp(2.3rem, 4vw, 3.5rem);
+	font-size: clamp(2.5rem, 4vw, 3rem);
 	line-height: 0.95;
 }
 
 .site-sidebar__nav {
-	padding: 0;
+	padding: 0 0 3rem 0;
 	margin: 0;
 	list-style: none;
 }
@@ -277,8 +287,8 @@ body.menu-is-open {
 
 .site-sidebar__subnav a {
 	padding: 0.35rem 0;
-	font-family: "Manrope", sans-serif;
-	font-size: 0.85rem;
+	font-family: "Cormorant Garamond", serif;
+	font-size: 1.6rem;
 	letter-spacing: 0.03em;
 }
 
@@ -319,7 +329,8 @@ body.menu-is-open {
 
 .hero__panel--left {
 	left: 0;
-	background-image: url("images/face-stock.png");
+	background-image: url("images/face-stock.png"); 
+    /* home page hero bg background (index.html) */
 }
 
 .hero__panel--right {
@@ -447,7 +458,10 @@ body.menu-is-open {
 }
 
 .content-section {
-	padding-block: 8rem;
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-block: 8rem;
 }
 
 .content-section h2 {
@@ -736,37 +750,42 @@ body.menu-is-open {
 }
 
 .detail-main {
-	max-width: 60rem;
-	min-height: 45vh;
-	padding-block: 8rem;
+    max-width: 60rem;
+    min-height: 45vh;
+    margin-inline: auto;
+    padding-block: 8rem;
 }
 
 .detail-main h2 {
-	max-width: 44rem;
-	margin: 0 0 1.5rem;
-	font-family: "Cormorant Garamond", serif;
-	font-size: clamp(3.5rem, 7vw, 6rem);
-	font-weight: 600;
-	line-height: 0.9;
+    max-width: 42rem;
+    margin: 0 0 1.5rem;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 600;
+    line-height: 0.95;
 }
 
 .detail-main > p:not(.section-label) {
-	max-width: 38rem;
-	margin: 0;
-	color: #635b52;
-	font-size: 1.05rem;
-	line-height: 1.9;
+    max-width: 32rem;
+    margin: 0;
+
+    color: #635b52;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.8;
 }
 
 .detail-main .book-button {
-	color: var(--ink);
-	border-color: var(--ink);
+    color: var(--ink);
+    border-color: var(--ink);
 }
 
 .detail-main .book-button:hover,
 .detail-main .book-button:focus-visible {
-	background: var(--ink);
-	color: var(--gold-soft);
+    background: var(--ink);
+    color: var(--gold-soft);
 }
 
 .procedure-page-main {
@@ -785,8 +804,9 @@ body.menu-is-open {
 	grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
 	gap: clamp(2rem, 7vw, 7rem);
 	align-items: center;
-	background: var(--ink);
-	color: var(--gold-soft);
+    background: var(--paper);
+    color: var(--ink);      
+    /* light vid */
 }
 
 .procedure-section__heading h2,
@@ -802,7 +822,7 @@ body.menu-is-open {
 .procedure-section__heading > p:last-child {
 	max-width: 28rem;
 	margin: 0;
-	color: rgba(238, 212, 154, 0.72);
+    color: #635b52;
 	line-height: 1.8;
 }
 
@@ -810,56 +830,57 @@ body.menu-is-open {
 	width: 100%;
 	max-height: 36rem;
 	border: 1px solid rgba(238, 212, 154, 0.25);
-	background: #30271e;
+    background: #e8e0d5;
 	box-shadow: 0 2rem 5rem rgba(8, 6, 4, 0.22);
 }
 
 .procedure-info {
-	background: var(--paper);
+    background: var(--ink);
+    color: var(--gold-soft);
 }
 
 .procedure-info__body {
-	max-width: 42rem;
-	margin: 0 0 3rem;
-	color: #635b52;
-	font-size: 1.1rem;
-	line-height: 1.9;
+    max-width: 42rem;
+    margin: 0 0 3rem;
+    color: rgba(238, 212, 154, 0.72);
+    font-size: 1.1rem;
+    line-height: 1.9;
 }
 
 .procedure-info__grid {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 1px;
-	background: rgba(23, 19, 15, 0.2);
-	border-top: 1px solid rgba(23, 19, 15, 0.2);
-	border-bottom: 1px solid rgba(23, 19, 15, 0.2);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(238, 212, 154, 0.2);
+    border-top: 1px solid rgba(238, 212, 154, 0.2);
+    border-bottom: 1px solid rgba(238, 212, 154, 0.2);
 }
 
 .procedure-info__grid > div {
-	display: flex;
-	flex-direction: column;
-	gap: 0.75rem;
-	min-height: 12rem;
-	padding: 1.5rem;
-	background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-height: 12rem;
+    padding: 1.5rem;
+    background: var(--ink);
 }
 
 .procedure-info__grid strong {
-	color: var(--ink);
-	font-size: 0.7rem;
-	letter-spacing: 0.16em;
-	text-transform: uppercase;
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
 }
 
 .procedure-info__grid span {
-	color: #635b52;
-	font-size: 0.95rem;
-	line-height: 1.7;
+    color: rgba(238, 212, 154, 0.72);
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 .procedure-gallery {
-	background: #211b16;
-	color: var(--gold-soft);
+    background: var(--paper);
+    color: var(--ink);
 }
 
 .procedure-carousel {
@@ -883,11 +904,13 @@ body.menu-is-open {
 	width: 100%;
 	max-width: none;
 	padding: 8rem max(2rem, calc((100% - 72rem) / 2));
-	background: var(--paper);
+    background: var(--ink);
+    color: var(--gold-soft);
 }
 
 .procedure-booking {
-	background: var(--paper);
+    background: var(--paper);
+    color: var(--ink);
 }
 
 @media (min-width: 576px) {
@@ -928,42 +951,47 @@ body.menu-is-open {
 	line-height: 0.9;
 }
 
+.procedure-faq {
+    background: var(--ink);
+    color: var(--gold-soft);
+}
+
 .procedure-faq .accordion {
-	border-top: 1px solid rgba(23, 19, 15, 0.22);
+    border-top: 1px solid rgba(238, 212, 154, 0.22);
 }
 
 .procedure-faq .accordion-item {
-	background: transparent;
-	border-bottom: 1px solid rgba(23, 19, 15, 0.22);
+    background: transparent;
+    border-bottom: 1px solid rgba(238, 212, 154, 0.22);
 }
 
 .procedure-faq .accordion-button {
-	padding: 1.5rem 0;
-	background: transparent;
-	box-shadow: none;
-	color: var(--ink);
-	font-family: "Cormorant Garamond", serif;
-	font-size: clamp(1.35rem, 2.5vw, 2rem);
+    padding: 1.5rem 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--gold-soft);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
 }
 
 .procedure-faq .accordion-button:focus,
 .procedure-faq .accordion-button:not(.collapsed) {
-	background-color: transparent !important;
-	box-shadow: none !important;
-	color: var(--ink) !important;
-	outline: none;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: var(--gold-soft) !important;
+    outline: none;
 }
 
 .procedure-faq .accordion-button::after {
-	filter: sepia(1) saturate(0.7);
+    filter: brightness(0) saturate(100%) invert(79%) sepia(25%) saturate(600%);
 }
 
 .procedure-faq .accordion-body {
-	max-width: 44rem;
-	padding: 0 0 1.5rem;
-	color: #635b52;
-	font-size: 1rem;
-	line-height: 1.8;
+    max-width: 44rem;
+    padding: 0 0 1.5rem;
+    color: rgba(238, 212, 154, 0.72);
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
 .client-gallery {
@@ -1350,7 +1378,10 @@ body.menu-is-open {
 	}
 
 	.content-section {
-		padding-block: 5rem;
+		width: 100%;
+        max-width: none;
+        padding: 8rem max(2rem, calc((100% - 72rem) / 2));
+        background: var(--paper);
 	}
 
 	.projects__intro {

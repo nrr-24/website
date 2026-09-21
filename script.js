@@ -10,7 +10,7 @@ const languageButtons = document.querySelectorAll("[data-language]");
 const translations = {
 	en: {
 		brand: "Dr. Reham",
-		sidebarTitle: "Clinical expertise, refined aesthetic care.",
+		sidebarTitle: "Where Skin Health Meets Beauty",
 		navHome: "Home",
 		navAbout: "About",
 		navProjects: "Projects",
@@ -90,7 +90,7 @@ const translations = {
 	},
 	ar: {
 		brand: "د. رهام قليب",
-		sidebarTitle: "خبرة جلدية ورعاية تجميلية متقدمة.",
+		sidebarTitle: "حيث تلتقي صحة البشرة بالجمال",
 		navHome: "الرئيسية",
 		navAbout: "نبذة عني",
 		navProjects: "المشاريع",
