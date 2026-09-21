@@ -16,8 +16,8 @@ const translations = {
 		navProjects: "Projects",
 		navContact: "Contact",
 		heroEyebrow: "Clinical dermatology · Aesthetic medicine",
-		heroTitle: "Healthy skin. Natural results.",
-		heroSubtitle: "Personalized dermatology and aesthetic treatments designed around you.",
+		heroTitle: "Dr. Reham Kolib",
+		heroSubtitle: "Where Skin Health Meets Beauty",
 		aboutLabel: "About Dr. Reham",
 		aboutTitle: "Expertise shaped around you.",
 		aboutBody: "Dr. Reham Kolib is a Specialist Dermatologist with over 10 years of experience assessing and treating clinical and cosmetic dermatological conditions. After earning her master’s degree in 2018, she pursued advanced certifications in laser and aesthetic treatments. Her practice is grounded in careful listening and customized treatment plans, because every patient and every skin is different.",
@@ -30,11 +30,11 @@ const translations = {
 		projectsLabel: "Treatment results",
 		projectsTitle: "A closer look at the work.",
 		projectsBody: "Explore selected aesthetic treatment outcomes through before and after comparisons.",
-		projectOneTitle: "Facial balance",
+		projectOneTitle: "Face lifts",
 		projectOneBody: "Refined facial proportions through a personalized aesthetic treatment plan designed to preserve natural expression.",
-		projectTwoTitle: "Lip enhancement",
+		projectTwoTitle: "Filler",
 		projectTwoBody: "Subtle lip definition and volume, carefully tailored to facial features for a balanced, natural-looking result.",
-		projectThreeTitle: "Expression softening",
+		projectThreeTitle: "Botox",
 		projectThreeBody: "Targeted wrinkle treatment planned with precision to soften lines while keeping the face expressive and recognizably yours.",
 		before: "Before",
 		after: "After",
@@ -60,19 +60,20 @@ const translations = {
 		procedureDetails: "About the procedure",
 		procedureGallery: "Selected client results",
 		procedureVideoBody: "A closer look at the treatment approach, performed with precision and a focus on natural-looking results.",
-		procedurePointOneLabel: "Personalized plan",
-		procedurePointOne: "A consultation-led treatment designed around your features and goals.",
-		procedurePointTwoLabel: "Natural finish",
-		procedurePointTwo: "Balanced results that respect your proportions and expression.",
-		procedurePointThreeLabel: "Expert guidance",
-		procedurePointThree: "Clear preparation and aftercare guidance from consultation to follow-up.",
+        faceProcedureBody: "Facelift surgery is a personalized facial rejuvenation procedure designed to address sagging skin, jowling, deeper folds, and loss of definition in the lower face and neck. The approach is selected according to your facial anatomy, skin condition, and aesthetic goals.",
+        procedurePointOneLabel: "What it addresses",
+        procedurePointOne: "A facelift can improve sagging skin, jowling, facial contours, and loose skin around the lower face and neck.",
+        procedurePointTwoLabel: "Individualized technique",
+        procedurePointTwo: "Treatment may involve a mini, standard, or deeper facelift approach depending on your anatomy, degree of aging, and goals.",
+        procedurePointThreeLabel: "Recovery and results",
+        procedurePointThree: "Recovery varies between patients and procedures, with swelling and bruising gradually improving as the face heals.",
 		faqTitle: "Frequently asked questions",
-		faqQ1: "How is the right treatment selected?",
-		faqA1: "The treatment is selected after a consultation that considers your concerns, anatomy, medical history, and desired outcome.",
-		faqQ2: "How long does a consultation take?",
-		faqA2: "Your consultation includes assessment, discussion of options, and aftercare guidance. The exact timing depends on your needs.",
-		faqQ3: "When will I see the result?",
-		faqA3: "Timing varies by treatment. Dr. Reham will explain what to expect, including any settling period and follow-up plan.",
+        faqQ1: "What areas does a facelift address?",
+        faqA1: "A facelift primarily addresses the lower two-thirds of the face, including the cheeks, jawline, and areas of loose or sagging skin. Additional procedures may be considered when concerns involve the eyelids, brow, or neck.",
+        faqQ2: "What types of facelift are available?",
+        faqA2: "The technique is individualized. Depending on the degree of sagging and your anatomy, options may include a mini facelift, a standard facelift using a SMAS approach, or a deeper-plane technique.",
+        faqQ3: "What is recovery like after a facelift?",
+        faqA3: "Recovery varies according to the procedure and the individual. Swelling and bruising are expected during the early recovery period and gradually improve. Your doctor will provide specific instructions for returning to normal activities and exercise.",
 		galleryPrevious: "Previous image",
 		galleryNext: "Next image",
 		detailFace: "Facial balance",
@@ -86,8 +87,34 @@ const translations = {
 		fillerBody: "Subtle, carefully placed filler can restore balance and definition while respecting the character of your features.",
 		botoxTitle: "Wrinkle treatment and softening",
 		botoxEyebrow: "Expression-conscious treatment",
-		botoxBody: "Targeted wrinkle treatment can soften dynamic lines while preserving a natural, expressive appearance."
-	},
+		botoxBody: "Targeted wrinkle treatment can soften dynamic lines while preserving a natural, expressive appearance.",
+        fillerProcedureBody:"Dermal fillers are non-surgical injectable treatments used to restore lost volume, soften lines and creases, enhance facial contours, and improve facial balance. The treatment plan is tailored to your features, concerns, and aesthetic goals.",
+        fillerPointOneLabel:"What it can address",
+        fillerPointOne:"Fillers can enhance the lips and cheeks, restore volume, soften lines around the mouth and nose, and improve facial symmetry and contours.",
+        fillerPointTwoLabel:"Individualized treatment",
+        fillerPointTwo:"The filler product, amount, treatment area, and injection approach are selected according to your anatomy and desired result.",
+        fillerPointThreeLabel:"Treatment and recovery",
+        fillerPointThree:"Filler treatments are typically performed during an office visit. Mild swelling or bruising can occur and usually improves over the following days.",
+        fillerFaqQ1:"What can dermal fillers be used for?",
+        fillerFaqA1:"Dermal fillers can restore lost volume, soften lines and creases, enhance the lips and cheeks, improve facial contours, and help create greater balance between facial features.",
+        fillerFaqQ2:"How is the right filler selected?",
+        fillerFaqA2:"The appropriate filler depends on the treatment area, the desired result, and the product's characteristics such as texture, density, and injection depth. Your provider will determine the most suitable option during your consultation.",
+        fillerFaqQ3:"How long do filler results last?",
+        fillerFaqA3:"The duration varies according to the filler, treatment area, and individual patient. Hyaluronic acid fillers commonly last around 6 to 18 months, while some other filler types can last longer.",
+        botoxProcedureBody: "Botulinum toxin injections are a non-surgical treatment that temporarily reduces targeted muscle activity to soften dynamic wrinkles and fine lines while maintaining natural facial expression.",
+        botoxPointOneLabel: "What it can address",
+        botoxPointOne: "Treatment can soften expression-related lines such as forehead lines, frown lines between the eyebrows, and crow's feet around the eyes.",
+        botoxPointTwoLabel: "How it works",
+        botoxPointTwo: "The treatment temporarily reduces nerve signals to selected muscles, allowing them to relax and making associated wrinkles less visible.",
+        botoxPointThreeLabel: "Timing and duration",
+        botoxPointThree: "Results develop gradually over several days and commonly last around three to six months, depending on the individual and treatment area.",
+        botoxFaqQ1:"Which wrinkles can Botox treat?",
+        botoxFaqA1:"Botox is mainly used for dynamic wrinkles caused by facial movement, including forehead lines, frown lines between the eyebrows, and crow's feet around the eyes. It may also be used in other areas depending on the treatment plan.",
+        botoxFaqQ2:"When will I see the results?",
+        botoxFaqA2:"The effects develop gradually. Some improvement may be noticeable within several days, while the full effect can take around one to two weeks.",
+        botoxFaqQ3:"How long do Botox results last?",
+        botoxFaqA3:"Results commonly last around three to six months. The duration can vary depending on the individual, the treatment area, and the amount used.",
+    },
 	ar: {
 		brand: "د. رهام قليب",
 		sidebarTitle: "حيث تلتقي صحة البشرة بالجمال",
@@ -96,8 +123,8 @@ const translations = {
 		navProjects: "المشاريع",
 		navContact: "تواصل معنا",
 		heroEyebrow: "الأمراض الجلدية السريرية · طب التجميل",
-		heroTitle: "بشرة صحية. نتائج طبيعية.",
-		heroSubtitle: "علاجات جلدية وتجميلية مخصصة صُممت لتناسبك.",
+		heroTitle: "د. رهام قليب",
+		heroSubtitle: "حيث تلتقي صحة البشرة بالجمال",
 		aboutLabel: "نبذة عن د. رهام",
 		aboutTitle: "خبرة تُصاغ بما يناسبك.",
 		aboutBody: "د. رهام قليب طبيبة أخصائية في الأمراض الجلدية، تتمتع بخبرة تزيد عن عشر سنوات في تقييم وعلاج الحالات الجلدية السريرية والتجميلية. بعد حصولها على درجة الماجستير عام 2018، واصلت شغفها وحصلت على شهادات متخصصة في علاجات الليزر والتجميل. تعتمد في ممارستها على الاستماع الدقيق ووضع خطط علاجية مخصصة، لأن لكل مريض ولكل بشرة احتياجات مختلفة.",
@@ -110,11 +137,11 @@ const translations = {
 		projectsLabel: "نتائج علاجية",
 		projectsTitle: "نظرة أقرب على العمل.",
 		projectsBody: "استكشف نتائج مختارة من العلاجات التجميلية من خلال مقارنات قبل وبعد.",
-		projectOneTitle: "توازن ملامح الوجه",
+		projectOneTitle: "شد الوجه",
 		projectOneBody: "تحسين تناسق ملامح الوجه من خلال خطة تجميلية مخصصة تحافظ على التعبير الطبيعي.",
-		projectTwoTitle: "تحسين الشفاه",
+		projectTwoTitle: "فيلر",
 		projectTwoBody: "تحديد وزيادة حجم الشفاه بشكل متوازن ومدروس ليناسب ملامح الوجه ويمنح نتيجة طبيعية.",
-		projectThreeTitle: "تنعيم تعابير الوجه",
+		projectThreeTitle: "بوتوكس",
 		projectThreeBody: "علاج موجه للتجاعيد بدقة لتنعيم الخطوط مع الحفاظ على تعابير الوجه وشكله الطبيعي.",
 		before: "قبل",
 		after: "بعد",
@@ -140,19 +167,20 @@ const translations = {
 		procedureDetails: "معلومات عن الإجراء",
 		procedureGallery: "نتائج مختارة للعملاء",
 		procedureVideoBody: "نظرة أقرب على طريقة العلاج، بتنفيذ دقيق وتركيز على نتائج طبيعية المظهر.",
-		procedurePointOneLabel: "خطة مخصصة",
-		procedurePointOne: "علاج يبدأ باستشارة ويُصمم بما يناسب ملامحك وأهدافك.",
-		procedurePointTwoLabel: "نتيجة طبيعية",
-		procedurePointTwo: "نتائج متوازنة تحترم تناسق ملامحك وتعابير وجهك.",
-		procedurePointThreeLabel: "إرشاد متخصص",
-		procedurePointThree: "إرشادات واضحة للتحضير والعناية بعد العلاج من الاستشارة حتى المتابعة.",
+        faceProcedureBody: "تُعد جراحة شد الوجه إجراءً مخصصًا لتجديد مظهر الوجه، وتهدف إلى معالجة ترهل الجلد والخدين وخط الفك والتجاعيد العميقة وفقدان التحديد في الجزء السفلي من الوجه والرقبة. ويتم اختيار الأسلوب المناسب وفقًا لتشريح الوجه وحالة البشرة والأهداف الجمالية لكل شخص.",
+        procedurePointOneLabel: "ما يعالجه الإجراء",
+        procedurePointOne: "يمكن لشد الوجه تحسين ترهل الجلد والخدين وتحديد ملامح الوجه والجلد المترهل في الجزء السفلي من الوجه والرقبة.",
+        procedurePointTwoLabel: "تقنية مخصصة",
+        procedurePointTwo: "قد يشمل العلاج شدًا مصغرًا أو شدًا تقليديًا أو تقنية أعمق، وذلك وفقًا لتشريح الوجه ودرجة التغيرات المرتبطة بالعمر والأهداف المطلوبة.",
+        procedurePointThreeLabel: "التعافي والنتائج",
+        procedurePointThree: "تختلف فترة التعافي من شخص لآخر ومن إجراء لآخر، بينما يتحسن التورم والكدمات تدريجيًا خلال فترة التعافي.",
 		faqTitle: "الأسئلة الشائعة",
-		faqQ1: "كيف يتم اختيار العلاج المناسب؟",
-		faqA1: "يتم اختيار العلاج بعد استشارة تراعي احتياجاتك وملامحك وتاريخك الطبي والنتيجة التي ترغبين في الوصول إليها.",
-		faqQ2: "كم تستغرق الاستشارة؟",
-		faqA2: "تشمل الاستشارة التقييم ومناقشة الخيارات وإرشادات العناية بعد العلاج، وتختلف مدتها حسب احتياجاتك.",
-		faqQ3: "متى تظهر النتيجة؟",
-		faqA3: "يختلف توقيت ظهور النتيجة حسب نوع العلاج. ستوضح لك د. رهام ما يمكن توقعه وخطة المتابعة.",
+        faqQ1: "ما المناطق التي يعالجها شد الوجه؟",
+        faqA1: "يركز شد الوجه بشكل أساسي على الثلثين السفليين من الوجه، بما في ذلك الخدين وخط الفك ومناطق الجلد المترهل. وقد يتم التفكير في إجراءات إضافية عند وجود مشكلات تتعلق بالجفون أو الحاجب أو الرقبة.",
+        faqQ2: "ما أنواع شد الوجه المتاحة؟",
+        faqA2: "يتم تحديد التقنية وفقًا لكل حالة. وبناءً على درجة الترهل وتشريح الوجه، قد تشمل الخيارات شد الوجه المصغر أو الشد التقليدي بتقنية SMAS أو تقنيات شد أعمق.",
+        faqQ3: "كيف تكون فترة التعافي بعد شد الوجه؟",
+        faqA3: "تختلف فترة التعافي حسب نوع الإجراء وحالة كل شخص. من المتوقع حدوث بعض التورم والكدمات في الفترة الأولى، ثم تتحسن تدريجيًا. وسيتم تقديم تعليمات خاصة حول العناية والعودة إلى الأنشطة اليومية والتمارين.",
 		galleryPrevious: "الصورة السابقة",
 		galleryNext: "الصورة التالية",
 		detailFace: "توازن ملامح الوجه",
@@ -166,7 +194,33 @@ const translations = {
 		fillerBody: "يمكن للفيلر الموضعي والمدروس أن يعيد التوازن والتحديد مع الحفاظ على طبيعة ملامحك.",
 		botoxTitle: "علاج التجاعيد وتنعيم الخطوط",
 		botoxEyebrow: "علاج يحافظ على تعابير الوجه",
-		botoxBody: "يساعد علاج التجاعيد الموجه على تنعيم الخطوط التعبيرية مع الحفاظ على مظهر طبيعي وحيوي."
+		botoxBody: "يساعد علاج التجاعيد الموجه على تنعيم الخطوط التعبيرية مع الحفاظ على مظهر طبيعي وحيوي.",
+        fillerProcedureBody:"الفيلر الجلدي هو إجراء غير جراحي يعتمد على الحقن لاستعادة الحجم المفقود وتخفيف الخطوط والتجاعيد وتحسين ملامح الوجه وتعزيز تناسقه. ويتم تصميم خطة العلاج بما يتناسب مع ملامح الوجه واحتياجات كل شخص وأهدافه الجمالية.",
+        fillerPointOneLabel:"ما الذي يمكن تحسينه",
+        fillerPointOne:"يمكن للفيلر تحسين مظهر الشفاه والخدين، واستعادة الحجم، وتخفيف الخطوط حول الفم والأنف، وتحسين تناسق ملامح الوجه وتحديدها.",
+        fillerPointTwoLabel:    "علاج مخصص",
+        fillerPointTwo:"يتم اختيار نوع الفيلر وكميته والمنطقة المراد علاجها وطريقة الحقن وفقًا لتشريح الوجه والنتيجة المطلوبة.",
+        fillerPointThreeLabel:"العلاج والتعافي",
+        fillerPointThree:"يتم إجراء الفيلر عادةً خلال زيارة للعيادة. وقد يحدث بعض التورم أو الكدمات الخفيفة، والتي تتحسن عادةً خلال الأيام التالية.",
+        fillerFaqQ1:"ما استخدامات الفيلر الجلدي؟",
+        fillerFaqA1:"يمكن استخدام الفيلر الجلدي لاستعادة الحجم المفقود وتخفيف الخطوط والتجاعيد وتحسين مظهر الشفاه والخدين وتحديد ملامح الوجه وتعزيز التناسق بين أجزاء الوجه.",
+        fillerFaqQ2:"كيف يتم اختيار نوع الفيلر المناسب؟",
+        fillerFaqA2: "يعتمد اختيار الفيلر المناسب على المنطقة المراد علاجها والنتيجة المطلوبة وخصائص المنتج مثل القوام والكثافة وعمق الحقن. ويتم تحديد الخيار الأنسب خلال الاستشارة.",
+        fillerFaqQ3:"كم تستمر نتائج الفيلر؟",
+        fillerFaqA3:"تختلف مدة النتائج حسب نوع الفيلر والمنطقة المعالجة وحالة كل شخص. وعادةً ما تستمر أنواع حمض الهيالورونيك من حوالي 6 إلى 18 شهرًا، بينما قد تستمر بعض أنواع الفيلر الأخرى لفترة أطول.",
+        botoxProcedureBody:"تُعد حقن توكسين البوتولينوم إجراءً غير جراحي يقلل مؤقتًا من نشاط عضلات معينة بهدف تخفيف التجاعيد الديناميكية والخطوط الدقيقة مع الحفاظ على مظهر طبيعي وتعبيرات الوجه.",
+        botoxPointOneLabel:"ما الذي يمكن تحسينه",
+        botoxPointOne:"يمكن للعلاج تخفيف الخطوط المرتبطة بتعبيرات الوجه مثل خطوط الجبهة وخطوط العبوس بين الحاجبين والتجاعيد حول العينين.",
+        botoxPointTwoLabel:"كيف يعمل",
+        botoxPointTwo:"يعمل العلاج مؤقتًا على تقليل الإشارات العصبية إلى العضلات المستهدفة، مما يسمح لها بالاسترخاء ويجعل التجاعيد المرتبطة بحركتها أقل وضوحًا.",
+        botoxPointThreeLabel:"التوقيت ومدة النتائج",
+        botoxPointThree:"تظهر النتائج تدريجيًا خلال عدة أيام، وتستمر عادةً لمدة تتراوح بين ثلاثة وستة أشهر، حسب الشخص والمنطقة المعالجة.",
+        botoxFaqQ1:"ما التجاعيد التي يمكن علاجها بالبوتوكس؟",
+        botoxFaqA1:"يُستخدم البوتوكس بشكل أساسي لعلاج التجاعيد الديناميكية الناتجة عن حركة عضلات الوجه، مثل خطوط الجبهة وخطوط العبوس بين الحاجبين والتجاعيد حول العينين. ويمكن استخدامه أيضًا في مناطق أخرى وفقًا لخطة العلاج.",
+        botoxFaqQ2:"متى تظهر نتائج البوتوكس؟",
+        botoxFaqA2:"تظهر التأثيرات تدريجيًا. قد يبدأ بعض التحسن خلال عدة أيام، بينما قد يستغرق ظهور التأثير الكامل حوالي أسبوع إلى أسبوعين.",
+        botoxFaqQ3:"كم تستمر نتائج البوتوكس؟",
+        botoxFaqA3:"تستمر النتائج عادةً لمدة تتراوح بين ثلاثة وستة أشهر. وقد تختلف المدة حسب الشخص والمنطقة المعالجة والكمية المستخدمة.",
 	}
 };
 
@@ -197,127 +251,162 @@ const setupProjectDropdown = () => {
 	projectItem.replaceChildren(details);
 };
 
-const renderProcedurePage = () => {
-	const pageKey = document.body.dataset.page;
-	const main = document.querySelector(".detail-main");
-	if (!pageKey || !main || main.querySelector(".procedure-video")) return;
 
-	main.className = "detail-main procedure-page-main";
-	const videoSource = document.body.dataset.video;
-	const videoPoster = document.body.dataset.poster;
-	const carouselImages = (document.body.dataset.gallery || "").split(",").map((image) => image.trim()).filter(Boolean);
-	const carouselId = `${pageKey}-client-carousel`;
-	main.innerHTML = `
-		<section class="procedure-video" aria-labelledby="procedure-video-title">
-			<div class="procedure-section__heading">
-				<p class="section-label" data-i18n="${pageKey}Eyebrow"></p>
-				<h2 id="procedure-video-title" data-i18n="procedureVideo">Treatment showcase</h2>
-				<p data-i18n="procedureVideoBody"></p>
-			</div>
-			<!-- Replace the local video path below with a final local file or hosted video URL. -->
-			<video class="procedure-video__player" controls muted loop playsinline preload="metadata" poster="${videoPoster}">
-				<source src="${videoSource}" type="video/mp4">
-			</video>
-		</section>
-		<section class="procedure-info" aria-labelledby="procedure-info-title">
-			<p class="section-label" data-i18n="${pageKey}Eyebrow"></p>
-			<h2 id="procedure-info-title" data-i18n="procedureDetails">About the procedure</h2>
-			<p class="procedure-info__body" data-i18n="${pageKey}Body"></p>
-			<div class="procedure-info__grid">
-				<div><strong data-i18n="procedurePointOneLabel">Personalized plan</strong><span data-i18n="procedurePointOne">A consultation-led treatment designed around your features and goals.</span></div>
-				<div><strong data-i18n="procedurePointTwoLabel">Natural finish</strong><span data-i18n="procedurePointTwo">Balanced results that respect your proportions and expression.</span></div>
-				<div><strong data-i18n="procedurePointThreeLabel">Expert guidance</strong><span data-i18n="procedurePointThree">Clear preparation and aftercare guidance from consultation to follow-up.</span></div>
-			</div>
-		</section>
-		<section class="procedure-gallery" aria-labelledby="procedure-gallery-title">
-			<div class="procedure-section__heading">
-				<p class="section-label" data-i18n="${pageKey}Eyebrow"></p>
-				<h2 id="procedure-gallery-title" data-i18n="procedureGallery">Selected client results</h2>
-			</div>
-			<div id="${carouselId}" class="carousel slide procedure-carousel" data-bs-ride="carousel" data-bs-interval="5000">
-				<div class="carousel-inner">
-					${carouselImages.map((image, index) => `<div class="carousel-item${index === 0 ? " active" : ""}"><img src="${image.startsWith("images/") ? image : `images/${image}`}" class="d-block w-100" alt="Selected client result ${index + 1}" loading="lazy"></div>`).join("")}
-				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden" data-i18n="galleryPrevious">Previous image</span></button>
-				<button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden" data-i18n="galleryNext">Next image</span></button>
-			</div>
-		</section>
-		<section class="procedure-faq" aria-labelledby="procedure-faq-title">
-			<p class="section-label" data-i18n="procedureDetails"></p>
-			<h2 id="procedure-faq-title" data-i18n="faqTitle">Frequently asked questions</h2>
-			<div class="accordion accordion-flush" id="${pageKey}-faq">
-				${[1, 2, 3].map((index) => `<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${pageKey}-faq-${index}" aria-expanded="false" aria-controls="${pageKey}-faq-${index}" data-i18n="faqQ${index}"></button></h3><div id="${pageKey}-faq-${index}" class="accordion-collapse collapse" data-bs-parent="#${pageKey}-faq"><div class="accordion-body" data-i18n="faqA${index}"></div></div></div>`).join("")}
-			</div>
-		</section>
-		<section class="content-section container procedure-booking" id="contact" aria-labelledby="procedure-booking-title">
-			<p class="section-label" data-i18n="contactLabel">Begin a conversation</p>
-			<h2 id="procedure-booking-title" data-i18n="contactTitle">Start with a dermatology consultation.</h2>
-			<p data-i18n="contactBody">Appointments are available at Cosmesurge Abu Dhabi for clinical dermatology, laser, and aesthetic treatments.</p>
-			<a class="book-button procedure-page-main__cta" href="tel:+97180026763" data-i18n="bookNow">Book now</a>
-		</section>
-	`;
+
+const initializeProcedureGallery = () => {
+    const galleryImages = document.body.dataset.gallery;
+
+    if (!galleryImages) {
+        return;
+    }
+
+    const images = galleryImages
+        .split(",")
+        .map((image) => image.trim())
+        .filter(Boolean);
+
+    const modal = document.getElementById("procedure-image-modal");
+    const modalImage = document.getElementById("procedure-modal-image");
+    const modalPrev = document.getElementById("procedure-modal-prev");
+    const modalNext = document.getElementById("procedure-modal-next");
+
+    let currentModalIndex = 0;
+
+    const showModalImage = (index) => {
+        currentModalIndex =
+            (index + images.length) % images.length;
+
+        modalImage.src = images[currentModalIndex];
+        modalImage.alt =
+            `Treatment result ${currentModalIndex + 1}`;
+    };
+
+    const openImageModal = (index) => {
+        if (!modal || !modalImage) {
+            return;
+        }
+
+        showModalImage(index);
+
+        bootstrap.Modal
+            .getOrCreateInstance(modal)
+            .show();
+    };
+
+    // -----------------------------
+    // MODAL ARROWS
+    // -----------------------------
+
+    modalPrev?.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        showModalImage(currentModalIndex - 1);
+    });
+
+    modalNext?.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        showModalImage(currentModalIndex + 1);
+    });
+
+    // -----------------------------
+    // KEYBOARD ARROWS
+    // -----------------------------
+
+    document.addEventListener("keydown", (event) => {
+        if (!modal?.classList.contains("show")) {
+            return;
+        }
+
+        if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            showModalImage(currentModalIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+            event.preventDefault();
+            showModalImage(currentModalIndex + 1);
+        }
+    });
+
+    // -----------------------------
+    // CAROUSEL
+    // -----------------------------
+
+    document
+        .querySelectorAll(".procedure-carousel")
+        .forEach((carousel) => {
+
+            const carouselInner =
+                carousel.querySelector(".carousel-inner");
+
+            if (!carouselInner) {
+                return;
+            }
+
+            carouselInner.innerHTML = "";
+
+            images.forEach((image, index) => {
+                const item = document.createElement("div");
+
+                item.className =
+                    `carousel-item${index === 0 ? " active" : ""}`;
+
+                const img = document.createElement("img");
+
+                img.src = image;
+                img.className =
+                    "d-block w-100 procedure-gallery-image";
+
+                img.alt =
+                    `Treatment result ${index + 1}`;
+
+                img.addEventListener("click", () => {
+                    openImageModal(index);
+                });
+
+                item.appendChild(img);
+                carouselInner.appendChild(item);
+            });
+
+            if (images.length <= 1) {
+                carousel
+                    .querySelector(".carousel-control-prev")
+                    ?.remove();
+
+                carousel
+                    .querySelector(".carousel-control-next")
+                    ?.remove();
+
+                carousel.removeAttribute("data-bs-ride");
+                carousel.removeAttribute("data-bs-interval");
+            }
+        });
 };
 
-const initializeProcedureControls = () => {
-	document.querySelectorAll(".procedure-carousel").forEach((carousel) => {
-		const items = [...carousel.querySelectorAll(".carousel-item")];
-		const showItem = (index) => {
-			const nextIndex = (index + items.length) % items.length;
-			items.forEach((item, itemIndex) => item.classList.toggle("active", itemIndex === nextIndex));
-			carousel.dataset.activeIndex = String(nextIndex);
-		};
-		const move = (direction) => showItem(Number(carousel.dataset.activeIndex || 0) + direction);
-		if (!window.bootstrap) {
-			carousel.querySelector(".carousel-control-prev")?.addEventListener("click", () => move(-1));
-			carousel.querySelector(".carousel-control-next")?.addEventListener("click", () => move(1));
-		}
-		showItem(0);
-		if (!window.bootstrap) setInterval(() => move(1), 5000);
-	});
+// const ensureFooterStructure = () => {
+// 	const footer = document.querySelector(".site-footer");
+// 	if (!footer || footer.querySelector(".site-footer__map")) return;
 
-	const hasBootstrapBundle = Boolean(document.querySelector('script[src*="bootstrap.bundle"]'));
-	if (hasBootstrapBundle || window.bootstrap) return;
-
-	document.querySelectorAll(".procedure-faq .accordion-button").forEach((button) => {
-		button.addEventListener("click", () => {
-			const panel = document.querySelector(button.dataset.bsTarget);
-			const isOpen = panel.classList.contains("show");
-			document.querySelectorAll(".procedure-faq .accordion-collapse").forEach((item) => item.classList.remove("show"));
-			document.querySelectorAll(".procedure-faq .accordion-button").forEach((item) => {
-				item.classList.add("collapsed");
-				item.setAttribute("aria-expanded", "false");
-			});
-			if (!isOpen) {
-				panel.classList.add("show");
-				button.classList.remove("collapsed");
-				button.setAttribute("aria-expanded", "true");
-			}
-		});
-	});
-};
-
-const ensureFooterStructure = () => {
-	const footer = document.querySelector(".site-footer");
-	if (!footer || footer.querySelector(".site-footer__map")) return;
-
-	const bottom = footer.querySelector(".site-footer__bottom");
-	const map = document.createElement("div");
-	map.className = "site-footer__map container";
-	map.innerHTML = `
-		<div>
-			<p class="site-footer__heading" data-i18n="footerVisit">Visit the clinic</p>
-			<p class="site-footer__muted" data-i18n="footerAddress">Cosmesurge Abu Dhabi, Delma region, Abu Dhabi, UAE</p>
-			<a href="https://m.edarabia.com/dr-reham-kolib/" target="_blank" rel="noopener noreferrer" data-i18n="viewLocation">View location details</a>
-		</div>
-		<iframe title="Cosmesurge Abu Dhabi location map" src="https://www.google.com/maps?q=Cosmesurge+Abu+Dhabi&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-	`;
-	footer.insertBefore(map, bottom);
-};
+// 	const bottom = footer.querySelector(".site-footer__bottom");
+// 	const map = document.createElement("div");
+// 	map.className = "site-footer__map container";
+// 	map.innerHTML = `
+// 		<div>
+// 			<p class="site-footer__heading" data-i18n="footerVisit">Visit the clinic</p>
+// 			<p class="site-footer__muted" data-i18n="footerAddress">Cosmesurge Abu Dhabi, Delma region, Abu Dhabi, UAE</p>
+// 			<a href="https://m.edarabia.com/dr-reham-kolib/" target="_blank" rel="noopener noreferrer" data-i18n="viewLocation">View location details</a>
+// 		</div>
+// 		<iframe title="Cosmesurge Abu Dhabi location map" src="https://www.google.com/maps?q=Cosmesurge+Abu+Dhabi&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+// 	`;
+// 	footer.insertBefore(map, bottom);
+// };
 
 setupProjectDropdown();
-renderProcedurePage();
-initializeProcedureControls();
-ensureFooterStructure();
+initializeProcedureGallery();
+// ensureFooterStructure();
 
 const setLanguage = (language) => {
 	const content = translations[language];
@@ -361,24 +450,33 @@ languageButtons.forEach((button) => {
 	button.addEventListener("click", () => setLanguage(button.dataset.language));
 });
 
-	setLanguage(new URLSearchParams(window.location.search).get("lang") || localStorage.getItem("preferred-language") || "en");
+setLanguage(
+    new URLSearchParams(window.location.search).get("lang") ||
+    localStorage.getItem("preferred-language") ||
+    "en"
+);
 
 document.body.classList.add("js-ready");
 
 const waitForPanel = (panel) => {
-	const backgroundImage = getComputedStyle(panel).backgroundImage;
-	const imageUrl = backgroundImage.match(/url\(["']?(.*?)["']?\)/)?.[1];
+    const backgroundImage = getComputedStyle(panel).backgroundImage;
 
-	if (!imageUrl) {
-		return Promise.resolve();
-	}
+    const imageUrl = backgroundImage.match(
+        /url\(["']?(.*?)["']?\)/
+    )?.[1];
 
-	return new Promise((resolve) => {
-		const image = new Image();
-		image.addEventListener("load", resolve, { once: true });
-		image.addEventListener("error", resolve, { once: true });
-		image.src = imageUrl;
-	});
+    if (!imageUrl) {
+        return Promise.resolve();
+    }
+
+    return new Promise((resolve) => {
+        const image = new Image();
+
+        image.addEventListener("load", resolve, { once: true });
+        image.addEventListener("error", resolve, { once: true });
+
+        image.src = imageUrl;
+    });
 };
 
 if (hero) {
@@ -535,36 +633,36 @@ comparisons.forEach((comparison) => {
 	updateImageFraming();
 });
 
-document.querySelectorAll("[data-client-gallery]").forEach((gallery) => {
-	const cards = [...gallery.querySelectorAll(".client-gallery__card")];
-	let activeIndex = 0;
-	let timer;
+// document.querySelectorAll("[data-client-gallery]").forEach((gallery) => {
+// 	const cards = [...gallery.querySelectorAll(".client-gallery__card")];
+// 	let activeIndex = 0;
+// 	let timer;
 
-	const showCard = (nextIndex) => {
-		activeIndex = (nextIndex + cards.length) % cards.length;
-		cards.forEach((card, index) => {
-			card.classList.toggle("is-active", index === activeIndex);
-			card.setAttribute("aria-hidden", String(index !== activeIndex));
-		});
-	};
+// 	const showCard = (nextIndex) => {
+// 		activeIndex = (nextIndex + cards.length) % cards.length;
+// 		cards.forEach((card, index) => {
+// 			card.classList.toggle("is-active", index === activeIndex);
+// 			card.setAttribute("aria-hidden", String(index !== activeIndex));
+// 		});
+// 	};
 
-	const startAutoPlay = () => {
-		clearInterval(timer);
-		timer = setInterval(() => showCard(activeIndex + 1), 500);
-	};
+// 	const startAutoPlay = () => {
+// 		clearInterval(timer);
+// 		timer = setInterval(() => showCard(activeIndex + 1), 500);
+// 	};
 
-	gallery.querySelector("[data-gallery-prev]").addEventListener("click", () => {
-		showCard(activeIndex - 1);
-		startAutoPlay();
-	});
-	gallery.querySelector("[data-gallery-next]").addEventListener("click", () => {
-		showCard(activeIndex + 1);
-		startAutoPlay();
-	});
-	gallery.addEventListener("mouseenter", () => clearInterval(timer));
-	gallery.addEventListener("mouseleave", startAutoPlay);
-	gallery.addEventListener("focusin", () => clearInterval(timer));
-	gallery.addEventListener("focusout", startAutoPlay);
-	showCard(0);
-	startAutoPlay();
-});
+// 	gallery.querySelector("[data-gallery-prev]").addEventListener("click", () => {
+// 		showCard(activeIndex - 1);
+// 		startAutoPlay();
+// 	});
+// 	gallery.querySelector("[data-gallery-next]").addEventListener("click", () => {
+// 		showCard(activeIndex + 1);
+// 		startAutoPlay();
+// 	});
+// 	gallery.addEventListener("mouseenter", () => clearInterval(timer));
+// 	gallery.addEventListener("mouseleave", startAutoPlay);
+// 	gallery.addEventListener("focusin", () => clearInterval(timer));
+// 	gallery.addEventListener("focusout", startAutoPlay);
+// 	showCard(0);
+// 	startAutoPlay();
+// });
