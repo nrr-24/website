@@ -295,7 +295,9 @@ body.menu-is-open {
 }
 
 .site-sidebar__item a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
 
     padding: 0.65rem 0;
 
@@ -312,10 +314,21 @@ body.menu-is-open {
         transform 200ms ease;
 }
 
+.site-sidebar__item a .bi {
+    font-size: 0.75em;
+    opacity: 0.6;
+    transition: opacity 200ms ease, transform 300ms ease;
+}
+
 .site-sidebar__item a:hover,
 .site-sidebar__item a:focus-visible {
     color: #fff4d4;
     transform: translateX(0.5rem);
+}
+
+.site-sidebar__item a:hover .bi {
+    opacity: 1;
+    transform: scale(1.15);
 }
 
 .site-sidebar__item a:focus-visible {
@@ -686,7 +699,17 @@ html[dir="rtl"] .hero__actions {
     transition:
         background 200ms ease,
         color 200ms ease,
-        transform 200ms ease;
+        transform 200ms ease,
+        box-shadow 200ms ease;
+}
+
+.book-button .bi {
+    font-size: 1.1em;
+    transition: transform 300ms ease;
+}
+
+.book-button:hover .bi {
+    transform: scale(1.15);
 }
 
 .book-button:hover,
@@ -694,7 +717,8 @@ html[dir="rtl"] .hero__actions {
     background: var(--gold-soft);
     color: var(--ink);
 
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 
 .book-button:focus-visible {
@@ -847,10 +871,11 @@ html[dir="rtl"] .hero__actions {
 .treatment-card:hover {
     z-index: 2;
 
-    transform: translateY(-0.6rem);
+    transform: translateY(-0.6rem) scale(1.02);
 
     background: #fffaf3;
     color: var(--ink);
+    box-shadow: 0 1.5rem 4rem rgba(30, 24, 18, 0.08);
 }
 
 .treatment-card--dark {
@@ -1131,7 +1156,8 @@ html[dir="rtl"] .hero__actions {
     background: var(--gold);
     color: var(--ink);
 
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
 
 .text-link:hover span {
@@ -1641,29 +1667,42 @@ html[dir="rtl"] .project--reverse .project__details h3 {
 .js-ready .projects__intro > *,
 .js-ready .project__details > *,
 .js-ready .content-section > *,
-.js-ready .about-section > * {
+.js-ready .about-section > *,
+.js-ready .procedure-video > *,
+.js-ready .procedure-gallery > *,
+.js-ready .procedure-info > *,
+.js-ready .procedure-faq > *,
+.js-ready .treatment-grid > *,
+.js-ready .client-gallery > * {
     opacity: 0;
-
-    transform: translateY(1.5rem);
-
+    transform: translateY(2rem);
     transition:
-        opacity 800ms ease,
-        transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+        opacity 1000ms cubic-bezier(0.25, 1, 0.5, 1),
+        transform 1000ms cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
 }
 
-.js-ready .reveal-visible > * {
+.js-ready .reveal-zoom {
+    opacity: 0;
+    transform: scale(1.05);
+    transition:
+        opacity 1200ms cubic-bezier(0.25, 1, 0.5, 1),
+        transform 1200ms cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+.js-ready .reveal-visible > *,
+.js-ready .reveal-zoom.reveal-visible {
     opacity: 1;
-
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
-.js-ready .reveal-visible > *:nth-child(2) {
-    transition-delay: 100ms;
-}
-
-.js-ready .reveal-visible > *:nth-child(3) {
-    transition-delay: 180ms;
-}
+/* Staggering delays for natural cascading */
+.js-ready .reveal-visible > *:nth-child(1) { transition-delay: 50ms; }
+.js-ready .reveal-visible > *:nth-child(2) { transition-delay: 150ms; }
+.js-ready .reveal-visible > *:nth-child(3) { transition-delay: 250ms; }
+.js-ready .reveal-visible > *:nth-child(4) { transition-delay: 350ms; }
+.js-ready .reveal-visible > *:nth-child(5) { transition-delay: 450ms; }
 
 /*
    Keep RTL project heading skew separate from the reveal

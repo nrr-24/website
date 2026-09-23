@@ -704,9 +704,22 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 	});
 }, { threshold: 0.2, rootMargin: "0px 0px -8%" });
 
-document.querySelectorAll(".projects__intro, .project__details, .content-section, .about-section").forEach((section) => {
+document.querySelectorAll(".projects__intro, .project__details, .content-section, .about-section, .procedure-video, .procedure-gallery, .procedure-info, .procedure-faq, .treatment-grid, .client-gallery").forEach((section) => {
 	revealObserver.observe(section);
 });
+
+// Subtle Hero Parallax Effect
+if (hero) {
+    window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        // Only run parallax if we're near the top to save performance
+        if (scrollY < window.innerHeight) {
+            panels.forEach(panel => {
+                panel.style.transform = `scale(1.02) translateY(${scrollY * 0.25}px)`;
+            });
+        }
+    }, { passive: true });
+}
 
 // Initialize each project comparison independently so dragging one does not affect the others.
 comparisons.forEach((comparison) => {
