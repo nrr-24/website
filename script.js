@@ -114,6 +114,95 @@ const translations = {
         botoxFaqA2:"The effects develop gradually. Some improvement may be noticeable within several days, while the full effect can take around one to two weeks.",
         botoxFaqQ3:"How long do Botox results last?",
         botoxFaqA3:"Results commonly last around three to six months. The duration can vary depending on the individual, the treatment area, and the amount used.",
+        heroDescription:
+    "Personalized dermatological and aesthetic care designed around your skin, your features, and your goals.",
+
+bookConsultation: "Book a consultation",
+exploreTreatments: "Explore treatments",
+scrollExplore: "Scroll to explore",
+
+statExperience: "Years of experience",
+statApproach: "Personalized approach",
+statLanguages: "Languages",
+statCare: "Patient-focused care",
+
+aboutLearnMore: "Discover the approach",
+
+navTreatments: "Treatments",
+navJourney: "Your Journey",
+navFaq: "FAQ",
+
+treatmentsLabel: "Treatments",
+treatmentsTitle: "Care that starts with understanding.",
+treatmentsBody:
+    "From medical dermatology to aesthetic treatments, every treatment plan begins with understanding your individual needs.",
+
+treatmentFaceTitle: "Facial rejuvenation",
+treatmentFaceBody:
+    "Personalized approaches to facial aging, skin laxity, contours, and natural-looking rejuvenation.",
+
+treatmentFillerTitle: "Dermal fillers",
+treatmentFillerBody:
+    "Restore volume, enhance contours, and create balanced results while respecting your natural features.",
+
+treatmentBotoxTitle: "Botulinum toxin",
+treatmentBotoxBody:
+    "Soften expression lines with carefully targeted treatment while maintaining natural facial movement.",
+
+whyLabel: "The approach",
+whyTitle: "Natural results start with thoughtful care.",
+
+whyOneTitle: "Listen first",
+whyOneBody:
+    "Understanding your concerns and expectations is the starting point for every treatment plan.",
+
+whyTwoTitle: "Assess carefully",
+whyTwoBody:
+    "Your skin, facial anatomy, concerns, and individual needs are considered before treatment.",
+
+whyThreeTitle: "Treat precisely",
+whyThreeBody:
+    "Treatments are selected and performed with attention to proportion, balance, and natural expression.",
+
+whyFourTitle: "Follow up",
+whyFourBody:
+    "Your progress matters beyond the treatment itself, with appropriate follow-up and aftercare guidance.",
+
+journeyLabel: "Your journey",
+journeyTitle: "From consultation to confident care.",
+
+journeyOneTitle: "Consultation",
+journeyOneBody:
+    "Discuss your concerns, goals, previous treatments, and what you would like to achieve.",
+
+journeyTwoTitle: "Assessment",
+journeyTwoBody:
+    "Your skin and facial features are assessed to understand which treatment options may be appropriate.",
+
+journeyThreeTitle: "Personalized plan",
+journeyThreeBody:
+    "A treatment approach is selected according to your individual anatomy, concerns, and goals.",
+
+journeyFourTitle: "Follow-up",
+journeyFourBody:
+    "Your recovery and results are monitored, with guidance on aftercare and future treatment when appropriate.",
+
+faqLabel: "Frequently asked questions",
+faqHomeTitle: "Before your consultation.",
+
+homeFaqQ1: "How do I know which treatment is right for me?",
+homeFaqA1:
+    "The appropriate treatment depends on your concerns, skin condition, anatomy, medical history, and goals. A consultation allows the doctor to assess these factors and discuss suitable options.",
+
+homeFaqQ2: "Are aesthetic treatments personalized?",
+homeFaqA2:
+    "Yes. Treatment areas, techniques, products, and amounts are selected according to the individual rather than using a single approach for everyone.",
+
+homeFaqQ3: "Can I discuss several concerns during one consultation?",
+homeFaqA3:
+    "Yes. A consultation can be used to discuss your different concerns and understand which treatments may be suitable individually or as part of a broader treatment plan.",
+
+whatsapp: "WhatsApp"
     },
 	ar: {
 		brand: "د. رهام قليب",
@@ -221,6 +310,95 @@ const translations = {
         botoxFaqA2:"تظهر التأثيرات تدريجيًا. قد يبدأ بعض التحسن خلال عدة أيام، بينما قد يستغرق ظهور التأثير الكامل حوالي أسبوع إلى أسبوعين.",
         botoxFaqQ3:"كم تستمر نتائج البوتوكس؟",
         botoxFaqA3:"تستمر النتائج عادةً لمدة تتراوح بين ثلاثة وستة أشهر. وقد تختلف المدة حسب الشخص والمنطقة المعالجة والكمية المستخدمة.",
+        heroDescription:
+    "رعاية جلدية وتجميلية مخصصة يتم تصميمها وفقًا لبشرتك وملامحك وأهدافك.",
+
+bookConsultation: "احجزي استشارتك",
+exploreTreatments: "استكشفي العلاجات",
+scrollExplore: "مرري لاستكشاف المزيد",
+
+statExperience: "سنوات من الخبرة",
+statApproach: "نهج مخصص",
+statLanguages: "لغتان",
+statCare: "رعاية تركز على المريض",
+
+aboutLearnMore: "اكتشفي نهج العلاج",
+
+navTreatments: "العلاجات",
+navJourney: "رحلتك",
+navFaq: "الأسئلة الشائعة",
+
+treatmentsLabel: "العلاجات",
+treatmentsTitle: "رعاية تبدأ بفهم احتياجاتك.",
+treatmentsBody:
+    "من الأمراض الجلدية إلى العلاجات التجميلية، تبدأ كل خطة علاجية بفهم احتياجاتك الفردية.",
+
+treatmentFaceTitle: "تجديد مظهر الوجه",
+treatmentFaceBody:
+    "أساليب مخصصة للتعامل مع علامات تقدم العمر وترهل البشرة وتحديد ملامح الوجه وتحقيق مظهر أكثر نضارة وطبيعية.",
+
+treatmentFillerTitle: "الفيلر الجلدي",
+treatmentFillerBody:
+    "استعادة الحجم وتحسين ملامح الوجه وتحقيق توازن طبيعي مع الحفاظ على خصوصية ملامحك.",
+
+treatmentBotoxTitle: "توكسين البوتولينوم",
+treatmentBotoxBody:
+    "تخفيف خطوط التعبير من خلال علاج دقيق يستهدف العضلات مع الحفاظ على حركة الوجه الطبيعية.",
+
+whyLabel: "نهج العلاج",
+whyTitle: "النتائج الطبيعية تبدأ برعاية مدروسة.",
+
+whyOneTitle: "نستمع أولًا",
+whyOneBody:
+    "فهم مخاوفك وتوقعاتك هو نقطة البداية لكل خطة علاجية.",
+
+whyTwoTitle: "نقيّم بعناية",
+whyTwoBody:
+    "يتم أخذ بشرتك وتشريح الوجه واحتياجاتك ومخاوفك الفردية بعين الاعتبار قبل العلاج.",
+
+whyThreeTitle: "نعالج بدقة",
+whyThreeBody:
+    "يتم اختيار العلاجات وتنفيذها مع الاهتمام بالتناسق والتوازن والحفاظ على تعبيرات الوجه الطبيعية.",
+
+whyFourTitle: "المتابعة",
+whyFourBody:
+    "تستمر الرعاية بعد العلاج من خلال المتابعة المناسبة وإرشادات العناية.",
+
+journeyLabel: "رحلتك",
+journeyTitle: "من الاستشارة إلى رعاية مصممة لك.",
+
+journeyOneTitle: "الاستشارة",
+journeyOneBody:
+    "مناقشة مخاوفك وأهدافك والعلاجات السابقة والنتيجة التي ترغبين في الوصول إليها.",
+
+journeyTwoTitle: "التقييم",
+journeyTwoBody:
+    "يتم تقييم البشرة وملامح الوجه لفهم خيارات العلاج المناسبة.",
+
+journeyThreeTitle: "خطة مخصصة",
+journeyThreeBody:
+    "يتم اختيار نهج العلاج وفقًا لتشريح الوجه واحتياجاتك وأهدافك الفردية.",
+
+journeyFourTitle: "المتابعة",
+journeyFourBody:
+    "تتم متابعة التعافي والنتائج مع تقديم الإرشادات المناسبة للعناية والعلاجات المستقبلية عند الحاجة.",
+
+faqLabel: "الأسئلة الشائعة",
+faqHomeTitle: "قبل الاستشارة.",
+
+homeFaqQ1: "كيف أعرف العلاج المناسب لي؟",
+homeFaqA1:
+    "يعتمد العلاج المناسب على احتياجاتك وحالة بشرتك وتشريح الوجه والتاريخ الطبي والأهداف المطلوبة. وتتيح الاستشارة تقييم هذه العوامل ومناقشة الخيارات المناسبة.",
+
+homeFaqQ2: "هل العلاجات التجميلية مخصصة لكل شخص؟",
+homeFaqA2:
+    "نعم. يتم اختيار مناطق العلاج والتقنيات والمنتجات والكميات وفقًا لاحتياجات كل شخص بدلًا من اتباع أسلوب واحد للجميع.",
+
+homeFaqQ3: "هل يمكنني مناقشة أكثر من مشكلة خلال الاستشارة؟",
+homeFaqA3:
+    "نعم. يمكن خلال الاستشارة مناقشة مختلف مخاوفك وفهم العلاجات التي قد تكون مناسبة لكل مشكلة بشكل منفصل أو ضمن خطة علاجية متكاملة.",
+
+whatsapp: "واتساب"
 	}
 };
 

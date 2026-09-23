@@ -129,25 +129,17 @@
     </aside>
 
     <!-- Hero -->
-    <header class="detail-hero detail-hero--filler">
-
-        <div class="detail-hero__veil"></div>
-
-        <div class="detail-hero__content">
-
-            <p class="hero__eyebrow" data-i18n="fillerEyebrow">
-                Injectable aesthetics
-            </p>
-
-            <h1 data-i18n="fillerTitle">
-                Lip filler and facial harmony
-            </h1>
-
-            <p data-i18n="fillerBody">
-                Subtle, carefully placed filler can restore balance and definition
-                while respecting the character of your features.
-            </p>
-
+    <header class="hero" aria-labelledby="hero-title">
+        <div class="hero__panel hero__panel--filler"></div>
+        <div class="hero__veil" aria-hidden="true"></div>
+        <div class="hero__content container">
+            <div class="hero__copy">
+                <p class="hero__eyebrow" data-i18n="fillerEyebrow">Injectable aesthetics</p>
+                <h1 id="hero-title" data-i18n="fillerTitle">Lip filler and facial harmony</h1>
+                <p class="hero__description" data-i18n="fillerBody">Subtle, carefully placed filler can restore balance and definition
+                    while respecting the character of your features.</p>
+            </div>
+            <div class="hero__scroll"></div>
         </div>
     </header>
 
