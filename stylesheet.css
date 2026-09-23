@@ -989,8 +989,8 @@ html[dir="rtl"] .hero__actions {
     background: var(--paper);
     border-radius: 2rem;
 
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
+    /* scroll-snap-align: center;
+    scroll-snap-stop: always; */
 }
 
 .project.has-adjusted-comparison {
@@ -1375,15 +1375,38 @@ html[dir="rtl"] .project--reverse .project__details h3 {
 /* =========================================================
    HOME CONTACT
 ========================================================= */
-
 .home-contact {
     min-height: auto;
-
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.75fr);
     align-items: center;
-
+    gap: clamp(3rem, 7vw, 7rem);
     padding-top: 5rem;
     padding-bottom: 5rem;
+}
+
+.home-contact__content {
+    max-width: 52rem;
+}
+
+.home-contact__image {
+    position: relative;
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
+.home-contact__image img {
+    display: block;
+    width: 100%;
+    /* aspect-ratio: 4 / 5; */
+    object-fit: cover;
+
+    /* border-radius: 10rem 10rem 1.5rem 1.5rem;
+
+    border: 1px solid var(--gold); */
+    padding: 0.65rem;
+    /* background: rgba(214, 179, 106, 0.12); */
 }
 
 .home-contact__content {
