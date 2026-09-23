@@ -3238,3 +3238,70 @@ html[dir="rtl"] .quick-stats__item {
 html[dir="rtl"] .quick-stats__item:last-child {
     border-left: 0;
 }
+/* =========================================================
+   SECTION BACKGROUND PATTERNS
+========================================================= */
+
+.section-dark,
+.section-light {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-dark {
+    background: var(--ink);
+}
+
+.section-light {
+    background: var(--paper);
+}
+
+/* Pattern overlay */
+.section-dark::before,
+.section-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+    z-index: 0;
+/* Fade: invisible top → visible middle → invisible bottom */
+-webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
+);
+
+mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
+);
+}
+
+/* Dark section pattern */
+.section-dark::before {
+    background-image: url("images/blobs-bg.png");
+}
+
+/* Light section pattern */
+.section-light::before {
+    background-image: url("images/blobs-bg.png");
+}
+
+/* Keep section content above the pattern */
+.section-dark > *,
+.section-light > * {
+    position: relative;
+    z-index: 1;
+}
