@@ -3305,3 +3305,1031 @@ mask-image: linear-gradient(
     position: relative;
     z-index: 1;
 }
+
+/* =========================================================
+   LIVELY / ANIMATED VISUAL OVERRIDES
+   Paste at the VERY END of stylesheet.css
+========================================================= */
+
+/* ---------------------------------------------------------
+   1. MORE COLOR
+--------------------------------------------------------- */
+
+:root {
+    --ink: #17130f;
+    --gold: #d6b36a;
+    --gold-soft: #eed49a;
+    --paper: #f4efe7;
+
+    --rose: #c98f86;
+    --rose-soft: #e8b8ad;
+    --sage: #9eaa8d;
+    --cream: #fff8ec;
+}
+
+/* ---------------------------------------------------------
+   2. GLOBAL SECTION TRANSITIONS
+--------------------------------------------------------- */
+
+section,
+article,
+.quick-stats,
+.site-footer {
+    position: relative;
+}
+
+/* Add subtle ambient color to light sections */
+
+.treatments-section,
+.journey-section,
+.home-contact,
+.about-section {
+    background-image:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(201, 143, 134, 0.12),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(214, 179, 106, 0.12),
+            transparent 25%
+        );
+}
+
+/* ---------------------------------------------------------
+   3. HERO — MAKE THE DOCTOR IMAGE MUCH MORE IMPORTANT
+--------------------------------------------------------- */
+
+.hero {
+    min-height: 72svh;
+}
+
+/* Slow movement in the hero image */
+
+.hero__panel {
+    animation: heroImageFloat 14s ease-in-out infinite alternate;
+    transform-origin: center center;
+    filter: saturate(1.08) contrast(1.04);
+}
+
+/* Give the image a warm/golden glow */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(214, 179, 106, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(201, 143, 134, 0.18),
+            transparent 25%
+        );
+
+    mix-blend-mode: screen;
+    animation: heroGlow 8s ease-in-out infinite alternate;
+}
+
+/* Keep text readable but reveal more of the image */
+
+.hero__veil {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 6, 4, 0.68) 0%,
+            rgba(8, 6, 4, 0.32) 48%,
+            rgba(8, 6, 4, 0.05) 100%
+        );
+}
+
+/* Make the hero text enter more dramatically */
+
+.js-ready .hero__copy {
+    animation: heroCopyIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero h1 {
+    text-shadow:
+        0 0 2rem rgba(214, 179, 106, 0.15);
+}
+
+.hero__eyebrow {
+    position: relative;
+    display: inline-block;
+}
+
+.hero__eyebrow::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.5rem;
+
+    width: 3rem;
+    height: 1px;
+
+    background: var(--gold);
+
+    transform-origin: right;
+    animation: lineGrow 1.2s ease 0.5s both;
+}
+
+/* ---------------------------------------------------------
+   4. DOCTOR PORTRAIT — STRONGER EMPHASIS
+--------------------------------------------------------- */
+
+.about-section__portrait {
+    animation:
+        portraitFloat 6s ease-in-out infinite,
+        portraitGlow 5s ease-in-out infinite alternate;
+
+    box-shadow:
+        0 2rem 5rem rgba(23, 19, 15, 0.15),
+        0 0 0 1px rgba(214, 179, 106, 0.15);
+
+    transition:
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 600ms ease;
+}
+
+.about-section__portrait:hover {
+    transform:
+        translateY(-0.8rem)
+        rotate(-1deg)
+        scale(1.025);
+
+    box-shadow:
+        0 3rem 7rem rgba(23, 19, 15, 0.22),
+        0 0 3rem rgba(214, 179, 106, 0.18);
+}
+
+.about-section__portrait::after {
+    content: "";
+
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+
+    right: -1.5rem;
+    top: 15%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            var(--rose-soft) 0%,
+            rgba(232, 184, 173, 0.25) 45%,
+            transparent 70%
+        );
+
+    filter: blur(2px);
+
+    animation: floatingOrb 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Make the doctor image itself slightly richer */
+
+.about-section__portrait img {
+    filter:
+        saturate(1.08)
+        contrast(1.03);
+
+    transition:
+        filter 500ms ease,
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-section__portrait:hover img {
+    filter:
+        saturate(1.18)
+        contrast(1.05);
+
+    transform: scale(1.035);
+}
+
+/* ---------------------------------------------------------
+   5. QUICK STATS — MORE LIFE
+--------------------------------------------------------- */
+
+.quick-stats {
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(201, 143, 134, 0.10),
+            transparent 25%
+        ),
+        var(--paper);
+}
+
+.quick-stats__item {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        background 400ms ease,
+        transform 400ms ease;
+}
+
+.quick-stats__item::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            var(--rose),
+            var(--sage)
+        );
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.quick-stats__item:hover {
+    background: rgba(255, 250, 243, 0.8);
+    transform: translateY(-0.25rem);
+}
+
+.quick-stats__item:hover::before {
+    transform: scaleX(1);
+}
+
+.quick-stats__item strong {
+    transition:
+        color 300ms ease,
+        transform 300ms ease;
+}
+
+.quick-stats__item:hover strong {
+    color: var(--rose);
+    transform: translateX(0.3rem);
+}
+
+/* ---------------------------------------------------------
+   6. TREATMENT CARDS — COLOR + FLOATING EFFECT
+--------------------------------------------------------- */
+
+.treatment-card {
+    isolation: isolate;
+}
+
+.treatment-card::before {
+    content: "";
+
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+
+    right: -4rem;
+    bottom: -4rem;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201, 143, 134, 0.22),
+            transparent 70%
+        );
+
+    opacity: 0;
+    transform: scale(0.5);
+
+    transition:
+        opacity 500ms ease,
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: -1;
+}
+
+.treatment-card:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.treatment-card:nth-child(2)::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(214, 179, 106, 0.30),
+            transparent 70%
+        );
+}
+
+.treatment-card:nth-child(3)::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(158, 170, 141, 0.28),
+            transparent 70%
+        );
+}
+
+.treatment-card__number {
+    transition:
+        transform 300ms ease,
+        color 300ms ease;
+}
+
+.treatment-card:hover .treatment-card__number {
+    color: var(--rose);
+    transform: translateX(0.4rem);
+}
+
+/* ---------------------------------------------------------
+   7. PROJECTS — MORE MOTION
+--------------------------------------------------------- */
+
+.project {
+    transition:
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 600ms ease;
+}
+
+.project:hover {
+    transform: translateY(-0.4rem);
+    box-shadow:
+        0 2rem 5rem rgba(23, 19, 15, 0.10);
+}
+
+.project--dark:hover {
+    box-shadow:
+        0 2rem 5rem rgba(8, 6, 4, 0.30);
+}
+
+/* Project numbers become colorful */
+
+.project__number {
+    position: relative;
+    transition:
+        color 300ms ease,
+        letter-spacing 300ms ease;
+}
+
+.project:hover .project__number {
+    color: var(--rose-soft);
+    letter-spacing: 0.38em;
+}
+
+/* ---------------------------------------------------------
+   8. BEFORE / AFTER IMAGE — EMPHASIZE IT
+--------------------------------------------------------- */
+
+.comparison {
+    transition:
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 600ms ease;
+}
+
+.comparison:hover {
+    transform: scale(1.015);
+
+    box-shadow:
+        0 2.5rem 6rem rgba(8, 6, 4, 0.30),
+        0 0 2rem rgba(214, 179, 106, 0.10);
+}
+
+.comparison__image img {
+    transition:
+        transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 500ms ease;
+}
+
+.comparison:hover .comparison__image img {
+    filter:
+        saturate(1.08)
+        contrast(1.05);
+}
+
+/* ---------------------------------------------------------
+   9. COMPARISON KNOB — GOLD GLOW
+--------------------------------------------------------- */
+
+.comparison__knob {
+    box-shadow:
+        0 0.5rem 2rem rgba(8, 6, 4, 0.28),
+        0 0 0 rgba(214, 179, 106, 0);
+
+    animation: knobPulse 3s ease-in-out infinite;
+}
+
+.comparison__knob:hover {
+    box-shadow:
+        0 0.5rem 2rem rgba(8, 6, 4, 0.28),
+        0 0 2rem rgba(214, 179, 106, 0.45);
+}
+
+/* ---------------------------------------------------------
+   10. WHY SECTION — FLOATING COLOR
+--------------------------------------------------------- */
+
+.why-section {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(201, 143, 134, 0.12),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(214, 179, 106, 0.10),
+            transparent 30%
+        ),
+        var(--ink);
+}
+
+.why-card {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+        background 400ms ease;
+}
+
+.why-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7rem;
+    height: 7rem;
+
+    right: -3rem;
+    bottom: -3rem;
+
+    border-radius: 50%;
+
+    background: var(--rose);
+    opacity: 0.08;
+
+    transition:
+        transform 600ms ease,
+        opacity 400ms ease;
+}
+
+.why-card:hover {
+    transform: translateY(-0.5rem);
+    background: #211b16;
+}
+
+.why-card:hover::after {
+    transform: scale(1.7);
+    opacity: 0.14;
+}
+
+.why-card > span {
+    transition:
+        color 300ms ease,
+        transform 300ms ease;
+}
+
+.why-card:hover > span {
+    color: var(--rose-soft);
+}
+
+/* ---------------------------------------------------------
+   11. JOURNEY — ACTIVE-LINE EFFECT
+--------------------------------------------------------- */
+
+.journey-step {
+    position: relative;
+
+    transition:
+        padding-left 400ms ease,
+        background 400ms ease;
+}
+
+.journey-step::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--gold),
+            var(--rose)
+        );
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    transition:
+        transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.journey-step:hover {
+    padding-left: 1.5rem;
+    background: rgba(201, 143, 134, 0.045);
+}
+
+.journey-step:hover::before {
+    transform: scaleY(1);
+}
+
+.journey-step__number {
+    transition:
+        color 300ms ease,
+        transform 300ms ease;
+}
+
+.journey-step:hover .journey-step__number {
+    color: var(--rose);
+    transform: translateX(0.3rem);
+}
+
+/* ---------------------------------------------------------
+   12. FAQ — GLOW ON OPEN
+--------------------------------------------------------- */
+
+.home-faq {
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(201, 143, 134, 0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(214, 179, 106, 0.10),
+            transparent 30%
+        ),
+        var(--ink);
+}
+
+.home-faq .accordion-button {
+    transition:
+        color 300ms ease,
+        padding-left 300ms ease;
+}
+
+.home-faq .accordion-button:hover {
+    color: var(--rose-soft);
+    padding-left: 0.5rem;
+}
+
+/* ---------------------------------------------------------
+   13. CONTACT DOCTOR IMAGE — EMPHASIZE IT
+--------------------------------------------------------- */
+
+.home-contact__image {
+    animation: contactImageFloat 7s ease-in-out infinite;
+}
+
+.home-contact__image::before {
+    content: "";
+
+    position: absolute;
+    inset: -1rem;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214, 179, 106, 0.18),
+            transparent 65%
+        );
+
+    z-index: -1;
+
+    animation: contactGlow 5s ease-in-out infinite alternate;
+}
+
+.home-contact__image img {
+    transition:
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 500ms ease;
+}
+
+.home-contact__image:hover img {
+    transform: scale(1.04) rotate(1deg);
+    filter:
+        saturate(1.1)
+        contrast(1.04);
+}
+
+/* ---------------------------------------------------------
+   14. BUTTONS — MORE ENERGY
+--------------------------------------------------------- */
+
+.book-button,
+.text-link,
+.hero__secondary-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.book-button::before,
+.text-link::before,
+.hero__secondary-link::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 25%,
+            rgba(255,255,255,0.35) 50%,
+            transparent 75%
+        );
+
+    transform: translateX(-120%);
+
+    transition: transform 600ms ease;
+}
+
+.book-button:hover::before,
+.text-link:hover::before,
+.hero__secondary-link:hover::before {
+    transform: translateX(120%);
+}
+
+/* ---------------------------------------------------------
+   15. FOOTER — COLOR DEPTH
+--------------------------------------------------------- */
+
+.site-footer {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(201, 143, 134, 0.12),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(214, 179, 106, 0.10),
+            transparent 30%
+        ),
+        var(--ink);
+}
+
+.site-footer::before {
+    content: "";
+
+    position: absolute;
+
+    width: 25rem;
+    height: 25rem;
+
+    right: -12rem;
+    bottom: -12rem;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(214, 179, 106, 0.12);
+
+    animation: footerOrb 12s linear infinite;
+}
+
+/* ---------------------------------------------------------
+   16. BACKGROUND PATTERNS
+   Fade TOP → strong MIDDLE → fade BOTTOM
+--------------------------------------------------------- */
+
+.section-dark,
+.section-light {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.section-dark::before,
+.section-light::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("images/blobs-bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    opacity: 0.28;
+
+    pointer-events: none;
+    z-index: -1;
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0,0,0,0.15) 15%,
+        black 40%,
+        black 60%,
+        rgba(0,0,0,0.15) 85%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0,0,0,0.15) 15%,
+        black 40%,
+        black 60%,
+        rgba(0,0,0,0.15) 85%,
+        transparent 100%
+    );
+
+    animation: patternDrift 18s ease-in-out infinite alternate;
+}
+
+.section-dark > *,
+.section-light > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------------------------------------------------------
+   17. GENERAL REVEALS — MORE DRAMATIC
+--------------------------------------------------------- */
+
+.js-ready .projects__intro > *,
+.js-ready .project__details > *,
+.js-ready .content-section > *,
+.js-ready .about-section > *,
+.js-ready .procedure-video > *,
+.js-ready .procedure-gallery > *,
+.js-ready .procedure-info > *,
+.js-ready .procedure-faq > *,
+.js-ready .treatment-grid > *,
+.js-ready .client-gallery > * {
+    opacity: 0;
+    transform: translateY(3rem) scale(0.98);
+
+    transition:
+        opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+}
+
+.js-ready .reveal-visible > * {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Longer cascade */
+
+.js-ready .reveal-visible > *:nth-child(1) {
+    transition-delay: 50ms;
+}
+
+.js-ready .reveal-visible > *:nth-child(2) {
+    transition-delay: 140ms;
+}
+
+.js-ready .reveal-visible > *:nth-child(3) {
+    transition-delay: 230ms;
+}
+
+.js-ready .reveal-visible > *:nth-child(4) {
+    transition-delay: 320ms;
+}
+
+.js-ready .reveal-visible > *:nth-child(5) {
+    transition-delay: 410ms;
+}
+
+.js-ready .reveal-visible > *:nth-child(6) {
+    transition-delay: 500ms;
+}
+
+/* ---------------------------------------------------------
+   18. ANIMATIONS
+--------------------------------------------------------- */
+
+@keyframes heroImageFloat {
+    0% {
+        transform: scale(1.02) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: scale(1.055) translate3d(-0.4%, -0.3%, 0);
+    }
+
+    100% {
+        transform: scale(1.02) translate3d(0.4%, 0.3%, 0);
+    }
+}
+
+@keyframes heroGlow {
+    0% {
+        opacity: 0.55;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes heroCopyIn {
+    from {
+        opacity: 0;
+        transform: translateX(3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes lineGrow {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes portraitFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.7rem);
+    }
+}
+
+@keyframes portraitGlow {
+    0% {
+        box-shadow:
+            0 2rem 5rem rgba(23, 19, 15, 0.15),
+            0 0 0 rgba(214, 179, 106, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 2rem 5rem rgba(23, 19, 15, 0.18),
+            0 0 2rem rgba(214, 179, 106, 0.16);
+    }
+}
+
+@keyframes floatingOrb {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0.8rem, -1rem);
+    }
+}
+
+@keyframes knobPulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0.5rem 2rem rgba(8, 6, 4, 0.28),
+            0 0 0 rgba(214, 179, 106, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0.5rem 2rem rgba(8, 6, 4, 0.28),
+            0 0 1.2rem rgba(214, 179, 106, 0.22);
+    }
+}
+
+@keyframes contactImageFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.8rem);
+    }
+}
+
+@keyframes contactGlow {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes footerOrb {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1.08);
+    }
+}
+
+@keyframes patternDrift {
+    0% {
+        background-position: 48% 45%;
+    }
+
+    100% {
+        background-position: 53% 55%;
+    }
+}
+
+/* ---------------------------------------------------------
+   19. MOBILE — KEEP ANIMATION SUBTLE
+--------------------------------------------------------- */
+
+@media (max-width: 575.98px) {
+
+    .hero {
+        min-height: 82svh;
+    }
+
+    .hero__panel {
+        animation-duration: 18s;
+    }
+
+    .about-section__portrait {
+        animation:
+            portraitFloat 7s ease-in-out infinite;
+    }
+
+    .project:hover {
+        transform: none;
+    }
+
+    .comparison:hover {
+        transform: none;
+    }
+
+    .treatment-card:hover {
+        transform: translateY(-0.3rem);
+    }
+
+    .home-contact__image {
+        animation-duration: 8s;
+    }
+}
+
+/* ---------------------------------------------------------
+   20. ACCESSIBILITY
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero__panel,
+    .hero::after,
+    .about-section__portrait,
+    .about-section__portrait::after,
+    .home-contact__image,
+    .home-contact__image::before,
+    .comparison__knob,
+    .site-footer::before,
+    .section-dark::before,
+    .section-light::before {
+        animation: none !important;
+    }
+
+    .project,
+    .comparison,
+    .treatment-card,
+    .about-section__portrait,
+    .home-contact__image img {
+        transition: none !important;
+    }
+}
