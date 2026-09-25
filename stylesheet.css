@@ -3098,60 +3098,96 @@ iframe {
         max-width: 100%;
     }
 }
+/* =========================================
+   MOBILE START A CONVERSATION
+   ========================================= */
+
 @media (max-width: 768px) {
 
     .home-contact {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .home-contact .container {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .home-contact__content {
         display: grid !important;
         grid-template-columns: 1fr !important;
-        grid-template-rows: auto auto auto !important;
-        width: 100%;
-        gap: 0;
+        grid-template-rows: auto auto !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+
+        gap: 0 !important;
     }
 
-    /* TITLE */
+    /* =========================
+       TEXT BLOCK
+       ========================= */
+
+    .home-contact__content {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .home-contact__content .section-label,
+    .home-contact__content h2,
+    .home-contact__content > p {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
     .home-contact__content h2 {
-        grid-column: 1;
-        grid-row: 1;
-        width: 100%;
         margin-bottom: 20px;
     }
 
-    /* DESCRIPTION / TEXT */
-    .home-contact__content .home-contact__text {
-        grid-column: 1;
-        grid-row: 2;
-        width: 100%;
-        margin-bottom: 30px;
+    .home-contact__content > p {
+        margin-bottom: 25px;
     }
 
-    /* IMAGE */
+    /* Buttons stay inside the text row */
+    .home-contact__actions {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* =========================
+       IMAGE = SECOND ROW
+       ========================= */
+
     .home-contact__image {
-        grid-column: 1;
-        grid-row: 3;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 35px 0 0 0 !important;
+        padding: 0 !important;
+
         box-shadow: none !important;
         filter: none !important;
     }
 
     .home-contact__image img {
         display: block;
-        width: 100%;
-        height: auto;
-        max-width: 100%;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
         box-shadow: none !important;
     }
 }
