@@ -2073,10 +2073,10 @@ html[dir="rtl"] .quick-stats__item:last-child {
   mask-image:linear-gradient( to bottom, transparent 0%, black 25%, black 75%, transparent 100% )
 }
 .section-dark::before {
-  background-image:url("images/blobs-bg.png")
+  background-image:url("images/gold-blob-bg.png")
 }
 .section-light::before {
-  background-image:url("images/blobs-bg.png")
+  background-image:url("images/gold-blob-bg.png")
 }
 .section-dark>*, .section-light>* {
   position:relative;
@@ -2409,7 +2409,7 @@ section, article, .quick-stats, .site-footer {
   content:"";
   position:absolute;
   inset:0;
-  background-image:url("images/blobs-bg.png");
+  background-image:url("images/gold-blob-bg.png");
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
@@ -3189,5 +3189,89 @@ iframe {
         padding: 0 !important;
 
         box-shadow: none !important;
+    }
+}
+/* =========================================================
+   PROJECT SECTION — INTENSE GOLDEN EDGE GLOW
+========================================================= */
+
+.projects {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        /* LEFT GOLDEN EDGE */
+        radial-gradient(
+            ellipse 45% 100% at 0% 50%,
+            rgba(198, 153, 55, 0.65) 0%,
+            rgba(214, 179, 106, 0.42) 25%,
+            rgba(238, 212, 154, 0.18) 50%,
+            transparent 75%
+        ),
+
+        /* RIGHT GOLDEN EDGE */
+        radial-gradient(
+            ellipse 45% 100% at 100% 50%,
+            rgba(198, 153, 55, 0.65) 0%,
+            rgba(214, 179, 106, 0.42) 25%,
+            rgba(238, 212, 154, 0.18) 50%,
+            transparent 75%
+        ),
+
+        /* TOP GOLDEN EDGE */
+        radial-gradient(
+            ellipse 100% 45% at 50% 0%,
+            rgba(214, 179, 106, 0.45),
+            transparent 70%
+        ),
+
+        /* BOTTOM GOLDEN EDGE */
+        radial-gradient(
+            ellipse 100% 45% at 50% 100%,
+            rgba(214, 179, 106, 0.45),
+            transparent 70%
+        ),
+
+        /* LIGHT CENTER */
+        #f8f4ec;
+}
+
+/* Animated golden glow */
+.projects::before {
+    content: "";
+    position: absolute;
+    inset: -15%;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 0% 50%,
+            rgba(190, 140, 35, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 100% 50%,
+            rgba(190, 140, 35, 0.28),
+            transparent 30%
+        );
+
+    filter: blur(35px);
+    animation: goldenEdgeGlow 8s ease-in-out infinite alternate;
+}
+
+.projects > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes goldenEdgeGlow {
+    0% {
+        opacity: 0.65;
+        transform: scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.04);
     }
 }
