@@ -1251,28 +1251,27 @@ if ("IntersectionObserver" in window) {
 ========================================================= */
 
 if (hero) {
+    window.addEventListener("scroll", () => {
 
-    window.addEventListener(
-        "scroll",
-        () => {
+        const scrollY = window.scrollY;
 
-            const scrollY = window.scrollY;
+        if (scrollY < window.innerHeight) {
 
-            if (scrollY < window.innerHeight) {
+            panels.forEach(panel => {
 
-                panels.forEach((panel) => {
-
+                if (window.innerWidth <= 768) {
+                    panel.style.transform =
+                        `scale(1.05) translateY(${scrollY * 0.12}px)`;
+                } else {
                     panel.style.transform =
                         `scale(1.02) translateY(${scrollY * 0.25}px)`;
+                }
 
-                });
+            });
 
-            }
+        }
 
-        },
-        { passive: true }
-    );
-
+    }, { passive: true });
 }
 
 
