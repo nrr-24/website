@@ -3098,3 +3098,50 @@ iframe {
         max-width: 100%;
     }
 }
+/* =========================================
+   MOBILE CONTACT / START A CONVERSATION
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .home-contact {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .home-contact .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .home-contact__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Text first */
+    .home-contact__content > div:first-child {
+        width: 100%;
+    }
+
+    /* Image goes underneath the text */
+    .home-contact__image {
+        width: 100%;
+        margin-top: 35px;
+        padding: 0;
+        box-shadow: none !important;
+        filter: none !important;
+    }
+
+    .home-contact__image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
+        box-shadow: none !important;
+    }
+}
