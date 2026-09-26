@@ -3476,7 +3476,15 @@ iframe {
     }
 }
 @media (max-width: 768px) {
-    .hero__panel {
-        background-position: left center !important;
+
+    /* INDEX / HOMEPAGE */
+    body:not(:has(.procedure-page-main)) .hero__panel {
+        background-position: center !important;
     }
+
+    /* TREATMENT PAGES */
+    body:has(.procedure-page-main) .hero__panel {
+        background-position: center !important;
+    }
+
 }
