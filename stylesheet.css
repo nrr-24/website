@@ -301,15 +301,6 @@ body.menu-is-open {
   background-repeat:no-repeat;
   transform:scale(1.02)
 }
-.hero__panel--face {
-  background-image:url("images/face1-right.png")
-}
-.hero__panel--filler {
-  background-image:url("images/lips-right.png")
-}
-.hero__panel--botox {
-  background-image:url("images/botox-right.png")
-}
 .hero__veil {
   position:absolute;
   inset:0;
@@ -1118,14 +1109,15 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   color:var(--gold-soft);
   font-family:"Manrope", sans-serif
 }
-.detail-hero--face {
-  background-image:url("images/face1-right.png")
+/* hero project background bg*/
+.detail-hero--face {                
+  background-image:url("images/facelift-stock.jpg")
 }
 .detail-hero--filler {
-  background-image:url("images/lips-right.png")
+  background-image:url("images/filler-stock.jpg")
 }
 .detail-hero--botox {
-  background-image:url("images/botox-right.png")
+  background-image:url("images/botox-stock.jpg")
 }
 .detail-hero__veil {
   position:absolute;

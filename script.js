@@ -1,24 +1,15 @@
-const hero = document.querySelector(".hero");
-const panels = document.querySelectorAll(".hero__panel");
-
-const menuToggle = document.querySelector(".menu-toggle");
-const sidebar = document.querySelector(".site-sidebar");
-const sidebarBackdrop = document.querySelector(".sidebar-backdrop");
-const navigationLinks = document.querySelectorAll(".site-sidebar a");
-
-const comparisons = document.querySelectorAll("[data-comparison]");
-const languageButtons = document.querySelectorAll("[data-language]");
+/* =========================================================
+   DR. REHAM KOLIB — WEBSITE INTERACTIVE SCRIPT
+========================================================= */
 
 const translations = {
-
     en: {
-
         brand: "Dr. Reham",
         sidebarTitle: "Where Skin Health Meets Beauty",
 
         navHome: "Home",
         navAbout: "About",
-        navProjects: "Projects",
+        navProjects: "Results",
         navContact: "Contact",
         navTreatments: "Treatments",
         navJourney: "Your Journey",
@@ -298,13 +289,12 @@ const translations = {
     },
 
     ar: {
-
         brand: "د. رهام قليب",
         sidebarTitle: "حيث تلتقي صحة البشرة بالجمال",
 
         navHome: "الرئيسية",
         navAbout: "نبذة عني",
-        navProjects: "المشاريع",
+        navProjects: "نتائج علاجية",
         navContact: "تواصل معنا",
         navTreatments: "العلاجات",
         navJourney: "رحلتك",
@@ -450,12 +440,12 @@ const translations = {
         footerSpecialty:
             "طبيبة أخصائية في الأمراض الجلدية · كوزمسيرج أبوظبي",
 
-        footerContact: "تواصل",
+        footerContact: "تواصل معنا",
         footerFollow: "تابعنا",
-        footerVisit: "قم بزيارة العيادة",
+        footerVisit: "زيارة العيادة",
 
         footerAddress:
-            "كوزمسيرج أبوظبي، منطقة الدلما، أبوظبي، الإمارات العربية المتحدة",
+            "كوزمسيرج أبوظبي، منطقة دلما، أبوظبي، الإمارات العربية المتحدة",
 
         viewLocation: "عرض تفاصيل الموقع",
 
@@ -464,133 +454,131 @@ const translations = {
 
         profileSource: "الملف المهني",
 
-        menuOpen: "فتح قائمة التنقل",
-        menuClose: "إغلاق قائمة التنقل",
+        menuOpen: "فتح القائمة",
+        menuClose: "إغلاق القائمة",
 
         comparisonBeforeAfter: "مقارنة قبل وبعد",
-        comparisonSlider: "تحريك شريط المقارنة",
+        comparisonSlider: "تحريك مؤشر المقارنة",
 
-        procedureVideo: "عرض العلاج",
-        procedureDetails: "معلومات عن الإجراء",
-        procedureGallery: "نتائج مختارة للعملاء",
+        procedureVideo: "عرض توضيحي للعلاج",
+        procedureDetails: "عن الإجراء",
+        procedureGallery: "نتائج مختارة للمراجعين",
 
         procedureVideoBody:
-            "نظرة أقرب على طريقة العلاج، بتنفيذ دقيق وتركيز على نتائج طبيعية المظهر.",
+            "نظرة أقرب على أسلوب العلاج، المنفذ بدقة مع التركيز على المظهر الطبيعي المتناسق.",
 
         faceProcedureBody:
-            "تُعد جراحة شد الوجه إجراءً مخصصًا لتجديد مظهر الوجه، وتهدف إلى معالجة ترهل الجلد والخدين وخط الفك والتجاعيد العميقة وفقدان التحديد في الجزء السفلي من الوجه والرقبة. ويتم اختيار الأسلوب المناسب وفقًا لتشريح الوجه وحالة البشرة والأهداف الجمالية لكل شخص.",
+            "تعد عملية شد الوجه إجراءً مخصصاً لتجديد شباب ملامح الوجه، صُممت لمعالجة ترهل البشرة وتراجع تحديد خط الفك وثنايا الوجه العميقة. يتم اختيار التقنية المناسبة وفقاً لتشريح الوجه ونوع البشرة وأهدافك الجمالية.",
 
         procedurePointOneLabel: "ما يعالجه الإجراء",
         procedurePointOne:
-            "يمكن لشد الوجه تحسين ترهل الجلد والخدين وتحديد ملامح الوجه والجلد المترهل في الجزء السفلي من الوجه والرقبة.",
+            "يساعد شد الوجه على تحسين ترهل الجلد وتحديد خط الفك وملامح الوجه والرقبة.",
 
-        procedurePointTwoLabel: "تقنية مخصصة",
+        procedurePointTwoLabel: "تقنية مخصصة لكل حالة",
         procedurePointTwo:
-            "قد يشمل العلاج شدًا مصغرًا أو شدًا تقليديًا أو تقنية أعمق، وذلك وفقًا لتشريح الوجه ودرجة التغيرات المرتبطة بالعمر والأهداف المطلوبة.",
+            "قد يشمل الإجراء شداً مصغراً أو شداً قياسياً أو تقنية المستوى العميق حسب تشريح الوجه ودرجة الترهل.",
 
         procedurePointThreeLabel: "التعافي والنتائج",
         procedurePointThree:
-            "تختلف فترة التعافي من شخص لآخر ومن إجراء لآخر، بينما يتحسن التورم والكدمات تدريجيًا خلال فترة التعافي.",
+            "تختلف فترة التعافي باختلاف الإجراء، حيث تتلاشى الكدمات والتورمات تدريجياً مع التئام الأنسجة.",
 
         faqTitle: "الأسئلة الشائعة",
 
-        faqQ1: "ما المناطق التي يعالجها شد الوجه؟",
+        faqQ1: "ما هي المناطق التي يستهدفها شد الوجه؟",
         faqA1:
-            "يركز شد الوجه بشكل أساسي على الثلثين السفليين من الوجه، بما في ذلك الخدين وخط الفك ومناطق الجلد المترهل. وقد يتم التفكير في إجراءات إضافية عند وجود مشكلات تتعلق بالجفون أو الحاجب أو الرقبة.",
+            "يستهدف شد الوجه بشكل أساسي الثلثين السفليين من الوجه بما في ذلك الخدود، خط الفك، وترهلات الرقبة، ويمكن دمجه مع إجراءات أخرى كالجفون أو الحواجب عند الحاجة.",
 
-        faqQ2: "ما أنواع شد الوجه المتاحة؟",
+        faqQ2: "ما هي تقنيات شد الوجه المتاحة؟",
         faqA2:
-            "يتم تحديد التقنية وفقًا لكل حالة. وبناءً على درجة الترهل وتشريح الوجه، قد تشمل الخيارات شد الوجه المصغر أو الشد التقليدي بتقنية SMAS أو تقنيات شد أعمق.",
+            "يتم اختيار التقنية بصورة فردية بحسب درجة الترهل وتشريح الوجه، وتتنوع بين الشد المصغر، شد الـ SMAS، والشد العميق للأنسجة.",
 
         faqQ3: "كيف تكون فترة التعافي بعد شد الوجه؟",
         faqA3:
-            "تختلف فترة التعافي حسب نوع الإجراء وحالة كل شخص. من المتوقع حدوث بعض التورم والكدمات في الفترة الأولى، ثم تتحسن تدريجيًا. وسيتم تقديم تعليمات خاصة حول العناية والعودة إلى الأنشطة اليومية والتمارين.",
+            "تختلف فترة التعافي حسب نوع الإجراء. التورم والكدمات أمر متوقع في الأيام الأولى ويتحسن تدريجياً، ويوفر الطبيب كافة التعليمات للعودة الآمنة للنشاط اليومي.",
 
         galleryPrevious: "الصورة السابقة",
         galleryNext: "الصورة التالية",
 
-        detailFace: "توازن ملامح الوجه",
-        detailFiller: "تحسين الشفاه",
-        detailBotox: "تنعيم تعابير الوجه",
+        detailFace: "توازن الوجه",
+        detailFiller: "تجميل الشفاه",
+        detailBotox: "تخفيف التجاعيد",
 
-        faceTitle: "توازن ورفع ملامح الوجه",
-        faceEyebrow: "الأمراض الجلدية التجميلية",
+        faceTitle: "توازن وشد ملامح الوجه",
+        faceEyebrow: "طب التجميل والأمراض الجلدية",
         faceBody:
-            "خطة علاجية مخصصة للوجه تركز على التناسق والتحديد وتحسين الملامح بشكل طبيعي.",
+            "خطة علاجية مخصصة للوجه تركز على التناسق والتحديد والتحسين الطبيعي للملامح.",
 
-        fillerTitle: "فيلر الشفاه وتناسق الوجه",
-        fillerEyebrow: "التجميل بالحقن",
+        fillerTitle: "فيلر الشفاه وتناسق ملامح الوجه",
+        fillerEyebrow: "تجميل الحقن",
         fillerBody:
-            "يمكن للفيلر الموضعي والمدروس أن يعيد التوازن والتحديد مع الحفاظ على طبيعة ملامحك.",
+            "يساعد الفيلر الموضوع بدقة على استعادة التوازن والتحديد مع الحفاظ على خصوصية ملامحك.",
 
-        botoxTitle: "علاج التجاعيد وتنعيم الخطوط",
-        botoxEyebrow: "علاج يحافظ على تعابير الوجه",
+        botoxTitle: "علاج وتخفيف التجاعيد",
+        botoxEyebrow: "علاج يحافظ على تعبيرات الوجه",
         botoxBody:
-            "يساعد علاج التجاعيد الموجه على تنعيم الخطوط التعبيرية مع الحفاظ على مظهر طبيعي وحيوي.",
+            "علاج موجه للتجاعيد يساعد على تخفيف الخطوط التعبيرية مع الحفاظ على مظهر طبيعي وتعبيرات الوجه.",
 
         fillerProcedureBody:
-            "الفيلر الجلدي هو إجراء غير جراحي يعتمد على الحقن لاستعادة الحجم المفقود وتخفيف الخطوط والتجاعيد وتحسين ملامح الوجه وتعزيز تناسقه. ويتم تصميم خطة العلاج بما يتناسب مع ملامح الوجه واحتياجات كل شخص وأهدافه الجمالية.",
+            "الفيلر الجلدي هو علاج تجميلي قابل للحقن غير جراحي، يُستخدم لاستعادة الحجم المفقود وتنعيم التجاعيد وتحسين ملامح وتناسق الوجه. يتم تصميم الخطة العلاجية بعناية لتلائم ملامحك وتفضيلاتك.",
 
         fillerPointOneLabel: "ما الذي يمكن تحسينه",
         fillerPointOne:
-            "يمكن للفيلر تحسين مظهر الشفاه والخدين، واستعادة الحجم، وتخفيف الخطوط حول الفم والأنف، وتحسين تناسق ملامح الوجه وتحديدها.",
+            "يمكن للفيلر تعزيز الشفاه والخدود، واستعادة الحجم، وتخفيف الخطوط حول الفم والأنف، وتحسين تماثل ملامح الوجه.",
 
-        fillerPointTwoLabel: "علاج مخصص",
+        fillerPointTwoLabel: "علاج فردي ومخصص",
         fillerPointTwo:
-            "يتم اختيار نوع الفيلر وكميته والمنطقة المراد علاجها وطريقة الحقن وفقًا لتشريح الوجه والنتيجة المطلوبة.",
+            "يتم تحديد نوع الفيلر وكميته ومناطق الحقن بدقة لتناسب بنية الوجه والنتيجة الطبيعية المطلوبة.",
 
-        fillerPointThreeLabel: "العلاج والتعافي",
+        fillerPointThreeLabel: "الإجراء وفترة التعافي",
         fillerPointThree:
-            "يتم إجراء الفيلر عادةً خلال زيارة للعيادة. وقد يحدث بعض التورم أو الكدمات الخفيفة، والتي تتحسن عادةً خلال الأيام التالية.",
+            "يُجرى الحقن داخل العيادة بسهولة. قد تظهر انتفاخات أو كدمات خفيفة سرعان ما تزول خلال أيام قليلة.",
 
-        fillerFaqQ1: "ما استخدامات الفيلر الجلدي؟",
+        fillerFaqQ1: "ما هي أبرز استخدامات الفيلر؟",
         fillerFaqA1:
-            "يمكن استخدام الفيلر الجلدي لاستعادة الحجم المفقود وتخفيف الخطوط والتجاعيد وتحسين مظهر الشفاه والخدين وتحديد ملامح الوجه وتعزيز التناسق بين أجزاء الوجه.",
+            "يُستخدم لاستعادة الحجم، ملء الخطوط والتجاعيد، تحديد الشفاه وتجميل الخدين، وتحقيق تناسق متوازن بين تفاصيل الوجه.",
 
         fillerFaqQ2: "كيف يتم اختيار نوع الفيلر المناسب؟",
         fillerFaqA2:
-            "يعتمد اختيار الفيلر المناسب على المنطقة المراد علاجها والنتيجة المطلوبة وخصائص المنتج مثل القوام والكثافة وعمق الحقن. ويتم تحديد الخيار الأنسب خلال الاستشارة.",
+            "يتم الاختيار بناءً على منطقة الحقن، والعمق المطلوب، وخصائص القوام والكثافة للمنتج لتحقيق أنعم وأفضل مظهر طبيعي.",
 
-        fillerFaqQ3: "كم تستمر نتائج الفيلر؟",
+        fillerFaqQ3: "كم تدوم نتائج حقن الفيلر؟",
         fillerFaqA3:
-            "تختلف مدة النتائج حسب نوع الفيلر والمنطقة المعالجة وحالة كل شخص. وعادةً ما تستمر أنواع حمض الهيالورونيك من حوالي 6 إلى 18 شهرًا، بينما قد تستمر بعض أنواع الفيلر الأخرى لفترة أطول.",
+            "تدوم نتائج فيلر حمض الهيالورونيك عادة من 6 إلى 18 شهراً بحسب المنطقة ونوع المنتج وطبيعة استقلاب الجسم.",
 
         botoxProcedureBody:
-            "تُعد حقن توكسين البوتولينوم إجراءً غير جراحي يقلل مؤقتًا من نشاط عضلات معينة بهدف تخفيف التجاعيد الديناميكية والخطوط الدقيقة مع الحفاظ على مظهر طبيعي وتعبيرات الوجه.",
+            "تُعد حقن توكسين البوتولينوم إجراءً غير جراحي يقلل مؤقتاً من النشاط العضلي المستهدف لتخفيف التجاعيد الحركية والخطوط الدقيقة دون التأثير على التعبير الطبيعي.",
 
-        botoxPointOneLabel: "ما الذي يمكن تحسينه",
+        botoxPointOneLabel: "ما الذي يمكن علاجه",
         botoxPointOne:
-            "يمكن للعلاج تخفيف الخطوط المرتبطة بتعبيرات الوجه مثل خطوط الجبهة وخطوط العبوس بين الحاجبين والتجاعيد حول العينين.",
+            "يعالج الخطوط التعبيرية مثل تجاعيد الجبهة، وخطوط العبوس بين الحاجبين، والتجاعيد المحيطة بزوايا العينين.",
 
-        botoxPointTwoLabel: "كيف يعمل",
+        botoxPointTwoLabel: "آلية العمل",
         botoxPointTwo:
-            "يعمل العلاج مؤقتًا على تقليل الإشارات العصبية إلى العضلات المستهدفة، مما يسمح لها بالاسترخاء ويجعل التجاعيد المرتبطة بحركتها أقل وضوحًا.",
+            "يقلل العلاج مؤقتاً من الإشارات العصبية الواصلة للعضلات المستهدفة مما يسمح لها بالاسترخاء وتنعيم الخطوط الظاهرة.",
 
-        botoxPointThreeLabel: "التوقيت ومدة النتائج",
+        botoxPointThreeLabel: "الجدول الزمني واستمرار النتائج",
         botoxPointThree:
-            "تظهر النتائج تدريجيًا خلال عدة أيام، وتستمر عادةً لمدة تتراوح بين ثلاثة وستة أشهر، حسب الشخص والمنطقة المعالجة.",
+            "تبدأ النتائج بالظهور تدريجياً خلال أيام وتستمر عادةً ما بين 3 إلى 6 أشهر بحسب طبيعة الجسم ومنطقة العلاج.",
 
-        botoxFaqQ1: "ما التجاعيد التي يمكن علاجها بالبوتوكس؟",
+        botoxFaqQ1: "ما أنواع التجاعيد التي يعالجها البوتوكس؟",
         botoxFaqA1:
-            "يُستخدم البوتوكس بشكل أساسي لعلاج التجاعيد الديناميكية الناتجة عن حركة عضلات الوجه، مثل خطوط الجبهة وخطوط العبوس بين الحاجبين والتجاعيد حول العينين. ويمكن استخدامه أيضًا في مناطق أخرى وفقًا لخطة العلاج.",
+            "يعالج التجاعيد الحركية التعبيرية الناتجة عن حركة العضلات مثل خطوط الجبهة، ما بين الحاجبين، وحول العينين.",
 
-        botoxFaqQ2: "متى تظهر نتائج البوتوكس؟",
+        botoxFaqQ2: "متى تصبح نتائج البوتوكس واضحة؟",
         botoxFaqA2:
-            "تظهر التأثيرات تدريجيًا. قد يبدأ بعض التحسن خلال عدة أيام، بينما قد يستغرق ظهور التأثير الكامل حوالي أسبوع إلى أسبوعين.",
+            "يبدأ التحسن بالظهور تدريجياً خلال 3 إلى 5 أيام، ويكتمل التأثير النهائي خلال أسبوع إلى أسبوعين.",
 
-        botoxFaqQ3: "كم تستمر نتائج البوتوكس؟",
+        botoxFaqQ3: "كم تستمر نتائج حقن البوتوكس؟",
         botoxFaqA3:
-            "تستمر النتائج عادةً لمدة تتراوح بين ثلاثة وستة أشهر. وقد تختلف المدة حسب الشخص والمنطقة المعالجة والكمية المستخدمة."
+            "تستمر النتائج عادة بين 3 إلى 6 أشهر، ويمكن تكرار الجلسات للحفاظ على نضارة وتناسق المظهر."
     }
 };
 
-
 /* =========================================================
-   PROJECT DROPDOWN
+   PROJECT DROPDOWN (Ensures presence & fallback)
 ========================================================= */
 
 const setupProjectDropdown = () => {
-
     const projectItem = document
         .querySelector(".site-sidebar__item a[data-i18n='navProjects']")
         ?.closest(".site-sidebar__item");
@@ -600,12 +588,10 @@ const setupProjectDropdown = () => {
     }
 
     const projectLink = projectItem.querySelector("a");
-
-    if (!projectLink) {
-        return;
-    }
+    if (!projectLink) return;
 
     const details = document.createElement("details");
+    details.className = "site-sidebar__dropdown";
     const summary = document.createElement("summary");
 
     summary.dataset.i18n = "navProjects";
@@ -615,38 +601,32 @@ const setupProjectDropdown = () => {
     subnav.className = "site-sidebar__subnav";
 
     [
-        ["face_lift.html", "detailFace"],
-        ["filler.html", "detailFiller"],
-        ["botox.html", "detailBotox"]
-    ].forEach(([href, key]) => {
-
+        ["face_lift.html", "detailFace", "Facial balance"],
+        ["filler.html", "detailFiller", "Lip enhancement"],
+        ["botox.html", "detailBotox", "Expression softening"]
+    ].forEach(([href, key, fallbackText]) => {
         const item = document.createElement("li");
         const link = document.createElement("a");
 
         link.href = href;
         link.dataset.i18n = key;
+        link.textContent = fallbackText;
 
         item.appendChild(link);
         subnav.appendChild(item);
-
     });
 
     details.append(summary, subnav);
     projectItem.replaceChildren(details);
 };
 
-
 /* =========================================================
    PROCEDURE GALLERY
 ========================================================= */
 
 const initializeProcedureGallery = () => {
-
     const galleryImages = document.body.dataset.gallery;
-
-    if (!galleryImages) {
-        return;
-    }
+    if (!galleryImages) return;
 
     const images = galleryImages
         .split(",")
@@ -661,218 +641,131 @@ const initializeProcedureGallery = () => {
     let currentModalIndex = 0;
 
     const showModalImage = (index) => {
-
-        currentModalIndex =
-            (index + images.length) % images.length;
-
-        if (!modalImage) {
-            return;
-        }
+        currentModalIndex = (index + images.length) % images.length;
+        if (!modalImage) return;
 
         modalImage.src = images[currentModalIndex];
-        modalImage.alt =
-            `Treatment result ${currentModalIndex + 1}`;
+        modalImage.alt = `Treatment result ${currentModalIndex + 1}`;
     };
 
     const openImageModal = (index) => {
-
-        if (!modal || !modalImage) {
-            return;
-        }
+        if (!modal || !modalImage) return;
 
         showModalImage(index);
 
         if (typeof bootstrap !== "undefined") {
-            bootstrap.Modal
-                .getOrCreateInstance(modal)
-                .show();
+            bootstrap.Modal.getOrCreateInstance(modal).show();
         }
     };
 
-
     modalPrev?.addEventListener("click", (event) => {
-
         event.preventDefault();
         event.stopPropagation();
-
         showModalImage(currentModalIndex - 1);
-
     });
-
 
     modalNext?.addEventListener("click", (event) => {
-
         event.preventDefault();
         event.stopPropagation();
-
         showModalImage(currentModalIndex + 1);
-
     });
 
-
     document.addEventListener("keydown", (event) => {
-
-        if (!modal?.classList.contains("show")) {
-            return;
-        }
+        if (!modal?.classList.contains("show")) return;
 
         if (event.key === "ArrowLeft") {
-
             event.preventDefault();
             showModalImage(currentModalIndex - 1);
-
         }
 
         if (event.key === "ArrowRight") {
-
             event.preventDefault();
             showModalImage(currentModalIndex + 1);
-
         }
-
     });
 
+    document.querySelectorAll(".procedure-carousel").forEach((carousel) => {
+        const carouselInner = carousel.querySelector(".carousel-inner");
+        if (!carouselInner) return;
 
-    document
-        .querySelectorAll(".procedure-carousel")
-        .forEach((carousel) => {
+        carouselInner.innerHTML = "";
 
-            const carouselInner =
-                carousel.querySelector(".carousel-inner");
+        images.forEach((image, index) => {
+            const item = document.createElement("div");
+            item.className = `carousel-item${index === 0 ? " active" : ""}`;
 
-            if (!carouselInner) {
-                return;
-            }
+            const img = document.createElement("img");
+            img.src = image;
+            img.className = "d-block w-100 procedure-gallery-image";
+            img.alt = `Treatment result ${index + 1}`;
 
-            carouselInner.innerHTML = "";
-
-            images.forEach((image, index) => {
-
-                const item = document.createElement("div");
-
-                item.className =
-                    `carousel-item${index === 0 ? " active" : ""}`;
-
-                const img = document.createElement("img");
-
-                img.src = image;
-                img.className =
-                    "d-block w-100 procedure-gallery-image";
-
-                img.alt =
-                    `Treatment result ${index + 1}`;
-
-                img.addEventListener("click", () => {
-                    openImageModal(index);
-                });
-
-                item.appendChild(img);
-                carouselInner.appendChild(item);
-
+            img.addEventListener("click", () => {
+                openImageModal(index);
             });
 
-
-            if (images.length <= 1) {
-
-                carousel
-                    .querySelector(".carousel-control-prev")
-                    ?.remove();
-
-                carousel
-                    .querySelector(".carousel-control-next")
-                    ?.remove();
-
-                carousel.removeAttribute("data-bs-ride");
-                carousel.removeAttribute("data-bs-interval");
-
-            }
-
+            item.appendChild(img);
+            carouselInner.appendChild(item);
         });
 
+        if (images.length <= 1) {
+            carousel.querySelector(".carousel-control-prev")?.remove();
+            carousel.querySelector(".carousel-control-next")?.remove();
+            carousel.removeAttribute("data-bs-ride");
+            carousel.removeAttribute("data-bs-interval");
+        }
+    });
 };
-
 
 /* =========================================================
    LANGUAGE
 ========================================================= */
 
 const setLanguage = (language) => {
-
     const content = translations[language];
-
-    if (!content) {
-        return;
-    }
+    if (!content) return;
 
     document.documentElement.lang = language;
-    document.documentElement.dir =
-        language === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 
     const pageKey = document.body.dataset.page;
-
-    const pageTitle = pageKey
-        ? content[`${pageKey}Title`]
-        : null;
+    const pageTitle = pageKey ? content[`${pageKey}Title`] : null;
 
     document.title = pageTitle
-        ? `${pageTitle} | ${
-            language === "ar"
-                ? "د. رهام قليب"
-                : "Dr. Reham Kolib"
-        }`
+        ? `${pageTitle} | ${language === "ar" ? "د. رهام قليب" : "Dr. Reham Kolib"}`
         : language === "ar"
             ? "د. رهام قليب | طبيبة أخصائية في الأمراض الجلدية بأبوظبي"
             : "Dr. Reham Kolib | Specialist Dermatologist in Abu Dhabi";
 
+    document.querySelector('meta[name="description"]')?.setAttribute(
+        "content",
+        pageKey && content[`${pageKey}Body`]
+            ? content[`${pageKey}Body`]
+            : language === "ar"
+                ? "د. رهام قليب طبيبة أخصائية في الأمراض الجلدية بأبوظبي، تتمتع بخبرة تزيد عن 10 سنوات في الأمراض الجلدية السريرية والتجميلية وعلاجات الليزر والتجميل."
+                : "Dr. Reham Kolib is a specialist dermatologist in Abu Dhabi with over 10 years of experience in clinical and cosmetic dermatology, laser, and aesthetic treatments."
+    );
 
-    document
-        .querySelector('meta[name="description"]')
-        ?.setAttribute(
-            "content",
-            pageKey && content[`${pageKey}Body`]
-                ? content[`${pageKey}Body`]
-                : language === "ar"
-                    ? "د. رهام قليب طبيبة أخصائية في الأمراض الجلدية بأبوظبي، تتمتع بخبرة تزيد عن 10 سنوات في الأمراض الجلدية السريرية والتجميلية وعلاجات الليزر والتجميل."
-                    : "Dr. Reham Kolib is a specialist dermatologist in Abu Dhabi with over 10 years of experience in clinical and cosmetic dermatology, laser, and aesthetic treatments."
-        );
-
-
-    document
-        .querySelector('meta[name="keywords"]')
-        ?.setAttribute(
-            "content",
-            language === "ar"
-                ? "د. رهام قليب, طبيبة جلدية أبوظبي, طبيبة جلدية تجميلية, علاجات الليزر أبوظبي, تجميل البشرة الإمارات"
-                : "Dr Reham Kolib, dermatologist Abu Dhabi, cosmetic dermatologist UAE, laser treatments Abu Dhabi, aesthetic dermatology"
-        );
-
+    document.querySelector('meta[name="keywords"]')?.setAttribute(
+        "content",
+        language === "ar"
+            ? "د. رهام قليب, طبيبة جلدية أبوظبي, طبيبة جلدية تجميلية, علاجات الليزر أبوظبي, تجميل البشرة الإمارات"
+            : "Dr Reham Kolib, dermatologist Abu Dhabi, cosmetic dermatologist UAE, laser treatments Abu Dhabi, aesthetic dermatology"
+    );
 
     document.querySelectorAll("[data-i18n]").forEach((element) => {
-
         const translation = content[element.dataset.i18n];
-
         if (translation !== undefined) {
             element.textContent = translation;
         }
-
     });
 
-
-    languageButtons.forEach((button) => {
-
-        const isActive =
-            button.dataset.language === language;
-
+    document.querySelectorAll("[data-language]").forEach((button) => {
+        const isActive = button.dataset.language === language;
         button.classList.toggle("is-active", isActive);
-
-        button.setAttribute(
-            "aria-pressed",
-            String(isActive)
-        );
-
+        button.setAttribute("aria-pressed", String(isActive));
     });
 
-
+    const menuToggle = document.querySelector(".menu-toggle");
     menuToggle?.setAttribute(
         "aria-label",
         menuToggle.getAttribute("aria-expanded") === "true"
@@ -880,9 +773,7 @@ const setLanguage = (language) => {
             : content.menuOpen
     );
 
-
-    comparisons.forEach((comparison) => {
-
+    document.querySelectorAll("[data-comparison]").forEach((comparison) => {
         comparison.setAttribute(
             "aria-label",
             `${content.comparisonBeforeAfter}: ${
@@ -890,209 +781,133 @@ const setLanguage = (language) => {
             }`
         );
 
-        comparison
-            .querySelector(".comparison__knob")
-            ?.setAttribute(
-                "aria-label",
-                content.comparisonSlider
-            );
-
+        comparison.querySelector(".comparison__knob")?.setAttribute(
+            "aria-label",
+            content.comparisonSlider
+        );
     });
 
-
-    document
-        .querySelector("[data-gallery-prev]")
-        ?.setAttribute(
-            "aria-label",
-            content.galleryPrevious
-        );
-
-    document
-        .querySelector("[data-gallery-next]")
-        ?.setAttribute(
-            "aria-label",
-            content.galleryNext
-        );
-
-
-    localStorage.setItem(
-        "preferred-language",
-        language
+    document.querySelector("[data-gallery-prev]")?.setAttribute(
+        "aria-label",
+        content.galleryPrevious
     );
 
+    document.querySelector("[data-gallery-next]")?.setAttribute(
+        "aria-label",
+        content.galleryNext
+    );
+
+    localStorage.setItem("preferred-language", language);
 };
 
-
-languageButtons.forEach((button) => {
-
-    button.addEventListener("click", () => {
-
-        setLanguage(button.dataset.language);
-
-    });
-
+// Language Button Listener via Delegation
+document.addEventListener("click", (event) => {
+    const langBtn = event.target.closest("[data-language]");
+    if (langBtn) {
+        setLanguage(langBtn.dataset.language);
+    }
 });
 
-
-const requestedLanguage =
-    new URLSearchParams(window.location.search).get("lang");
-
+const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
 setLanguage(
     requestedLanguage ||
     localStorage.getItem("preferred-language") ||
     "en"
 );
 
-
 /* =========================================================
    HERO IMAGE LOADING
 ========================================================= */
 
-const waitForPanel = (panel) => {
+const hero = document.querySelector(".hero");
+const panels = document.querySelectorAll(".hero__panel");
 
-    const backgroundImage =
-        getComputedStyle(panel).backgroundImage;
+// Apply hero background from data-hero-bg attribute (set per page in HTML)
+panels.forEach((panel) => {
+    const bg = panel.dataset.heroBg;
+    if (bg) panel.style.backgroundImage = `url("${bg}")`;
+});
 
-    const imageUrl =
-        backgroundImage.match(
-            /url\(["']?(.*?)["']?\)/
-        )?.[1];
-
-    if (!imageUrl) {
-        return Promise.resolve();
+// Apply video source and poster from body data attributes (set per page in HTML)
+const videoEl = document.querySelector(".procedure-video__player");
+if (videoEl) {
+    const { video, poster } = document.body.dataset;
+    if (poster) videoEl.poster = poster;
+    if (video) {
+        let src = videoEl.querySelector("source");
+        if (!src) { src = document.createElement("source"); videoEl.appendChild(src); }
+        src.type = "video/mp4";
+        src.src = video;
+        videoEl.load();
     }
-
-    return new Promise((resolve) => {
-
-        const image = new Image();
-
-        image.addEventListener(
-            "load",
-            resolve,
-            { once: true }
-        );
-
-        image.addEventListener(
-            "error",
-            resolve,
-            { once: true }
-        );
-
-        image.src = imageUrl;
-
-    });
-
-};
-
-
-if (hero) {
-
-    Promise
-        .all([...panels].map(waitForPanel))
-        .then(() => {
-
-            hero.classList.add("is-loaded");
-
-        });
-
 }
 
+const waitForPanel = (panel) => {
+    const backgroundImage = getComputedStyle(panel).backgroundImage;
+    const imageUrl = backgroundImage.match(/url\(["']?(.*?)["']?\)/)?.[1];
+    if (!imageUrl) return Promise.resolve();
+
+    return new Promise((resolve) => {
+        const image = new Image();
+        image.addEventListener("load", resolve, { once: true });
+        image.addEventListener("error", resolve, { once: true });
+        image.src = imageUrl;
+    });
+};
+
+if (hero) {
+    Promise.all([...panels].map(waitForPanel)).then(() => {
+        hero.classList.add("is-loaded");
+    });
+}
 
 /* =========================================================
-   MENU
+   MENU CONTROLLER
 ========================================================= */
 
 const setMenuState = (isOpen) => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const sidebar = document.querySelector(".site-sidebar");
+    const sidebarBackdrop = document.querySelector(".sidebar-backdrop");
 
-    menuToggle?.classList.toggle(
-        "is-active",
-        isOpen
-    );
+    menuToggle?.classList.toggle("is-active", isOpen);
+    menuToggle?.setAttribute("aria-expanded", String(isOpen));
 
-    menuToggle?.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-    );
-
-    const currentLanguage =
-        document.documentElement.lang || "en";
+    const currentLanguage = document.documentElement.lang || "en";
+    const currentTranslations = translations[currentLanguage] || translations.en;
 
     menuToggle?.setAttribute(
         "aria-label",
-        isOpen
-            ? translations[currentLanguage].menuClose
-            : translations[currentLanguage].menuOpen
+        isOpen ? currentTranslations.menuClose : currentTranslations.menuOpen
     );
 
-    sidebar?.classList.toggle(
-        "is-visible",
-        isOpen
-    );
+    sidebar?.classList.toggle("is-visible", isOpen);
+    sidebar?.setAttribute("aria-hidden", String(!isOpen));
 
-    sidebar?.setAttribute(
-        "aria-hidden",
-        String(!isOpen)
-    );
-
-    sidebarBackdrop?.classList.toggle(
-        "is-visible",
-        isOpen
-    );
-
-    document.body.classList.toggle(
-        "menu-is-open",
-        isOpen
-    );
-
+    sidebarBackdrop?.classList.toggle("is-visible", isOpen);
+    document.body.classList.toggle("menu-is-open", isOpen);
 };
 
-
-menuToggle?.addEventListener("click", () => {
-
-    setMenuState(
-        menuToggle.getAttribute("aria-expanded") !== "true"
-    );
-
-});
-
-
-sidebarBackdrop?.addEventListener(
-    "click",
-    () => setMenuState(false)
-);
-
-
-navigationLinks.forEach((link) => {
-
-    link.addEventListener(
-        "click",
-        () => setMenuState(false)
-    );
-
-});
-
-
-sidebar?.addEventListener("click", (event) => {
-
-    if (event.target.closest("a")) {
-        setMenuState(false);
+document.addEventListener("click", (event) => {
+    const toggle = event.target.closest(".menu-toggle");
+    if (toggle) {
+        setMenuState(toggle.getAttribute("aria-expanded") !== "true");
+        return;
     }
 
+    if (event.target.closest(".sidebar-backdrop") || event.target.closest(".site-sidebar a")) {
+        setMenuState(false);
+    }
 });
 
-
 document.addEventListener("keydown", (event) => {
-
     if (event.key === "Escape") {
         setMenuState(false);
     }
-
 });
-
 
 /* =========================================================
    SCROLL REVEAL
-   EVERYTHING RELATED TO REVEALING ELEMENTS IS HERE
 ========================================================= */
 
 const revealTargets = document.querySelectorAll(
@@ -1109,83 +924,45 @@ const revealTargets = document.querySelectorAll(
     ".journey-step, " +
     ".home-faq__accordion .accordion-item, " +
     ".home-contact__content, " +
-    ".home-contact__image"
+    ".home-contact__image, " +
+    ".procedure-section__heading, " +
+    ".procedure-video__player, " +
+    ".procedure-carousel, " +
+    ".procedure-info__body, " +
+    ".procedure-info__grid > div, " +
+    ".procedure-faq .accordion-item"
 );
 
-
-/*
-   Add the reveal class first.
-   The elements remain normal until JS has initialized.
-*/
-
 revealTargets.forEach((element) => {
-
     element.classList.add("scroll-reveal");
-
 });
 
-
-/* Direction variations */
-
 document
-    .querySelectorAll(
-        ".about-section__content, .home-contact__content"
-    )
+    .querySelectorAll(".about-section__content, .home-contact__content")
     .forEach((element) => {
-
         element.classList.add("from-left");
-
     });
 
-
 document
-    .querySelectorAll(
-        ".about-section__portrait, .home-contact__image"
-    )
+    .querySelectorAll(".about-section__portrait, .home-contact__image")
     .forEach((element) => {
-
         element.classList.add("from-right");
-
     });
-
 
 document
-    .querySelectorAll(".comparison")
+    .querySelectorAll(".comparison, .procedure-video__player, .procedure-carousel")
     .forEach((element) => {
-
         element.classList.add("scale-up");
-
     });
-
-
-/*
-   Intersection Observer
-
-   IMPORTANT:
-   Nothing is permanently hidden by JS.
-   If IntersectionObserver is unavailable,
-   everything is immediately made visible.
-*/
 
 if ("IntersectionObserver" in window) {
-
     const revealObserver = new IntersectionObserver(
         (entries, observer) => {
-
             entries.forEach((entry) => {
-
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                entry.target.classList.add(
-                    "is-visible"
-                );
-
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
                 observer.unobserve(entry.target);
-
             });
-
         },
         {
             threshold: 0.12,
@@ -1193,58 +970,26 @@ if ("IntersectionObserver" in window) {
         }
     );
 
-
-    /*
-       Normal reveal elements
-    */
-
     revealTargets.forEach((element) => {
-
         revealObserver.observe(element);
-
     });
 
-
-    /*
-       Staggered groups
-    */
-
     document
-        .querySelectorAll(
-            ".treatment-grid, .why-grid, .journey-list"
-        )
+        .querySelectorAll(".treatment-grid, .why-grid, .journey-list, .procedure-info__grid")
         .forEach((group) => {
-
             group.classList.add("scroll-stagger");
-
             [...group.children].forEach((child) => {
-
                 if (!child.classList.contains("scroll-reveal")) {
                     child.classList.add("scroll-reveal");
                 }
-
                 revealObserver.observe(child);
-
             });
-
         });
-
 } else {
-
-    /*
-       Fallback:
-       If the browser doesn't support IntersectionObserver,
-       don't allow anything to disappear.
-    */
-
     revealTargets.forEach((element) => {
-
         element.classList.add("is-visible");
-
     });
-
 }
-
 
 /* =========================================================
    HERO PARALLAX
@@ -1252,362 +997,143 @@ if ("IntersectionObserver" in window) {
 
 if (hero) {
     window.addEventListener("scroll", () => {
-
         const scrollY = window.scrollY;
-
         if (scrollY < window.innerHeight) {
-
-            panels.forEach(panel => {
-
+            panels.forEach((panel) => {
                 if (window.innerWidth <= 768) {
-                    panel.style.transform =
-                        `scale(1.05) translateY(${scrollY * 0.12}px)`;
+                    panel.style.transform = `scale(1.05) translateY(${scrollY * 0.12}px)`;
                 } else {
-                    panel.style.transform =
-                        `scale(1.02) translateY(${scrollY * 0.25}px)`;
+                    panel.style.transform = `scale(1.02) translateY(${scrollY * 0.25}px)`;
                 }
-
             });
-
         }
-
     }, { passive: true });
 }
-
 
 /* =========================================================
    BEFORE / AFTER COMPARISON
 ========================================================= */
 
+const comparisons = document.querySelectorAll("[data-comparison]");
+
 comparisons.forEach((comparison) => {
+    const beforeImage = comparison.querySelector(".comparison__image--before");
+    const sliderLine = comparison.querySelector(".comparison__line");
+    const sliderKnob = comparison.querySelector(".comparison__knob");
 
-    const beforeImage =
-        comparison.querySelector(
-            ".comparison__image--before"
-        );
-
-    const sliderLine =
-        comparison.querySelector(
-            ".comparison__line"
-        );
-
-    const sliderKnob =
-        comparison.querySelector(
-            ".comparison__knob"
-        );
-
-    if (!beforeImage || !sliderLine || !sliderKnob) {
-        return;
-    }
+    if (!beforeImage || !sliderLine || !sliderKnob) return;
 
     let currentPosition = 50;
     let isDragging = false;
 
-
     const updateSlider = (position) => {
+        currentPosition = Math.max(0, Math.min(100, position));
 
-        currentPosition =
-            Math.max(0, Math.min(100, position));
-
-
-        if (
-            comparison.classList.contains(
-                "is-horizontal"
-            )
-        ) {
-
-            beforeImage.style.clipPath =
-                `inset(0 0 ${100 - currentPosition}% 0)`;
-
-            sliderLine.style.top =
-                `${currentPosition}%`;
-
-            sliderKnob.style.top =
-                `${currentPosition}%`;
-
+        if (comparison.classList.contains("is-horizontal")) {
+            beforeImage.style.clipPath = `inset(0 0 ${100 - currentPosition}% 0)`;
+            sliderLine.style.top = `${currentPosition}%`;
+            sliderKnob.style.top = `${currentPosition}%`;
         } else {
-
-            beforeImage.style.clipPath =
-                `inset(0 ${100 - currentPosition}% 0 0)`;
-
-            sliderLine.style.left =
-                `${currentPosition}%`;
-
-            sliderKnob.style.left =
-                `${currentPosition}%`;
-
+            beforeImage.style.clipPath = `inset(0 ${100 - currentPosition}% 0 0)`;
+            sliderLine.style.left = `${currentPosition}%`;
+            sliderKnob.style.left = `${currentPosition}%`;
         }
 
-
-        sliderKnob.setAttribute(
-            "aria-valuenow",
-            Math.round(currentPosition)
-        );
-
+        sliderKnob.setAttribute("aria-valuenow", Math.round(currentPosition));
     };
-
 
     const handleMove = (clientX, clientY) => {
-
-        const bounds =
-            comparison.getBoundingClientRect();
-
-        const position =
-            comparison.classList.contains("is-horizontal")
-                ? (
-                    (clientY - bounds.top) /
-                    bounds.height
-                ) * 100
-                : (
-                    (clientX - bounds.left) /
-                    bounds.width
-                ) * 100;
-
+        const bounds = comparison.getBoundingClientRect();
+        const position = comparison.classList.contains("is-horizontal")
+            ? ((clientY - bounds.top) / bounds.height) * 100
+            : ((clientX - bounds.left) / bounds.width) * 100;
         updateSlider(position);
-
     };
-
 
     const updateImageFraming = () => {
+        const image = comparison.querySelector(".comparison__image--after img");
+        if (!image || !image.naturalWidth || !image.naturalHeight) return;
 
-        const image =
-            comparison.querySelector(
-                ".comparison__image--after img"
-            );
+        const bounds = comparison.getBoundingClientRect();
+        const imageRatio = image.naturalWidth / image.naturalHeight;
+        const project = comparison.closest(".project");
+        if (!project) return;
 
-        if (
-            !image ||
-            !image.naturalWidth ||
-            !image.naturalHeight
-        ) {
-            return;
-        }
+        const isHorizontal = imageRatio > 1;
+        comparison.classList.toggle("is-horizontal", isHorizontal);
+        sliderKnob.setAttribute("aria-orientation", isHorizontal ? "horizontal" : "vertical");
 
-        const bounds =
-            comparison.getBoundingClientRect();
-
-        const imageRatio =
-            image.naturalWidth /
-            image.naturalHeight;
-
-        const project =
-            comparison.closest(".project");
-
-        if (!project) {
-            return;
-        }
-
-        const isHorizontal =
-            imageRatio > 1;
-
-        comparison.classList.toggle(
-            "is-horizontal",
-            isHorizontal
-        );
-
-        sliderKnob.setAttribute(
-            "aria-orientation",
-            isHorizontal
-                ? "horizontal"
-                : "vertical"
-        );
-
-
-        const currentRatio =
-            bounds.width / bounds.height;
-
-        const currentCrop =
-            imageRatio > currentRatio
-                ? 1 - currentRatio / imageRatio
-                : 1 - imageRatio / currentRatio;
-
+        const currentRatio = bounds.width / bounds.height;
+        const currentCrop = imageRatio > currentRatio
+            ? 1 - currentRatio / imageRatio
+            : 1 - imageRatio / currentRatio;
 
         if (currentCrop <= 0.5) {
-
-            project.classList.remove(
-                "has-adjusted-comparison"
-            );
-
-            project.style.removeProperty(
-                "--comparison-width"
-            );
-
+            project.classList.remove("has-adjusted-comparison");
+            project.style.removeProperty("--comparison-width");
             return;
-
         }
 
+        const targetRatio = imageRatio > currentRatio ? imageRatio * 0.6 : imageRatio / 0.6;
+        const targetWidth = Math.round(bounds.height * targetRatio);
+        const projectWidth = project.getBoundingClientRect().width;
+        const minimumTextWidth = Math.min(360, projectWidth * 0.4);
+        const adjustedWidth = Math.min(targetWidth, projectWidth - minimumTextWidth);
 
-        const targetRatio =
-            imageRatio > currentRatio
-                ? imageRatio * 0.6
-                : imageRatio / 0.6;
-
-        const targetWidth =
-            Math.round(
-                bounds.height * targetRatio
-            );
-
-        const projectWidth =
-            project.getBoundingClientRect().width;
-
-        const minimumTextWidth =
-            Math.min(
-                360,
-                projectWidth * 0.4
-            );
-
-        const adjustedWidth =
-            Math.min(
-                targetWidth,
-                projectWidth - minimumTextWidth
-            );
-
-
-        project.classList.add(
-            "has-adjusted-comparison"
-        );
-
-        project.style.setProperty(
-            "--comparison-width",
-            `${Math.max(240, adjustedWidth)}px`
-        );
-
+        project.classList.add("has-adjusted-comparison");
+        project.style.setProperty("--comparison-width", `${Math.max(240, adjustedWidth)}px`);
     };
-
 
     const stopDragging = () => {
-
         isDragging = false;
-
-        comparison.classList.remove(
-            "is-dragging"
-        );
-
+        comparison.classList.remove("is-dragging");
     };
 
+    comparison.addEventListener("pointerdown", (event) => {
+        isDragging = true;
+        comparison.classList.add("is-dragging");
+        comparison.setPointerCapture(event.pointerId);
+        handleMove(event.clientX, event.clientY);
+    });
 
-    comparison.addEventListener(
-        "pointerdown",
-        (event) => {
-
-            isDragging = true;
-
-            comparison.classList.add(
-                "is-dragging"
-            );
-
-            comparison.setPointerCapture(
-                event.pointerId
-            );
-
-            handleMove(
-                event.clientX,
-                event.clientY
-            );
-
+    comparison.addEventListener("pointermove", (event) => {
+        if (isDragging) {
+            handleMove(event.clientX, event.clientY);
         }
-    );
+    });
 
+    comparison.addEventListener("pointerup", stopDragging);
+    comparison.addEventListener("pointercancel", stopDragging);
 
-    comparison.addEventListener(
-        "pointermove",
-        (event) => {
+    window.addEventListener("resize", updateImageFraming);
 
-            if (isDragging) {
-
-                handleMove(
-                    event.clientX,
-                    event.clientY
-                );
-
-            }
-
+    comparison.querySelectorAll("img").forEach((image) => {
+        image.addEventListener("load", updateImageFraming, { once: true });
+        if (image.complete) {
+            updateImageFraming();
         }
-    );
+    });
 
+    sliderKnob.addEventListener("keydown", (event) => {
+        const increments = {
+            ArrowLeft: -5,
+            ArrowDown: -5,
+            ArrowRight: 5,
+            ArrowUp: 5
+        };
 
-    comparison.addEventListener(
-        "pointerup",
-        stopDragging
-    );
-
-
-    comparison.addEventListener(
-        "pointercancel",
-        stopDragging
-    );
-
-
-    window.addEventListener(
-        "resize",
-        updateImageFraming
-    );
-
-
-    comparison
-        .querySelectorAll("img")
-        .forEach((image) => {
-
-            image.addEventListener(
-                "load",
-                updateImageFraming,
-                { once: true }
-            );
-
-            if (image.complete) {
-                updateImageFraming();
-            }
-
-        });
-
-
-    sliderKnob.addEventListener(
-        "keydown",
-        (event) => {
-
-            const increments = {
-                ArrowLeft: -5,
-                ArrowDown: -5,
-                ArrowRight: 5,
-                ArrowUp: 5
-            };
-
-
-            if (
-                increments[event.key] !== undefined
-            ) {
-
-                event.preventDefault();
-
-                updateSlider(
-                    currentPosition +
-                    increments[event.key]
-                );
-
-            } else if (
-                event.key === "Home" ||
-                event.key === "End"
-            ) {
-
-                event.preventDefault();
-
-                updateSlider(
-                    event.key === "Home"
-                        ? 0
-                        : 100
-                );
-
-            }
-
+        if (increments[event.key] !== undefined) {
+            event.preventDefault();
+            updateSlider(currentPosition + increments[event.key]);
+        } else if (event.key === "Home" || event.key === "End") {
+            event.preventDefault();
+            updateSlider(event.key === "Home" ? 0 : 100);
         }
-    );
-
+    });
 
     updateSlider(currentPosition);
     updateImageFraming();
-
 });
-
 
 /* =========================================================
    INITIALIZE

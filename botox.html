@@ -1,30 +1,18 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description"
-        content="Expression-conscious wrinkle treatment by Dr. Reham Kolib in Abu Dhabi.">
-
-    <meta name="keywords"
-        content="Botox Abu Dhabi, wrinkle treatment, aesthetic dermatology, Dr Reham Kolib">
+    <meta name="description" content="Expression-conscious wrinkle treatment by Dr. Reham Kolib in Abu Dhabi.">
+    <meta name="keywords" content="Botox Abu Dhabi, wrinkle treatment, aesthetic dermatology, Dr Reham Kolib">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="stylesheet.css">
 
@@ -34,782 +22,225 @@
 <body
     data-page="botox"
     data-video="images/botox.mp4"
-    data-poster="images/botox-comp.png"
+    data-poster="images/botox1.png"
     data-gallery="images/botox1.png,images/botox2.png,images/botox4.png,images/botox5.png">
 
-
-    <!-- =========================================================
-         LANGUAGE SWITCHER
-    ========================================================== -->
-
-    <div
-        class="language-switcher"
-        aria-label="Language selection">
-
-        <button
-            class="language-switcher__button is-active"
-            type="button"
-            data-language="en"
-            aria-pressed="true">
-            EN
-        </button>
-
-        <span aria-hidden="true">/</span>
-
-        <button
-            class="language-switcher__button"
-            type="button"
-            data-language="ar"
-            aria-pressed="false">
-            العربية
-        </button>
-
-    </div>
-
-
-    <!-- =========================================================
-         MENU BUTTON
-    ========================================================== -->
-
-    <button
-        class="menu-toggle"
-        type="button"
-        aria-controls="site-sidebar"
-        aria-expanded="false"
-        aria-label="Open navigation menu">
-
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-
-    </button>
-
-    <div
-        class="sidebar-backdrop"
-        aria-hidden="true">
-    </div>
-
-
-    <!-- =========================================================
-         SIDEBAR
-    ========================================================== -->
-
-    <aside
-        class="site-sidebar"
-        id="site-sidebar"
-        aria-label="Primary navigation"
-        aria-hidden="true">
-
-        <div class="site-sidebar__inner">
-
-            <p
-                class="site-sidebar__eyebrow"
-                data-i18n="brand">
-                Dr. Reham
-            </p>
-
-            <p
-                class="site-sidebar__title"
-                data-i18n="sidebarTitle">
-                Where Skin Health Meets Beauty
-            </p>
-
-            <nav aria-label="Main navigation">
-
-                <ul class="site-sidebar__nav">
-
-                    <li class="site-sidebar__item">
-                        <a
-                            href="index.html#home"
-                            data-i18n="navHome">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="site-sidebar__item">
-                        <a
-                            href="index.html#about"
-                            data-i18n="navAbout">
-                            About
-                        </a>
-                    </li>
-
-                    <li class="site-sidebar__item">
-                        <a
-                            href="index.html#projects"
-                            data-i18n="navProjects">
-                            Projects
-                        </a>
-                    </li>
-
-                    <li class="site-sidebar__item">
-                        <a
-                            href="index.html#contact"
-                            data-i18n="navContact">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
-        </div>
-
-    </aside>
-
+    <!-- Centralized Navigation Sidebar & Controls (Managed via components.js) -->
+    <div id="sidebar-mount"></div>
 
     <!-- =========================================================
          HERO
     ========================================================== -->
-
-    <header
-        class="hero"
-        aria-labelledby="hero-title">
-
-        <div class="hero__panel hero__panel--botox"></div>
-
-        <div
-            class="hero__veil"
-            aria-hidden="true">
-        </div>
+    <header class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero__panel" data-hero-bg="images/botox-stock.jpg"></div>
+        <div class="hero__veil" aria-hidden="true"></div>
 
         <div class="hero__content container">
-
             <div class="hero__copy">
-
-                <p
-                    class="hero__eyebrow"
-                    data-i18n="botoxEyebrow">
+                <p class="hero__eyebrow" data-i18n="botoxEyebrow">
                     Expression-conscious treatment
                 </p>
 
-                <h1
-                    id="hero-title"
-                    data-i18n="botoxTitle">
+                <h1 id="hero-title" data-i18n="botoxTitle">
                     Wrinkle treatment and softening
                 </h1>
 
-                <p
-                    class="hero__description"
-                    data-i18n="botoxBody">
-                    Targeted wrinkle treatment can soften dynamic lines while
-                    preserving a natural, expressive appearance.
+                <p class="hero__description" data-i18n="botoxBody">
+                    Targeted wrinkle treatment can soften dynamic lines while preserving a natural, expressive appearance.
                 </p>
-
             </div>
 
             <div class="hero__scroll"></div>
-
         </div>
-
     </header>
-
 
     <!-- =========================================================
          MAIN
     ========================================================== -->
-
     <main class="detail-main procedure-page-main">
 
-
-        <!-- =====================================================
-             VIDEO — LIGHT
-        ====================================================== -->
-
+        <!-- VIDEO — LIGHT -->
         <section class="procedure-video section-light">
+            <div class="procedure-section__heading">
+                <p class="section-label" data-i18n="botoxEyebrow">
+                    Expression-conscious treatment
+                </p>
 
-            <div class="container">
+                <h2 data-i18n="procedureVideo">
+                    Treatment showcase
+                </h2>
 
-                <div class="procedure-section__heading">
-
-                    <p
-                        class="section-label"
-                        data-i18n="botoxEyebrow">
-                        Expression-conscious treatment
-                    </p>
-
-                    <h2 data-i18n="procedureVideo">
-                        Treatment showcase
-                    </h2>
-
-                    <p data-i18n="procedureVideoBody">
-                        A closer look at the treatment approach, performed with
-                        precision and a focus on natural-looking results.
-                    </p>
-
-                </div>
-
-                <video
-                    class="procedure-video__player"
-                    controls
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    poster="images/botox-comp.png">
-
-                    <source
-                        src="images/botox.mp4"
-                        type="video/mp4">
-
-                </video>
-
+                <p data-i18n="procedureVideoBody">
+                    A closer look at the treatment approach, performed with precision and a focus on natural-looking results.
+                </p>
             </div>
 
+            <video
+                class="procedure-video__player"
+                controls
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="images/botox1.png">
+                <source src="images/botox.mp4" type="video/mp4">
+            </video>
         </section>
 
-
-        <!-- =====================================================
-             GALLERY — DARK
-        ====================================================== -->
-
+        <!-- GALLERY — DARK -->
         <section class="procedure-gallery section-dark">
+            <div class="procedure-section__heading">
+                <p class="section-label" data-i18n="botoxEyebrow">
+                    Expression-conscious treatment
+                </p>
 
-            <div class="container">
-
-                <div class="procedure-section__heading">
-
-                    <p
-                        class="section-label"
-                        data-i18n="botoxEyebrow">
-                        Expression-conscious treatment
-                    </p>
-
-                    <h2 data-i18n="procedureGallery">
-                        Selected client results
-                    </h2>
-
-                </div>
-
-
-                <div
-                    id="procedure-carousel"
-                    class="carousel slide procedure-carousel"
-                    data-bs-ride="carousel"
-                    data-bs-interval="2500">
-
-                    <div class="carousel-inner"></div>
-
-
-                    <button
-                        class="carousel-control-prev"
-                        type="button"
-                        data-bs-target="#procedure-carousel"
-                        data-bs-slide="prev">
-
-                        <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true">
-                        </span>
-
-                        <span
-                            class="visually-hidden"
-                            data-i18n="galleryPrevious">
-                            Previous image
-                        </span>
-
-                    </button>
-
-
-                    <button
-                        class="carousel-control-next"
-                        type="button"
-                        data-bs-target="#procedure-carousel"
-                        data-bs-slide="next">
-
-                        <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true">
-                        </span>
-
-                        <span
-                            class="visually-hidden"
-                            data-i18n="galleryNext">
-                            Next image
-                        </span>
-
-                    </button>
-
-                </div>
-
+                <h2 data-i18n="procedureGallery">
+                    Selected client results
+                </h2>
             </div>
 
+            <div id="procedure-carousel" class="carousel slide procedure-carousel" data-bs-ride="carousel" data-bs-interval="2500">
+                <div class="carousel-inner"></div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#procedure-carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden" data-i18n="galleryPrevious">Previous image</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#procedure-carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden" data-i18n="galleryNext">Next image</span>
+                </button>
+            </div>
         </section>
 
-
-        <!-- =====================================================
-             IMAGE MODAL
-        ====================================================== -->
-
-        <div
-            class="modal fade"
-            id="procedure-image-modal"
-            tabindex="-1"
-            aria-hidden="true">
-
-            <div
-                class="modal-dialog modal-fullscreen-sm-down modal-xl modal-dialog-centered">
-
+        <!-- IMAGE MODAL -->
+        <div class="modal fade" id="procedure-image-modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-sm-down modal-xl modal-dialog-centered">
                 <div class="modal-content bg-dark border-0">
-
                     <div class="modal-body p-0 position-relative">
-
-                        <button
-                            type="button"
-                            class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                            style="z-index: 10;">
-                        </button>
-
-
-                        <img
-                            id="procedure-modal-image"
-                            src=""
-                            alt="Treatment result">
-
-
-                        <button
-                            id="procedure-modal-prev"
-                            type="button"
-                            class="carousel-control-prev"
-                            aria-label="Previous image">
-
+                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index: 10;"></button>
+                        <img id="procedure-modal-image" src="" alt="Treatment result">
+                        <button id="procedure-modal-prev" type="button" class="carousel-control-prev" aria-label="Previous image">
                             <span class="carousel-control-prev-icon"></span>
-
                         </button>
-
-
-                        <button
-                            id="procedure-modal-next"
-                            type="button"
-                            class="carousel-control-next"
-                            aria-label="Next image">
-
+                        <button id="procedure-modal-next" type="button" class="carousel-control-next" aria-label="Next image">
                             <span class="carousel-control-next-icon"></span>
-
                         </button>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
-
-        <!-- =====================================================
-             PROCEDURE INFORMATION — LIGHT
-        ====================================================== -->
-
+        <!-- PROCEDURE INFORMATION — LIGHT -->
         <section class="procedure-info section-light">
-
-            <div class="container">
-
-                <p
-                    class="section-label"
-                    data-i18n="botoxEyebrow">
+            <div class="procedure-section__heading">
+                <p class="section-label" data-i18n="botoxEyebrow">
                     Expression-conscious treatment
                 </p>
 
                 <h2 data-i18n="procedureDetails">
                     About the procedure
                 </h2>
-
-                <p
-                    class="procedure-info__body"
-                    data-i18n="botoxProcedureBody">
-                    Botulinum toxin injections are a non-surgical treatment that
-                    temporarily reduces targeted muscle activity to soften
-                    dynamic wrinkles and fine lines while maintaining natural
-                    facial expression.
-                </p>
-
-
-                <div class="procedure-info__grid">
-
-                    <div>
-
-                        <strong data-i18n="botoxPointOneLabel">
-                            What it can address
-                        </strong>
-
-                        <span data-i18n="botoxPointOne">
-                            Treatment can soften expression-related lines such
-                            as forehead lines, frown lines between the eyebrows,
-                            and crow's feet around the eyes.
-                        </span>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong data-i18n="botoxPointTwoLabel">
-                            How it works
-                        </strong>
-
-                        <span data-i18n="botoxPointTwo">
-                            The treatment temporarily reduces nerve signals to
-                            selected muscles, allowing them to relax and making
-                            associated wrinkles less visible.
-                        </span>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong data-i18n="botoxPointThreeLabel">
-                            Timing and duration
-                        </strong>
-
-                        <span data-i18n="botoxPointThree">
-                            Results develop gradually over several days and
-                            commonly last around three to six months, depending
-                            on the individual and treatment area.
-                        </span>
-
-                    </div>
-
-                </div>
-
             </div>
 
-        </section>
+            <p class="procedure-info__body" data-i18n="botoxProcedureBody">
+                Botulinum toxin injections are a non-surgical treatment that temporarily reduces targeted muscle activity to soften dynamic wrinkles and fine lines while maintaining natural facial expression.
+            </p>
 
-
-        <!-- =====================================================
-             FAQ — DARK
-        ====================================================== -->
-
-        <section class="procedure-faq section-dark">
-
-            <div class="container">
-
-                <div class="procedure-section__heading">
-
-                    <p
-                        class="section-label"
-                        data-i18n="botoxEyebrow">
-                        Expression-conscious treatment
-                    </p>
-
-                    <h2 data-i18n="faqTitle">
-                        Frequently asked questions
-                    </h2>
-
+            <div class="procedure-info__grid">
+                <div>
+                    <strong data-i18n="botoxPointOneLabel">
+                        What it can address
+                    </strong>
+                    <span data-i18n="botoxPointOne">
+                        Treatment can soften expression-related lines such as forehead lines, frown lines between the eyebrows, and crow's feet around the eyes.
+                    </span>
                 </div>
 
-
-                <div
-                    class="accordion accordion-flush"
-                    id="botox-faq">
-
-
-                    <!-- FAQ 1 -->
-
-                    <div class="accordion-item">
-
-                        <h3 class="accordion-header">
-
-                            <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#botox-faq-1"
-                                aria-expanded="false"
-                                data-i18n="botoxFaqQ1">
-
-                                Which wrinkles can Botox treat?
-
-                            </button>
-
-                        </h3>
-
-
-                        <div
-                            id="botox-faq-1"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#botox-faq">
-
-                            <div
-                                class="accordion-body"
-                                data-i18n="botoxFaqA1">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- FAQ 2 -->
-
-                    <div class="accordion-item">
-
-                        <h3 class="accordion-header">
-
-                            <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#botox-faq-2"
-                                aria-expanded="false"
-                                data-i18n="botoxFaqQ2">
-
-                                When will I see the results?
-
-                            </button>
-
-                        </h3>
-
-
-                        <div
-                            id="botox-faq-2"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#botox-faq">
-
-                            <div
-                                class="accordion-body"
-                                data-i18n="botoxFaqA2">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- FAQ 3 -->
-
-                    <div class="accordion-item">
-
-                        <h3 class="accordion-header">
-
-                            <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#botox-faq-3"
-                                aria-expanded="false"
-                                data-i18n="botoxFaqQ3">
-
-                                How long do Botox results last?
-
-                            </button>
-
-                        </h3>
-
-
-                        <div
-                            id="botox-faq-3"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#botox-faq">
-
-                            <div
-                                class="accordion-body"
-                                data-i18n="botoxFaqA3">
-                            </div>
-
-                        </div>
-
-                    </div>
-
+                <div>
+                    <strong data-i18n="botoxPointTwoLabel">
+                        How it works
+                    </strong>
+                    <span data-i18n="botoxPointTwo">
+                        The treatment temporarily reduces nerve signals to selected muscles, allowing them to relax and making associated wrinkles less visible.
+                    </span>
                 </div>
 
+                <div>
+                    <strong data-i18n="botoxPointThreeLabel">
+                        Timing and duration
+                    </strong>
+                    <span data-i18n="botoxPointThree">
+                        Results develop gradually over several days and commonly last around three to six months, depending on the individual and treatment area.
+                    </span>
+                </div>
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             CONTACT — LIGHT
-        ====================================================== -->
-
-        <section
-            class="content-section section-light"
-            id="contact"
-            aria-labelledby="contact-title">
-
-            <div class="container">
-
-                <p
-                    class="section-label"
-                    data-i18n="contactLabel">
-                    Begin a conversation
+        <!-- FAQ — DARK -->
+        <section class="procedure-faq section-dark" id="faq">
+            <div class="procedure-section__heading">
+                <p class="section-label" data-i18n="botoxEyebrow">
+                    Expression-conscious treatment
                 </p>
 
-                <h2
-                    id="contact-title"
-                    data-i18n="contactTitle">
-                    Start with a dermatology consultation.
+                <h2 data-i18n="faqTitle">
+                    Frequently asked questions
                 </h2>
-
-                <p data-i18n="contactBody">
-                    Appointments are available at Cosmesurge Abu Dhabi for
-                    clinical dermatology, laser, and aesthetic treatments.
-                </p>
-
-                <a
-                    class="book-button"
-                    href="tel:+97180026763"
-                    data-i18n="callNow">
-                    Call to book
-                </a>
-
             </div>
 
+            <div class="accordion accordion-flush" id="botox-faq">
+                <!-- FAQ 1 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#botox-faq-1" aria-expanded="false" data-i18n="botoxFaqQ1">
+                            Which wrinkles can Botox treat?
+                        </button>
+                    </h3>
+                    <div id="botox-faq-1" class="accordion-collapse collapse" data-bs-parent="#botox-faq">
+                        <div class="accordion-body" data-i18n="botoxFaqA1"></div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#botox-faq-2" aria-expanded="false" data-i18n="botoxFaqQ2">
+                            When will I see the results?
+                        </button>
+                    </h3>
+                    <div id="botox-faq-2" class="accordion-collapse collapse" data-bs-parent="#botox-faq">
+                        <div class="accordion-body" data-i18n="botoxFaqA2"></div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#botox-faq-3" aria-expanded="false" data-i18n="botoxFaqQ3">
+                            How long do Botox results last?
+                        </button>
+                    </h3>
+                    <div id="botox-faq-3" class="accordion-collapse collapse" data-bs-parent="#botox-faq">
+                        <div class="accordion-body" data-i18n="botoxFaqA3"></div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- Centralized CTA Mount (Managed via components.js) -->
+        <div id="cta-mount"></div>
 
     </main>
 
+    <!-- Centralized Footer Mount (Managed via components.js) -->
+    <div id="footer-mount"></div>
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer class="site-footer">
-
-        <div class="site-footer__main container">
-
-            <div>
-
-                <p
-                    class="site-footer__brand"
-                    data-i18n="brand">
-                    Dr. Reham
-                </p>
-
-                <p
-                    class="site-footer__muted"
-                    data-i18n="footerSpecialty">
-                    Specialist Dermatologist · Cosmesurge Abu Dhabi
-                </p>
-
-            </div>
-
-
-            <div class="site-footer__column">
-
-                <p
-                    class="site-footer__heading"
-                    data-i18n="footerContact">
-                    Contact
-                </p>
-
-                <a href="tel:+97180026763">
-                    +971 800 26763
-                </a>
-
-                <a
-                    href="https://wa.me/971544052905"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    WhatsApp
-                </a>
-
-            </div>
-
-
-            <div class="site-footer__column">
-
-                <p
-                    class="site-footer__heading"
-                    data-i18n="footerFollow">
-                    Follow
-                </p>
-
-                <a
-                    href="https://www.instagram.com/dr.reham.kolib/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Instagram · @dr.reham.kolib
-                </a>
-
-                <a
-                    href="https://www.snapchat.com/add/drrehamkolib"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Snapchat · @drrehamkolib
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="site-footer__map container">
-
-            <div>
-
-                <p
-                    class="site-footer__heading"
-                    data-i18n="footerVisit">
-                    Visit the clinic
-                </p>
-
-                <p
-                    class="site-footer__muted"
-                    data-i18n="footerAddress">
-                    Cosmesurge Abu Dhabi, Delma region, Abu Dhabi, UAE
-                </p>
-
-                <a
-                    href="https://m.edarabia.com/dr-reham-kolib/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-i18n="viewLocation">
-                    View location details
-                </a>
-
-            </div>
-
-
-            <iframe
-                title="Cosmesurge Abu Dhabi location map"
-                src="https://www.google.com/maps?q=Cosmesurge+Abu Dhabi&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-
-        </div>
-
-
-        <div class="site-footer__bottom container">
-
-            <span data-i18n="footerCopyright">
-                © 2026 Dr. Reham Kolib. All rights reserved.
-            </span>
-
-            <a
-                href="https://m.edarabia.com/dr-reham-kolib/"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-i18n="profileSource">
-                Professional profile
-            </a>
-
-        </div>
-
-    </footer>
-
-
-    <!-- =========================================================
-         SCRIPTS
-    ========================================================== -->
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"
-        defer>
-    </script>
-
-    <script
-        src="script.js"
-        defer>
-    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+    <script src="components.js"></script>
+    <script src="script.js" defer></script>
 
 </body>
 </html>

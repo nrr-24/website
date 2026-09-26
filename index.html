@@ -2,18 +2,9 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta
-        name="description"
-        content="Dr. Reham Kolib is a Specialist Dermatologist in Abu Dhabi offering clinical dermatology, laser, and aesthetic treatments."
-    >
-
-    <meta
-        name="keywords"
-        content="Dr Reham Kolib, dermatologist Abu Dhabi, cosmetic dermatologist UAE, laser treatments Abu Dhabi, aesthetic dermatology"
-    >
+    <meta name="description" content="Dr. Reham Kolib is a Specialist Dermatologist in Abu Dhabi offering clinical dermatology, laser, and aesthetic treatments.">
+    <meta name="keywords" content="Dr Reham Kolib, dermatologist Abu Dhabi, cosmetic dermatologist UAE, laser treatments Abu Dhabi, aesthetic dermatology">
 
     <link rel="alternate" hreflang="en" href="./index.html?lang=en">
     <link rel="alternate" hreflang="ar" href="./index.html?lang=ar">
@@ -24,19 +15,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Your CSS -->
     <link rel="stylesheet" href="stylesheet.css">
@@ -69,301 +51,86 @@
 <body>
 
 <!-- =========================================================
-     LANGUAGE SWITCHER
+     CENTRAL SIDEBAR & CONTROLS (Managed via components.js)
 ========================================================= -->
-
-<div class="language-switcher" aria-label="Language selection">
-
-    <button
-        class="language-switcher__button is-active"
-        type="button"
-        data-language="en"
-        aria-pressed="true"
-    >
-        EN
-    </button>
-
-    <span aria-hidden="true">/</span>
-
-    <button
-        class="language-switcher__button"
-        type="button"
-        data-language="ar"
-        aria-pressed="false"
-    >
-        العربية
-    </button>
-
-</div>
-
-
-<!-- =========================================================
-     MENU BUTTON
-========================================================= -->
-
-<button
-    class="menu-toggle"
-    type="button"
-    aria-controls="site-sidebar"
-    aria-expanded="false"
-    aria-label="Open navigation menu"
->
-    <span class="menu-toggle__line"></span>
-    <span class="menu-toggle__line"></span>
-    <span class="menu-toggle__line"></span>
-</button>
-
-<div
-    class="sidebar-backdrop"
-    data-menu-close
-    aria-hidden="true"
-></div>
-
-
-<!-- =========================================================
-     SIDEBAR
-========================================================= -->
-
-<aside
-    class="site-sidebar"
-    id="site-sidebar"
-    aria-label="Primary navigation"
-    aria-hidden="true"
->
-
-    <div class="site-sidebar__inner">
-
-        <p
-            class="site-sidebar__eyebrow"
-            data-i18n="brand"
-        >
-            Dr. Reham
-        </p>
-
-        <p
-            class="site-sidebar__title"
-            data-i18n="sidebarTitle"
-        >
-            Where Skin Health Meets Beauty
-        </p>
-
-        <nav aria-label="Main navigation">
-
-            <ul class="site-sidebar__nav">
-
-                <li class="site-sidebar__item">
-                    <a href="#home" data-i18n="navHome">
-                        Home
-                    </a>
-                </li>
-
-                <li class="site-sidebar__item">
-                    <a href="#about" data-i18n="navAbout">
-                        About
-                    </a>
-                </li>
-
-                <li class="site-sidebar__item">
-                    <a href="#treatments" data-i18n="navTreatments">
-                        Treatments
-                    </a>
-                </li>
-
-                <li class="site-sidebar__item">
-                    <a href="#projects" data-i18n="navProjects">
-                        Results
-                    </a>
-                </li>
-
-                <li class="site-sidebar__item">
-                    <a href="#journey" data-i18n="navJourney">
-                        Your Journey
-                    </a>
-                </li>
-
-                <li class="site-sidebar__item">
-                    <a href="#faq" data-i18n="navFaq">
-                        FAQ
-                    </a>
-                </li>
-
-                <li class="site-sidebar__item">
-                    <a href="#contact" data-i18n="navContact">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </div>
-
-</aside>
-
+<div id="sidebar-mount"></div>
 
 <!-- =========================================================
      HERO
 ========================================================= -->
-
-<header
-    class="hero"
-    id="home"
-    aria-labelledby="hero-title"
->
-
-    <div class="hero__panel"></div>
-
-    <div
-        class="hero__veil"
-        aria-hidden="true"
-    ></div>
+<header class="hero" id="home" aria-labelledby="hero-title">
+    <div class="hero__panel" data-hero-bg="images/healthy.png"></div>
+    <div class="hero__veil" aria-hidden="true"></div>
 
     <div class="hero__content container">
-
         <div class="hero__copy">
-
-            <p
-                class="hero__eyebrow"
-                data-i18n="heroEyebrow"
-            >
+            <p class="hero__eyebrow" data-i18n="heroEyebrow">
                 Clinical dermatology · Aesthetic medicine
             </p>
 
-            <h1
-                id="hero-title"
-                data-i18n="heroTitle"
-            >
+            <h1 id="hero-title" data-i18n="heroTitle">
                 Dr. Reham Kolib
             </h1>
 
-            <p
-                class="hero__subtitle"
-                data-i18n="heroSubtitle"
-            >
+            <p class="hero__subtitle" data-i18n="heroSubtitle">
                 Where Skin Health Meets Beauty
             </p>
 
-            <p
-                class="hero__description"
-                data-i18n="heroDescription"
-            >
+            <p class="hero__description" data-i18n="heroDescription">
                 Personalized dermatological and aesthetic care designed around your skin, your features, and your goals.
             </p>
 
             <div class="hero__actions">
-
-                <a
-                    class="book-button"
-                    href="#contact"
-                    data-i18n="bookConsultation"
-                >
+                <a class="book-button" href="#contact" data-i18n="bookConsultation">
                     Book a consultation
                 </a>
 
-                <a
-                    class="hero__secondary-link"
-                    href="#treatments"
-                    data-i18n="exploreTreatments"
-                >
+                <a class="hero__secondary-link" href="#treatments" data-i18n="exploreTreatments">
                     Explore treatments
                     <span aria-hidden="true">↓</span>
                 </a>
-
             </div>
-
         </div>
-</div>
-
+    </div>
 </header>
 
-
 <main>
-
 
 <!-- =========================================================
      QUICK STATS
 ========================================================= -->
-
 <section class="quick-stats">
-
     <div class="quick-stats__item">
-
-        <strong>
-            10+
-        </strong>
-
-        <span data-i18n="statExperience">
-            Years of experience
-        </span>
-
+        <strong>10+</strong>
+        <span data-i18n="statExperience">Years of experience</span>
     </div>
 
-
     <div class="quick-stats__item">
-
-        <strong>
-            01
-        </strong>
-
-        <span data-i18n="statApproach">
-            Personalized approach
-        </span>
-
+        <strong>01</strong>
+        <span data-i18n="statApproach">Personalized approach</span>
     </div>
 
-
     <div class="quick-stats__item">
-
-        <strong>
-            02
-        </strong>
-
-        <span data-i18n="statLanguages">
-            Languages
-        </span>
-
+        <strong>02</strong>
+        <span data-i18n="statLanguages">Languages</span>
     </div>
 
-
     <div class="quick-stats__item">
-
-        <strong>
-            ∞
-        </strong>
-
-        <span data-i18n="statCare">
-            Patient-focused care
-        </span>
-
+        <strong>∞</strong>
+        <span data-i18n="statCare">Patient-focused care</span>
     </div>
-
 </section>
-
 
 <!-- =========================================================
      ABOUT
 ========================================================= -->
-
-<section
-    class="about-section about-section--new container section-light"
-    id="about"
-    aria-labelledby="about-title"
->
-
+<section class="about-section about-section--new container section-light" id="about" aria-labelledby="about-title">
     <div class="about-section__content">
-
-        <p
-            class="section-label"
-            data-i18n="aboutLabel"
-        >
+        <p class="section-label" data-i18n="aboutLabel">
             About Dr. Reham
         </p>
 
-        <h2
-            id="about-title"
-            data-i18n="aboutTitle"
-        >
+        <h2 id="about-title" data-i18n="aboutTitle">
             Expertise shaped around you.
         </h2>
 
@@ -371,248 +138,122 @@
             Dr. Reham Kolib is a Specialist Dermatologist with over 10 years of experience assessing and treating clinical and cosmetic dermatological conditions. After earning her master’s degree in 2018, she pursued advanced certifications in laser and aesthetic treatments. Her practice is grounded in careful listening and customized treatment plans, because every patient and every skin is different.
         </p>
 
-        <a
-            class="text-link"
-            href="#journey"
-            data-i18n="aboutLearnMore"
-        >
+        <a class="text-link" href="#journey" data-i18n="aboutLearnMore">
             Discover the approach
             <span aria-hidden="true">→</span>
         </a>
-
-    </div>
-<div class="about-section__side">
-
-    <figure class="about-section__portrait">
-        <img
-            src="images/dr-reham.png"
-            alt="Dr. Reham Kolib"
-        >
-    </figure>
-
-    <div class="about-section__facts">
-
-        <div class="about-section__fact">
-            <span class="about-section__fact-number">01</span>
-            <strong data-i18n="aboutSpecialtyLabel">Specialty</strong>
-            <span data-i18n="aboutSpecialty">
-                Clinical and cosmetic dermatology
-            </span>
-        </div>
-
-        <div class="about-section__fact">
-            <span class="about-section__fact-number">02</span>
-            <strong data-i18n="aboutExperienceLabel">Experience</strong>
-            <span data-i18n="aboutExperience">
-                10+ years
-            </span>
-        </div>
-
-        <div class="about-section__fact">
-            <span class="about-section__fact-number">03</span>
-            <strong data-i18n="aboutLanguagesLabel">Languages</strong>
-            <span data-i18n="aboutLanguages">
-                Arabic and English
-            </span>
-        </div>
-
     </div>
 
-</div>
+    <div class="about-section__side">
+        <figure class="about-section__portrait">
+            <img src="images/dr-reham.png" alt="Dr. Reham Kolib">
+        </figure>
 
+        <div class="about-section__facts">
+            <div class="about-section__fact">
+                <span class="about-section__fact-number">01</span>
+                <strong data-i18n="aboutSpecialtyLabel">Specialty</strong>
+                <span data-i18n="aboutSpecialty">Clinical and cosmetic dermatology</span>
+            </div>
+
+            <div class="about-section__fact">
+                <span class="about-section__fact-number">02</span>
+                <strong data-i18n="aboutExperienceLabel">Experience</strong>
+                <span data-i18n="aboutExperience">10+ years</span>
+            </div>
+
+            <div class="about-section__fact">
+                <span class="about-section__fact-number">03</span>
+                <strong data-i18n="aboutLanguagesLabel">Languages</strong>
+                <span data-i18n="aboutLanguages">Arabic and English</span>
+            </div>
+        </div>
+    </div>
 </section>
-
 
 <!-- =========================================================
      TREATMENTS
 ========================================================= -->
-
-<section
-    class="treatments-section section-light"
-    id="treatments"
-    aria-labelledby="treatments-title"
->
-
+<section class="treatments-section section-light" id="treatments" aria-labelledby="treatments-title">
     <div class="container">
-
         <div class="section-heading">
-
-            <p
-                class="section-label"
-                data-i18n="treatmentsLabel"
-            >
+            <p class="section-label" data-i18n="treatmentsLabel">
                 Treatments
             </p>
 
-            <h2
-                id="treatments-title"
-                data-i18n="treatmentsTitle"
-            >
+            <h2 id="treatments-title" data-i18n="treatmentsTitle">
                 Care that starts with understanding.
             </h2>
 
             <p data-i18n="treatmentsBody">
                 From medical dermatology to aesthetic treatments, every treatment plan begins with understanding your individual needs.
             </p>
-
         </div>
 
-
         <div class="treatment-grid">
-
-
             <!-- FACE -->
-            <a
-                class="treatment-card treatment-card--dark"
-                href="face_lift.html"
-            >
-
-                <span class="treatment-card__number">
-                    01
-                </span>
-
+            <a class="treatment-card treatment-card--dark" href="face_lift.html">
+                <span class="treatment-card__number">01</span>
                 <div>
-
-                    <h3 data-i18n="treatmentFaceTitle">
-                        Facial rejuvenation
-                    </h3>
-
+                    <h3 data-i18n="treatmentFaceTitle">Facial rejuvenation</h3>
                     <p data-i18n="treatmentFaceBody">
                         Personalized approaches to facial aging, skin laxity, contours, and natural-looking rejuvenation.
                     </p>
-
                 </div>
-
-                <span
-                    class="treatment-card__arrow"
-                    aria-hidden="true"
-                >
-                    →
-                </span>
-
+                <span class="treatment-card__arrow" aria-hidden="true">→</span>
             </a>
 
-
             <!-- FILLER -->
-            <a
-                class="treatment-card"
-                href="filler.html"
-            >
-
-                <span class="treatment-card__number">
-                    02
-                </span>
-
+            <a class="treatment-card" href="filler.html">
+                <span class="treatment-card__number">02</span>
                 <div>
-
-                    <h3 data-i18n="treatmentFillerTitle">
-                        Dermal fillers
-                    </h3>
-
+                    <h3 data-i18n="treatmentFillerTitle">Dermal fillers</h3>
                     <p data-i18n="treatmentFillerBody">
                         Restore volume, enhance contours, and create balanced results while respecting your natural features.
                     </p>
-
                 </div>
-
-                <span
-                    class="treatment-card__arrow"
-                    aria-hidden="true"
-                >
-                    →
-                </span>
-
+                <span class="treatment-card__arrow" aria-hidden="true">→</span>
             </a>
 
-
             <!-- BOTOX -->
-            <a
-                class="treatment-card treatment-card--gold"
-                href="botox.html"
-            >
-
-                <span class="treatment-card__number">
-                    03
-                </span>
-
+            <a class="treatment-card treatment-card--gold" href="botox.html">
+                <span class="treatment-card__number">03</span>
                 <div>
-
-                    <h3 data-i18n="treatmentBotoxTitle">
-                        Botulinum toxin
-                    </h3>
-
+                    <h3 data-i18n="treatmentBotoxTitle">Botulinum toxin</h3>
                     <p data-i18n="treatmentBotoxBody">
                         Soften expression lines with carefully targeted treatment while maintaining natural facial movement.
                     </p>
-
                 </div>
-
-                <span
-                    class="treatment-card__arrow"
-                    aria-hidden="true"
-                >
-                    →
-                </span>
-
+                <span class="treatment-card__arrow" aria-hidden="true">→</span>
             </a>
-
         </div>
-
     </div>
-
 </section>
-
 
 <!-- =========================================================
      RESULTS
 ========================================================= -->
-
-<section
-    class="projects projects--new"
-    id="projects"
-    aria-labelledby="projects-title"
->
-
+<section class="projects projects--new" id="projects" aria-labelledby="projects-title">
     <header class="projects__intro container text-center">
-
-        <p
-            class="section-label"
-            data-i18n="projectsLabel"
-        >
+        <p class="section-label" data-i18n="projectsLabel">
             Treatment results
         </p>
 
-        <h2
-            id="projects-title"
-            data-i18n="projectsTitle"
-        >
+        <h2 id="projects-title" data-i18n="projectsTitle">
             A closer look at the work.
         </h2>
 
         <p data-i18n="projectsBody">
             Explore selected aesthetic treatment outcomes through before and after comparisons.
         </p>
-
     </header>
 
-
     <!-- RESULT 01 -->
-
-    <article
-        class="project project--dark section-dark"
-        aria-labelledby="project-one-title"
-    >
-
+    <article class="project project--dark section-dark" aria-labelledby="project-one-title">
         <div class="project__details">
+            <p class="project__number">01 / 03</p>
 
-            <p class="project__number">
-                01 / 03
-            </p>
-
-            <h3
-                id="project-one-title"
-                data-i18n="projectOneTitle"
-            >
+            <h3 id="project-one-title" data-i18n="projectOneTitle">
                 Facial balance
             </h3>
 
@@ -621,102 +262,37 @@
             </p>
 
             <div class="project__actions">
-
-                <a
-                    class="book-button"
-                    href="face_lift.html"
-                    data-i18n="learnMore"
-                >
+                <a class="book-button" href="face_lift.html" data-i18n="learnMore">
                     Learn more
                 </a>
-
-                <a
-                        class="text-link"
-                        href="#contact"
-                        data-i18n="bookNow"
-                    >
-                        Book now
-                    </a>
-
+                <a class="text-link" href="#contact" data-i18n="bookNow">
+                    Book now
+                </a>
             </div>
-
         </div>
 
-
-        <div
-            class="comparison"
-            data-comparison
-            aria-label="Before and after comparison"
-        >
-
+        <div class="comparison" data-comparison aria-label="Before and after comparison">
             <div class="comparison__image comparison__image--before">
-
-                <img
-                    src="images/face1-left.png"
-                    alt="Original view"
-                >
-
+                <img src="images/face1-left.png" alt="Original view">
             </div>
 
             <div class="comparison__image comparison__image--after">
-
-                <img
-                    src="images/face1-right.png"
-                    alt="Enhanced view"
-                >
-
+                <img src="images/face1-right.png" alt="Enhanced view">
             </div>
 
-            <span
-                class="comparison__label comparison__label--before"
-                data-i18n="before"
-            >
-                Before
-            </span>
-
-            <span
-                class="comparison__label comparison__label--after"
-                data-i18n="after"
-            >
-                After
-            </span>
-
-            <div
-                class="comparison__line"
-                aria-hidden="true"
-            ></div>
-
-            <button
-                class="comparison__knob"
-                type="button"
-                aria-label="Move comparison slider"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                aria-valuenow="50"
-            ></button>
-
+            <span class="comparison__label comparison__label--before" data-i18n="before">Before</span>
+            <span class="comparison__label comparison__label--after" data-i18n="after">After</span>
+            <div class="comparison__line" aria-hidden="true"></div>
+            <button class="comparison__knob" type="button" aria-label="Move comparison slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
         </div>
-
     </article>
 
-
     <!-- RESULT 02 -->
-
-    <article
-        class="project project--reverse section-light"
-        aria-labelledby="project-two-title"
-    >
-
+    <article class="project project--reverse section-light" aria-labelledby="project-two-title">
         <div class="project__details">
+            <p class="project__number">02 / 03</p>
 
-            <p class="project__number">
-                02 / 03
-            </p>
-
-            <h3
-                id="project-two-title"
-                data-i18n="projectTwoTitle"
-            >
+            <h3 id="project-two-title" data-i18n="projectTwoTitle">
                 Lip enhancement
             </h3>
 
@@ -725,102 +301,37 @@
             </p>
 
             <div class="project__actions">
-
-                <a
-                    class="book-button"
-                    href="filler.html"
-                    data-i18n="learnMore"
-                >
+                <a class="book-button" href="filler.html" data-i18n="learnMore">
                     Learn more
                 </a>
-
-                <a
-                        class="text-link"
-                        href="#contact"
-                        data-i18n="bookNow"
-                    >
-                        Book now
-                    </a>
-
+                <a class="text-link" href="#contact" data-i18n="bookNow">
+                    Book now
+                </a>
             </div>
-
         </div>
 
-
-        <div
-            class="comparison"
-            data-comparison
-            aria-label="Before and after comparison"
-        >
-
+        <div class="comparison" data-comparison aria-label="Before and after comparison">
             <div class="comparison__image comparison__image--before">
-
-                <img
-                    src="images/lips-left.png"
-                    alt="Original view"
-                >
-
+                <img src="images/lips-left.png" alt="Original view">
             </div>
 
             <div class="comparison__image comparison__image--after">
-
-                <img
-                    src="images/lips-right.png"
-                    alt="Enhanced view"
-                >
-
+                <img src="images/lips-right.png" alt="Enhanced view">
             </div>
 
-            <span
-                class="comparison__label comparison__label--before"
-                data-i18n="before"
-            >
-                Before
-            </span>
-
-            <span
-                class="comparison__label comparison__label--after"
-                data-i18n="after"
-            >
-                After
-            </span>
-
-            <div
-                class="comparison__line"
-                aria-hidden="true"
-            ></div>
-
-            <button
-                class="comparison__knob"
-                type="button"
-                aria-label="Move comparison slider"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                aria-valuenow="50"
-            ></button>
-
+            <span class="comparison__label comparison__label--before" data-i18n="before">Before</span>
+            <span class="comparison__label comparison__label--after" data-i18n="after">After</span>
+            <div class="comparison__line" aria-hidden="true"></div>
+            <button class="comparison__knob" type="button" aria-label="Move comparison slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
         </div>
-
     </article>
 
-
     <!-- RESULT 03 -->
-
-    <article
-        class="project project--dark section-dark"
-        aria-labelledby="project-three-title"
-    >
-
+    <article class="project project--dark section-dark" aria-labelledby="project-three-title">
         <div class="project__details">
+            <p class="project__number">03 / 03</p>
 
-            <p class="project__number">
-                03 / 03
-            </p>
-
-            <h3
-                id="project-three-title"
-                data-i18n="projectThreeTitle"
-            >
+            <h3 id="project-three-title" data-i18n="projectThreeTitle">
                 Expression softening
             </h3>
 
@@ -829,675 +340,211 @@
             </p>
 
             <div class="project__actions">
-
-                <a
-                    class="book-button"
-                    href="botox.html"
-                    data-i18n="learnMore"
-                >
+                <a class="book-button" href="botox.html" data-i18n="learnMore">
                     Learn more
                 </a>
-
-                <a
-                        class="text-link"
-                        href="#contact"
-                        data-i18n="bookNow"
-                    >
-                        Book now
-                    </a>
-
+                <a class="text-link" href="#contact" data-i18n="bookNow">
+                    Book now
+                </a>
             </div>
-
         </div>
 
-
-        <div
-            class="comparison"
-            data-comparison
-            aria-label="Before and after comparison"
-        >
-
+        <div class="comparison" data-comparison aria-label="Before and after comparison">
             <div class="comparison__image comparison__image--before">
-
-                <img
-                    src="images/botox-left.png"
-                    alt="Original view"
-                >
-
+                <img src="images/botox-left.png" alt="Original view">
             </div>
 
             <div class="comparison__image comparison__image--after">
-
-                <img
-                    src="images/botox-right.png"
-                    alt="Enhanced view"
-                >
-
+                <img src="images/botox-right.png" alt="Enhanced view">
             </div>
 
-            <span
-                class="comparison__label comparison__label--before"
-                data-i18n="before"
-            >
-                Before
-            </span>
-
-            <span
-                class="comparison__label comparison__label--after"
-                data-i18n="after"
-            >
-                After
-            </span>
-
-            <div
-                class="comparison__line"
-                aria-hidden="true"
-            ></div>
-
-            <button
-                class="comparison__knob"
-                type="button"
-                aria-label="Move comparison slider"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                aria-valuenow="50"
-            ></button>
-
+            <span class="comparison__label comparison__label--before" data-i18n="before">Before</span>
+            <span class="comparison__label comparison__label--after" data-i18n="after">After</span>
+            <div class="comparison__line" aria-hidden="true"></div>
+            <button class="comparison__knob" type="button" aria-label="Move comparison slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
         </div>
-
     </article>
-
 </section>
-
 
 <!-- =========================================================
      WHY CHOOSE
 ========================================================= -->
-
 <section class="why-section">
-
     <div class="container">
-
         <div class="section-heading section-heading--light">
-
-            <p
-                class="section-label"
-                data-i18n="whyLabel"
-            >
+            <p class="section-label" data-i18n="whyLabel">
                 The approach
             </p>
 
             <h2 data-i18n="whyTitle">
                 Natural results start with thoughtful care.
             </h2>
-
         </div>
 
-
         <div class="why-grid">
-
             <article class="why-card">
-
-                <span>
-                    01
-                </span>
-
-                <h3 data-i18n="whyOneTitle">
-                    Listen first
-                </h3>
-
+                <span>01</span>
+                <h3 data-i18n="whyOneTitle">Listen first</h3>
                 <p data-i18n="whyOneBody">
                     Understanding your concerns and expectations is the starting point for every treatment plan.
                 </p>
-
             </article>
 
-
             <article class="why-card">
-
-                <span>
-                    02
-                </span>
-
-                <h3 data-i18n="whyTwoTitle">
-                    Assess carefully
-                </h3>
-
+                <span>02</span>
+                <h3 data-i18n="whyTwoTitle">Assess carefully</h3>
                 <p data-i18n="whyTwoBody">
                     Your skin, facial anatomy, concerns, and individual needs are considered before treatment.
                 </p>
-
             </article>
 
-
             <article class="why-card">
-
-                <span>
-                    03
-                </span>
-
-                <h3 data-i18n="whyThreeTitle">
-                    Treat precisely
-                </h3>
-
+                <span>03</span>
+                <h3 data-i18n="whyThreeTitle">Treat precisely</h3>
                 <p data-i18n="whyThreeBody">
                     Treatments are selected and performed with attention to proportion, balance, and natural expression.
                 </p>
-
             </article>
 
-
             <article class="why-card">
-
-                <span>
-                    04
-                </span>
-
-                <h3 data-i18n="whyFourTitle">
-                    Follow up
-                </h3>
-
+                <span>04</span>
+                <h3 data-i18n="whyFourTitle">Follow up</h3>
                 <p data-i18n="whyFourBody">
                     Your progress matters beyond the treatment itself, with appropriate follow-up and aftercare guidance.
                 </p>
-
             </article>
-
         </div>
-
     </div>
-
 </section>
-
 
 <!-- =========================================================
      JOURNEY
 ========================================================= -->
-
-<section
-    class="journey-section section-light"
-    id="journey"
-    aria-labelledby="journey-title"
->
-
+<section class="journey-section section-light" id="journey" aria-labelledby="journey-title">
     <div class="container">
-
         <div class="section-heading">
-
-            <p
-                class="section-label"
-                data-i18n="journeyLabel"
-            >
+            <p class="section-label" data-i18n="journeyLabel">
                 Your journey
             </p>
 
-            <h2
-                id="journey-title"
-                data-i18n="journeyTitle"
-            >
+            <h2 id="journey-title" data-i18n="journeyTitle">
                 From consultation to confident care.
             </h2>
-
         </div>
 
-
         <div class="journey-list">
-
-
             <article class="journey-step">
-
-                <div class="journey-step__number">
-                    01
-                </div>
-
+                <div class="journey-step__number">01</div>
                 <div>
-
-                    <h3 data-i18n="journeyOneTitle">
-                        Consultation
-                    </h3>
-
+                    <h3 data-i18n="journeyOneTitle">Consultation</h3>
                     <p data-i18n="journeyOneBody">
                         Discuss your concerns, goals, previous treatments, and what you would like to achieve.
                     </p>
-
                 </div>
-
             </article>
 
-
             <article class="journey-step">
-
-                <div class="journey-step__number">
-                    02
-                </div>
-
+                <div class="journey-step__number">02</div>
                 <div>
-
-                    <h3 data-i18n="journeyTwoTitle">
-                        Assessment
-                    </h3>
-
+                    <h3 data-i18n="journeyTwoTitle">Assessment</h3>
                     <p data-i18n="journeyTwoBody">
                         Your skin and facial features are assessed to understand which treatment options may be appropriate.
                     </p>
-
                 </div>
-
             </article>
 
-
             <article class="journey-step">
-
-                <div class="journey-step__number">
-                    03
-                </div>
-
+                <div class="journey-step__number">03</div>
                 <div>
-
-                    <h3 data-i18n="journeyThreeTitle">
-                        Personalized plan
-                    </h3>
-
+                    <h3 data-i18n="journeyThreeTitle">Personalized plan</h3>
                     <p data-i18n="journeyThreeBody">
                         A treatment approach is selected according to your individual anatomy, concerns, and goals.
                     </p>
-
                 </div>
-
             </article>
 
-
             <article class="journey-step">
-
-                <div class="journey-step__number">
-                    04
-                </div>
-
+                <div class="journey-step__number">04</div>
                 <div>
-
-                    <h3 data-i18n="journeyFourTitle">
-                        Follow-up
-                    </h3>
-
+                    <h3 data-i18n="journeyFourTitle">Follow-up</h3>
                     <p data-i18n="journeyFourBody">
                         Your recovery and results are monitored, with guidance on aftercare and future treatment when appropriate.
                     </p>
-
                 </div>
-
             </article>
-
         </div>
-
     </div>
-
 </section>
-
 
 <!-- =========================================================
      FAQ
 ========================================================= -->
-
-<section
-    class="home-faq"
-    id="faq"
-    aria-labelledby="faq-title"
->
-
+<section class="home-faq" id="faq" aria-labelledby="faq-title">
     <div class="container">
-
         <div class="section-heading section-heading--light">
-
-            <p
-                class="section-label"
-                data-i18n="faqLabel"
-            >
+            <p class="section-label" data-i18n="faqLabel">
                 Frequently asked questions
             </p>
 
-            <h2
-                id="faq-title"
-                data-i18n="faqHomeTitle"
-            >
+            <h2 id="faq-title" data-i18n="faqHomeTitle">
                 Before your consultation.
             </h2>
-
         </div>
 
-
-        <div
-            class="accordion accordion-flush home-faq__accordion"
-            id="homeFaqAccordion"
-        >
-
-
+        <div class="accordion accordion-flush home-faq__accordion" id="homeFaqAccordion">
             <div class="accordion-item">
-
                 <h3 class="accordion-header">
-
-                    <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#homeFaqOne"
-                        aria-expanded="false"
-                        aria-controls="homeFaqOne"
-                        data-i18n="homeFaqQ1"
-                    >
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#homeFaqOne" aria-expanded="false" aria-controls="homeFaqOne" data-i18n="homeFaqQ1">
                         How do I know which treatment is right for me?
                     </button>
-
                 </h3>
-
-                <div
-                    id="homeFaqOne"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#homeFaqAccordion"
-                >
-
-                    <div
-                        class="accordion-body"
-                        data-i18n="homeFaqA1"
-                    >
+                <div id="homeFaqOne" class="accordion-collapse collapse" data-bs-parent="#homeFaqAccordion">
+                    <div class="accordion-body" data-i18n="homeFaqA1">
                         The appropriate treatment depends on your concerns, skin condition, anatomy, medical history, and goals. A consultation allows the doctor to assess these factors and discuss suitable options.
-
                     </div>
-
                 </div>
-
             </div>
 
-
             <div class="accordion-item">
-
                 <h3 class="accordion-header">
-
-                    <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#homeFaqTwo"
-                        aria-expanded="false"
-                        aria-controls="homeFaqTwo"
-                        data-i18n="homeFaqQ2"
-                    >
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#homeFaqTwo" aria-expanded="false" aria-controls="homeFaqTwo" data-i18n="homeFaqQ2">
                         Are aesthetic treatments personalized?
                     </button>
-
                 </h3>
-
-                <div
-                    id="homeFaqTwo"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#homeFaqAccordion"
-                >
-
-                    <div
-                        class="accordion-body"
-                        data-i18n="homeFaqA2"
-                    >
+                <div id="homeFaqTwo" class="accordion-collapse collapse" data-bs-parent="#homeFaqAccordion">
+                    <div class="accordion-body" data-i18n="homeFaqA2">
                         Yes. Treatment areas, techniques, products, and amounts are selected according to the individual rather than using a single approach for everyone.
-
                     </div>
-
                 </div>
-
             </div>
-
 
             <div class="accordion-item">
-
                 <h3 class="accordion-header">
-
-                    <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#homeFaqThree"
-                        aria-expanded="false"
-                        aria-controls="homeFaqThree"
-                        data-i18n="homeFaqQ3"
-                    >
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#homeFaqThree" aria-expanded="false" aria-controls="homeFaqThree" data-i18n="homeFaqQ3">
                         Can I discuss several concerns during one consultation?
                     </button>
-
                 </h3>
-
-                <div
-                    id="homeFaqThree"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#homeFaqAccordion"
-                >
-
-                    <div
-                        class="accordion-body"
-                        data-i18n="homeFaqA3"
-                    >
+                <div id="homeFaqThree" class="accordion-collapse collapse" data-bs-parent="#homeFaqAccordion">
+                    <div class="accordion-body" data-i18n="homeFaqA3">
                         Yes. A consultation can be used to discuss your different concerns and understand which treatments may be suitable individually or as part of a broader treatment plan.
-
                     </div>
-
                 </div>
-
             </div>
-
-
         </div>
-
     </div>
-
 </section>
-
 
 <!-- =========================================================
-     CONTACT / CTA
+     CENTRAL CONTACT / CTA (Managed via components.js)
 ========================================================= -->
-
-<section
-    class="content-section home-contact container"
-    id="contact"
-    aria-labelledby="contact-title"
->
-
-    <div class="home-contact__content">
-
-        <p
-            class="section-label"
-            data-i18n="contactLabel"
-        >
-            Begin a conversation
-        </p>
-
-        <h2
-            id="contact-title"
-            data-i18n="contactTitle"
-        >
-            Start with a dermatology consultation.
-        </h2>
-
-        <p data-i18n="contactBody">
-            Appointments are available at Cosmesurge Abu Dhabi for clinical dermatology, laser, and aesthetic treatments.
-        </p>
-
-        <div class="home-contact__actions">
-
-            <a
-                class="book-button"
-                href="tel:+97180026763"
-                data-i18n="callNow"
-            >
-                Call to book
-            </a>
-
-            <a
-                class="text-link"
-                href="https://wa.me/971544052905"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-i18n="whatsapp"
-            >
-                WhatsApp
-                <span aria-hidden="true">→</span>
-            </a>
-
-        </div>
-
-    </div>
-
-    <!-- Consultation image -->
-    <figure class="home-contact__image">
-        <img
-            src="images/consult.png"
-            alt="Dermatology consultation"
-        >
-    </figure>
-
-</section>
-
+<div id="cta-mount"></div>
 
 </main>
 
-
 <!-- =========================================================
-     FOOTER
+     CENTRAL FOOTER (Managed via components.js)
 ========================================================= -->
-
-<footer class="site-footer">
-
-    <div class="site-footer__main container">
-
-        <div>
-
-            <p
-                class="site-footer__brand"
-                data-i18n="brand"
-            >
-                Dr. Reham
-            </p>
-
-            <p
-                class="site-footer__muted"
-                data-i18n="footerSpecialty"
-            >
-                Specialist Dermatologist · Cosmesurge Abu Dhabi
-            </p>
-
-        </div>
-
-
-        <div class="site-footer__column">
-
-            <p
-                class="site-footer__heading"
-                data-i18n="footerContact"
-            >
-                Contact
-            </p>
-
-            <a href="tel:+97180026763">
-                +971 800 26763
-            </a>
-
-            <a
-                href="https://wa.me/971544052905"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                WhatsApp
-            </a>
-
-        </div>
-
-
-        <div class="site-footer__column">
-
-            <p
-                class="site-footer__heading"
-                data-i18n="footerFollow"
-            >
-                Follow
-            </p>
-
-            <a
-                href="https://www.instagram.com/dr.reham.kolib/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Instagram · @dr.reham.kolib
-            </a>
-
-            <a
-                href="https://www.snapchat.com/add/drrehamkolib"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Snapchat · @drrehamkolib
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="site-footer__map container">
-
-        <div>
-
-            <p
-                class="site-footer__heading"
-                data-i18n="footerVisit"
-            >
-                Visit the clinic
-            </p>
-
-            <p
-                class="site-footer__muted"
-                data-i18n="footerAddress"
-            >
-                Cosmesurge Abu Dhabi, Delma region, Abu Dhabi, UAE
-            </p>
-
-            <a
-                href="https://m.edarabia.com/dr-reham-kolib/"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-i18n="viewLocation"
-            >
-                View location details
-            </a>
-
-        </div>
-
-
-        <iframe
-            title="Cosmesurge Abu Dhabi location map"
-            src="https://www.google.com/maps?q=Cosmesurge+Abu Dhabi&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-
-    </div>
-
-
-    <div class="site-footer__bottom container">
-
-        <span data-i18n="footerCopyright">
-            © 2026 Dr. Reham Kolib. All rights reserved.
-        </span>
-
-        <a
-            href="https://m.edarabia.com/dr-reham-kolib/"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="profileSource"
-        >
-            Professional profile
-        </a>
-
-    </div>
-
-</footer>
-
+<div id="footer-mount"></div>
 
 <!-- Bootstrap -->
 <script
@@ -1506,6 +553,10 @@
     crossorigin="anonymous"
 ></script>
 
+<!-- Central Components -->
+<script src="components.js"></script>
+
+<!-- Site Script -->
 <script src="script.js" defer></script>
 
 </body>
