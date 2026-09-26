@@ -848,7 +848,7 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   color:var(--gold-soft);
   box-shadow:none;
   font-family:"Cormorant Garamond", serif;
-  font-size:clamp(1.8rem, 3vw, 2.8rem)
+  font-size:clamp(2.5rem, 3vw, 2.8rem)
 }
 .home-faq .accordion-button::after {
   filter:brightness(0) invert(1)
@@ -3336,5 +3336,147 @@ iframe {
     100% {
         opacity: 1;
         transform: scale(1.04);
+    }
+}
+@media (max-width: 991.98px) {
+
+    /* =========================
+       PROJECT / RESULTS SECTION
+       ========================= */
+
+    .project__details h3 {
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+    }
+
+    .project__details {
+        padding-bottom: 1rem;
+    }
+
+    .project__details .book-button,
+    .project__details .text-link {
+        margin-bottom: 0;
+    }
+
+    .comparison {
+        margin-top: 1.2rem;
+    }
+
+
+    /* =========================
+       TREATMENT CARDS
+       ========================= */
+
+    .treatment-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .treatment-card {
+        min-height: 0;
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .treatment-card h3 {
+        font-size: 1.45rem;
+        line-height: 1.15;
+    }
+
+    .treatment-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       CONSULTATION
+       ========================= */
+
+    .home-contact {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .home-contact__content {
+        padding: 0;
+    }
+
+    .home-contact__content h2 {
+        font-size: 2rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+
+    .home-contact__content > p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.25rem;
+    }
+
+    .home-contact__actions {
+        margin-top: 1rem;
+    }
+
+    .home-contact__image {
+        margin-top: 1.5rem;
+    }
+
+    .home-contact__image img {
+        max-height: 320px;
+        object-fit: cover;
+    }
+}
+@media (max-width: 576px) {
+
+    /* Project titles */
+    .project__details h3 {
+        font-size: 1.65rem;
+    }
+
+    /* Reduce space between project buttons and comparison */
+    .project__details {
+        padding-bottom: 0.5rem;
+    }
+
+    .comparison {
+        margin-top: 0.8rem;
+    }
+
+    /* Smaller treatment cards */
+    .treatment-card {
+        padding: 1.25rem;
+    }
+
+    .treatment-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .treatment-card p {
+        font-size: 0.92rem;
+    }
+
+    /* More compact consultation */
+    .home-contact {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .home-contact__content h2 {
+        font-size: 1.8rem;
+    }
+
+    .home-contact__image {
+        margin-top: 1.25rem;
+    }
+
+    .home-contact__image img {
+        max-height: 260px;
+    }
+}
+@media (max-width: 768px) {
+    .hero__panel {
+        background-position: left center !important;
     }
 }
