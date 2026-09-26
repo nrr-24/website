@@ -13,7 +13,10 @@
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+>
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="stylesheet.css">
 
@@ -100,19 +103,18 @@
                 </h2>
             </div>
 
-            <div id="procedure-carousel" class="carousel slide procedure-carousel" data-bs-ride="carousel" data-bs-interval="2500">
-                <div class="carousel-inner"></div>
+            <div id="procedure-carousel" class="procedure-carousel swiper">
 
-                <button class="carousel-control-prev" type="button" data-bs-target="#procedure-carousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden" data-i18n="galleryPrevious">Previous image</span>
-                </button>
+    <div class="swiper-wrapper">
+        <!-- Images are inserted by JS -->
+    </div>
 
-                <button class="carousel-control-next" type="button" data-bs-target="#procedure-carousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden" data-i18n="galleryNext">Next image</span>
-                </button>
-            </div>
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
         </section>
 
         <!-- IMAGE MODAL -->
@@ -239,6 +241,7 @@
     <div id="footer-mount"></div>
 
     <!-- Scripts -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
     <script src="components.js"></script>
     <script src="script.js" defer></script>

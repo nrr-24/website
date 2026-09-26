@@ -1148,7 +1148,7 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   max-width:60rem;
   min-height:45vh;
   margin-inline:auto;
-  padding-block:8rem
+  padding-block:2rem;
 }
 .detail-main h2 {
   max-width:42rem;
@@ -1255,22 +1255,93 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   background:var(--ink);
   color:var(--gold-soft)
 }
+/* =========================================================
+   PROCEDURE GALLERY — SWIPER COVERFLOW
+========================================================= */
+
 .procedure-carousel {
-  width:min(90vw, 60rem);
-  max-width:60rem;
-  margin:3rem auto 0;
-  background:#30271e;
-  box-shadow:0 1.5rem 4rem rgba(0, 0, 0, 0.35)
+    width: 100%;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+    padding: 2rem 0 4rem;
+    overflow: hidden;
 }
-.procedure-carousel .carousel-item {
-  height:min(75svh, 50rem);
-  background:#30271e
+
+.procedure-carousel .swiper-wrapper {
+    align-items: center;
 }
-.procedure-carousel .carousel-item img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center
+
+.procedure-carousel .swiper-slide {
+    width: 300px;
+    height: 450px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #30271e;
+    cursor: grab;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35);
+}
+
+.procedure-carousel .swiper-slide:active {
+    cursor: grabbing;
+}
+
+.procedure-carousel .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Pagination */
+
+.procedure-carousel .swiper-pagination {
+    bottom: 0;
+}
+
+.procedure-carousel .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: var(--gold-soft);
+    opacity: 0.4;
+}
+
+.procedure-carousel .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--gold);
+}
+
+/* Arrows */
+
+.procedure-carousel .swiper-button-prev,
+.procedure-carousel .swiper-button-next {
+    color: var(--gold);
+    width: 45px;
+    height: 45px;
+}
+
+.procedure-carousel .swiper-button-prev::after,
+.procedure-carousel .swiper-button-next::after {
+    font-size: 20px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .procedure-carousel {
+        width: 100%;
+        padding: 1.5rem 0 3.5rem;
+    }
+
+    .procedure-carousel .swiper-slide {
+        width: 240px;
+        height: 360px;
+    }
+
+    .procedure-carousel .swiper-button-prev,
+    .procedure-carousel .swiper-button-next {
+        display: none;
+    }
 }
 .procedure-gallery-image {
   cursor:pointer;
@@ -1942,7 +2013,7 @@ html[dir="rtl"] .project--reverse .project__details h3 {
 }
 .detail-main {
   min-height:45vh;
-  padding-block:5rem
+  /* padding-block:5rem */
 }
 .procedure-booking {
   padding-block:5rem

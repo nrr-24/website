@@ -685,37 +685,82 @@ const initializeProcedureGallery = () => {
     });
 
     document.querySelectorAll(".procedure-carousel").forEach((carousel) => {
-        const carouselInner = carousel.querySelector(".carousel-inner");
-        if (!carouselInner) return;
 
-        carouselInner.innerHTML = "";
+    const carouselInner =
+        carousel.querySelector(".swiper-wrapper");
 
-        images.forEach((image, index) => {
-            const item = document.createElement("div");
-            item.className = `carousel-item${index === 0 ? " active" : ""}`;
+    if (!carouselInner) return;
 
-            const img = document.createElement("img");
-            img.src = image;
-            img.className = "d-block w-100 procedure-gallery-image";
-            img.alt = `Treatment result ${index + 1}`;
+    carouselInner.innerHTML = "";
 
-            img.addEventListener("click", () => {
-                openImageModal(index);
-            });
+const repeatedImages = [...images, ...images, ...images];
 
-            item.appendChild(img);
-            carouselInner.appendChild(item);
-        });
+repeatedImages.forEach((image, index) => {
 
-        if (images.length <= 1) {
-            carousel.querySelector(".carousel-control-prev")?.remove();
-            carousel.querySelector(".carousel-control-next")?.remove();
-            carousel.removeAttribute("data-bs-ride");
-            carousel.removeAttribute("data-bs-interval");
-        }
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide";
+
+    const img = document.createElement("img");
+
+    img.src = image;
+    img.alt = `Treatment result ${(index % images.length) + 1}`;
+    img.className = "procedure-gallery-image";
+
+    img.addEventListener("click", () => {
+        openImageModal(index % images.length);
     });
-};
 
+    slide.appendChild(img);
+    carouselInner.appendChild(slide);
+});
+
+    if (images.length <= 1) return;
+
+new Swiper(carousel, {
+    effect: "coverflow",
+
+    grabCursor: true,
+    centeredSlides: true,
+
+    slidesPerView: "auto",
+    spaceBetween: 25,
+
+    loop: true,
+    loopAdditionalSlides: images.length,
+
+    speed: 1200,
+
+    autoplay: {
+        delay: 1200,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false
+    },
+
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 120,
+        modifier: 2.5,
+        slideShadows: true
+    },
+
+    keyboard: {
+        enabled: true
+    },
+
+    navigation: {
+        nextEl: carousel.querySelector(".swiper-button-next"),
+        prevEl: carousel.querySelector(".swiper-button-prev")
+    },
+
+    pagination: {
+        el: carousel.querySelector(".swiper-pagination"),
+        clickable: true
+    }
+});
+
+});
+};
 /* =========================================================
    LANGUAGE
 ========================================================= */
