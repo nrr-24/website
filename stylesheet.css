@@ -873,7 +873,7 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   padding-bottom:5rem
 }
 .home-contact__content {
-  max-width:52rem
+  /* max-width:52rem */
 }
 .home-contact__image {
   position:relative;
@@ -888,10 +888,10 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   padding:0.65rem
 }
 .home-contact__content {
-  max-width:52rem
+  /* max-width:52rem */
 }
 .home-contact h2 {
-  max-width:48rem;
+  /* max-width:48rem; */
   margin:0 0 1.5rem;
   font-family:"Cormorant Garamond", serif;
   font-size:clamp(4rem, 7vw, 7rem);
@@ -899,7 +899,7 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   line-height:0.85
 }
 .home-contact p:not(.section-label) {
-  max-width:34rem;
+  /* max-width:34rem; */
   margin:0;
   color:#635b52;
   line-height:1.8
@@ -917,9 +917,11 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   gap:clamp(2rem, 6vw, 5rem);
   min-height:auto;
   align-items:center;
-  max-width:75rem;
-  padding-top:4rem;
-  padding-bottom:4rem
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding-block:4rem;
+  padding-inline:max(2rem, calc((100% - 75rem) / 2));
 }
 .about-section h2 {
   max-width:42rem;
@@ -1026,10 +1028,9 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   line-height:1.8
 }
 .content-section {
-  width:100%;
-  max-width:72rem;
-  margin-inline:auto;
-  padding-block:8rem
+    width: 100%;
+    max-width: none;
+    margin: 0;
 }
 .content-section h2 {
   max-width:45rem;
@@ -1955,7 +1956,12 @@ html[dir="rtl"] .project--reverse .project__details h3 {
 }
 .home-contact {
   min-height:auto;
-  padding-block:5rem
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(20rem, 0.75fr);
+  align-items:center;
+  gap:clamp(3rem, 7vw, 7rem);
+  padding-block:5rem;
+  padding-inline:max(2rem, calc((100% - 75rem) / 2));
 }
 .home-contact h2 {
   font-size:clamp(3.5rem, 14vw, 5rem)
@@ -2129,17 +2135,17 @@ html[dir="rtl"] .quick-stats__item:last-child {
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
-  opacity:0.35;
+  /* opacity:0.35; */
   pointer-events:none;
   z-index:0;
-  -webkit-mask-image:linear-gradient( to bottom, transparent 0%, black 25%, black 75%, transparent 100% );
-  mask-image:linear-gradient( to bottom, transparent 0%, black 25%, black 75%, transparent 100% )
+  /* -webkit-mask-image:linear-gradient( to bottom, transparent 0%, black 25%, black 75%, transparent 100% );
+  mask-image:linear-gradient( to bottom, transparent 0%, black 25%, black 75%, transparent 100% ) */
 }
 .section-dark::before {
-  background-image:url("images/gold-blob-bg.png")
+  background-image:url("images/butterfly-arrow-bg.png")
 }
 .section-light::before {
-  background-image:url("images/gold-blob-bg.png")
+  background-image:url("images/butterfly-arrow-bg.png")
 }
 .section-dark>*, .section-light>* {
   position:relative;
@@ -2220,9 +2226,9 @@ section, article, .quick-stats, .site-footer {
   right:-1.5rem;
   top:15%;
   border-radius:50%;
-  background:radial-gradient( circle, var(--rose-soft) 0%, rgba(232, 184, 173, 0.25) 45%, transparent 70% );
+  /* background:radial-gradient( circle, var(--rose-soft) 0%, rgba(232, 184, 173, 0.25) 45%, transparent 70% ); */
   filter:blur(2px);
-  animation:floatingOrb 5s ease-in-out infinite;
+  /* animation:floatingOrb 5s ease-in-out infinite; */
   pointer-events:none
 }
 .about-section__portrait img {
@@ -2472,15 +2478,33 @@ section, article, .quick-stats, .site-footer {
   content:"";
   position:absolute;
   inset:0;
-  background-image:url("images/gold-blob-bg.png");
+  background-image:url("images/butterfly-arrow-bg.png"); 
+  /* bg section image */
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
-  opacity:0.28;
+  opacity:0.3;
   pointer-events:none;
   z-index:-1;
-  -webkit-mask-image:linear-gradient( to bottom, transparent 0%, rgba(0, 0, 0, 0.15) 15%, black 40%, black 60%, rgba(0, 0, 0, 0.15) 85%, transparent 100% );
-  mask-image:linear-gradient( to bottom, transparent 0%, rgba(0, 0, 0, 0.15) 15%, black 40%, black 60%, rgba(0, 0, 0, 0.15) 85%, transparent 100% );
+-webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.65) 15%,
+    black 35%,
+    black 65%,
+    rgba(0, 0, 0, 0.65) 85%,
+    rgba(0, 0, 0, 0.35) 100%
+);
+
+mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.65) 15%,
+    black 35%,
+    black 65%,
+    rgba(0, 0, 0, 0.65) 85%,
+    rgba(0, 0, 0, 0.35) 100%
+);
   animation:patternDrift 18s ease-in-out infinite alternate
 }
 .section-dark>*, .section-light>* {
@@ -2970,7 +2994,7 @@ p {
   border-radius:50%;
   pointer-events:none;
   opacity:.12;
-  filter:blur(25px);
+  /* filter:blur(25px); */
   animation:sectionOrb 7s ease-in-out infinite
 }
 .section-dark::after {
@@ -2999,7 +3023,7 @@ p {
   transform:translateY(-8px)
 }
 }
-@keyframes mobileDoctorGlow {
+/* @keyframes mobileDoctorGlow {
   0%, 100% {
   transform:scale(.9);
   opacity:.5
@@ -3008,15 +3032,15 @@ p {
   transform:scale(1.15);
   opacity:.9
 }
-}
-@keyframes sectionOrb {
+} */
+/* @keyframes sectionOrb {
   0%, 100% {
   transform:translateY(0) scale(1)
 }
 50% {
   transform:translateY(-25px) scale(1.12)
 }
-}
+} */
 @media (prefers-reduced-motion:reduce) {
   *, *::before, *::after {
   animation-duration:.01ms !important;
@@ -3488,3 +3512,244 @@ iframe {
     }
 
 }
+/* =========================================
+   BUTTERFLY PARTICLE BUTTON
+   ========================================= */
+
+.particle-btn {
+    position: relative;
+    overflow: hidden !important;
+}
+
+/* Transparent animation layer */
+/* .particle-btn::after {
+    content: "";
+    position: absolute;
+    inset: -35px;
+    pointer-events: none;
+    z-index: 10;
+} */
+
+/* Container created by JS */
+.particle-layer {
+    position: absolute;
+    inset: -60px;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 20;
+}
+
+/* Butterfly particles */
+.butterfly-particle {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+
+    will-change: transform, opacity;
+}
+
+/* Tiny sparkles */
+.sparkle-particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+
+    background: currentColor;
+    border-radius: 50%;
+
+    pointer-events: none;
+    user-select: none;
+
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+
+    box-shadow:
+        0 0 5px currentColor,
+        0 0 10px currentColor;
+
+    will-change: transform, opacity;
+}
+
+/* Four-point sparkle */
+.sparkle-particle::before,
+.sparkle-particle::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 2px;
+    height: 14px;
+
+    background: currentColor;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+}
+
+.sparkle-particle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+
+/* =========================================
+   HOVER FLOAT
+   ========================================= */
+
+.butterfly-float {
+    animation: butterflyFloat 2.8s ease-in-out forwards;
+}
+
+.sparkle-float {
+    animation: sparkleFloat 2s ease-in-out forwards;
+}
+
+@keyframes butterflyFloat {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            translate(0, 8px)
+            rotate(-8deg)
+            scale(0.5);
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            translate(var(--x), var(--y))
+            rotate(var(--rotation))
+            scale(0.8);
+    }
+}
+
+
+@keyframes sparkleFloat {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            translate(0, 5px)
+            scale(0);
+    }
+
+    25% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            translate(0, 0)
+            scale(1);
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            translate(var(--x), var(--y))
+            scale(0.2);
+    }
+}
+
+
+/* =========================================
+   CLICK BURST
+   ========================================= */
+
+.butterfly-burst {
+    animation: butterflyBurst 900ms cubic-bezier(.15,.75,.25,1) forwards;
+}
+
+.sparkle-burst {
+    animation: sparkleBurst 650ms cubic-bezier(.15,.75,.25,1) forwards;
+}
+
+
+@keyframes butterflyBurst {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(0.8)
+            rotate(0deg);
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            translate(var(--x), var(--y))
+            rotate(var(--rotation))
+            scale(1);
+    }
+}
+
+
+@keyframes sparkleBurst {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+    }
+
+    15% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            translate(var(--x), var(--y))
+            scale(0.1);
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .particle-layer {
+        display: none;
+    }
+
+}
+/* .about-section,
+.home-contact{
+    width: min(1200px, 92%);
+    margin-left: auto;
+    margin-right: auto;
+    padding-block: 4rem;
+    position: relative;
+} */
