@@ -3753,3 +3753,9 @@ iframe {
     padding-block: 4rem;
     position: relative;
 } */
+ @media (orientation: portrait) {
+    .section-dark::before,
+    .section-light::before {
+        background-image: url("images/mobile-gold-butterfly.png");
+    }
+}
