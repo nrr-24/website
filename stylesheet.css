@@ -869,8 +869,11 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   grid-template-columns:minmax(0, 1fr) minmax(20rem, 0.75fr);
   align-items:center;
   gap:clamp(3rem, 7vw, 7rem);
-  padding-top:5rem;
-  padding-bottom:5rem
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding-block:5rem;
+  padding-inline:max(2rem, calc((100% - 75rem) / 2));
 }
 .home-contact__content {
   /* max-width:52rem */
@@ -1956,12 +1959,8 @@ html[dir="rtl"] .project--reverse .project__details h3 {
 }
 .home-contact {
   min-height:auto;
-  display:grid;
-  grid-template-columns:minmax(0, 1fr) minmax(20rem, 0.75fr);
-  align-items:center;
-  gap:clamp(3rem, 7vw, 7rem);
   padding-block:5rem;
-  padding-inline:max(2rem, calc((100% - 75rem) / 2));
+  width: 100%;
 }
 .home-contact h2 {
   font-size:clamp(3.5rem, 14vw, 5rem)
@@ -3745,17 +3744,62 @@ iframe {
     }
 
 }
-/* .about-section,
-.home-contact{
-    width: min(1200px, 92%);
-    margin-left: auto;
-    margin-right: auto;
-    padding-block: 4rem;
-    position: relative;
-} */
- @media (orientation: portrait) {
+
+/* =========================================
+   PORTRAIT ORIENTATION BACKGROUND
+   ========================================= */
+
+@media (orientation: portrait) {
+
     .section-dark::before,
     .section-light::before {
         background-image: url("images/mobile-gold-butterfly.png");
     }
+
+}
+.accordion-button::before {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-inline-end: 0.85rem;
+    background-image: url("images/side-butterfly-gold.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    transition: transform 300ms ease;
+}
+.accordion-button:hover::before {
+    transform: scale(1.15) rotate(-8deg);
+}
+.site-footer__column a::before {
+    content: "";
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-inline-end: 0.5rem;
+    background-image: url("images/side-butterfly-gold.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: -2px;
+    opacity: 0.85;
+    transition: opacity 200ms ease, transform 200ms ease;
+}
+.site-footer__column a:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.procedure-info__grid strong::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-inline-end: 0.5rem;
+    background-image: url("images/side-butterfly-gold.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: -2px;
 }
