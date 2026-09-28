@@ -81,7 +81,7 @@
             </p>
 
             <div class="hero__actions">
-                <a class="book-button " href="#contact" data-i18n="bookConsultation">
+                <a class="book-button particle-btn" href="#contact" data-i18n="bookConsultation">
                     Book a consultation
                 </a>
 
@@ -138,7 +138,7 @@
             Dr. Reham Kolib is a Specialist Dermatologist with over 10 years of experience assessing and treating clinical and cosmetic dermatological conditions. After earning her master’s degree in 2018, she pursued advanced certifications in laser and aesthetic treatments. Her practice is grounded in careful listening and customized treatment plans, because every patient and every skin is different.
         </p>
 
-        <a class="text-link" href="#journey" data-i18n="aboutLearnMore">
+        <a class="text-link particle-btn" href="#journey" data-i18n="aboutLearnMore">
             Discover the approach
             <span aria-hidden="true">→</span>
         </a>
@@ -174,9 +174,9 @@
 <!-- =========================================================
      TREATMENTS
 ========================================================= -->
-<section class="treatments-section section-light" id="treatments" aria-labelledby="treatments-title">
+<section class="treatments-section" id="treatments" aria-labelledby="treatments-title">
     <div class="container">
-        <div class="section-heading">
+        <div class="section-heading section-heading--light">
             <p class="section-label" data-i18n="treatmentsLabel">
                 Treatments
             </p>
@@ -204,7 +204,7 @@
             </a>
 
             <!-- FILLER -->
-            <a class="treatment-card" href="filler.html">
+            <a class="treatment-card particle-btn" href="filler.html">
                 <span class="treatment-card__number">02</span>
                 <div>
                     <h3 data-i18n="treatmentFillerTitle">Dermal fillers</h3>
@@ -216,7 +216,7 @@
             </a>
 
             <!-- BOTOX -->
-            <a class="treatment-card treatment-card--gold" href="botox.html">
+            <a class="treatment-card treatment-card--gold particle-btn" href="botox.html">
                 <span class="treatment-card__number">03</span>
                 <div>
                     <h3 data-i18n="treatmentBotoxTitle">Botulinum toxin</h3>
@@ -262,10 +262,10 @@
             </p>
 
             <div class="project__actions">
-                <a class="book-button" href="face_lift.html" data-i18n="learnMore">
+                <a class="book-button particle-btn" href="face_lift.html" data-i18n="learnMore">
                     Learn more
                 </a>
-                <a class="text-link" href="#contact" data-i18n="bookNow">
+                <a class="text-link particle-btn" href="#contact" data-i18n="bookNow">
                     Book now
                 </a>
             </div>
@@ -301,10 +301,10 @@
             </p>
 
             <div class="project__actions">
-                <a class="book-button" href="filler.html" data-i18n="learnMore">
+                <a class="book-button particle-btn" href="filler.html" data-i18n="learnMore">
                     Learn more
                 </a>
-                <a class="text-link" href="#contact" data-i18n="bookNow">
+                <a class="text-link particle-btn" href="#contact" data-i18n="bookNow">
                     Book now
                 </a>
             </div>
@@ -340,10 +340,10 @@
             </p>
 
             <div class="project__actions">
-                <a class="book-button" href="botox.html" data-i18n="learnMore">
+                <a class="book-button particle-btn" href="botox.html" data-i18n="learnMore">
                     Learn more
                 </a>
-                <a class="text-link" href="#contact" data-i18n="bookNow">
+                <a class="text-link particle-btn" href="#contact" data-i18n="bookNow">
                     Book now
                 </a>
             </div>
@@ -558,6 +558,11 @@
 <script src="particles.js"></script>
 <!-- Site Script -->
 <script src="script.js" defer></script>
+
+<!-- Project card reveal (GSAP ScrollTrigger) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="project-reveal.js" defer></script>
 
 </body>
 </html>

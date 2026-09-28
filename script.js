@@ -955,8 +955,6 @@ const revealTargets = document.querySelectorAll(
     ".section-heading, " +
     ".treatment-card, " +
     ".projects__intro, " +
-    ".project__details, " +
-    ".comparison, " +
     ".why-card, " +
     ".journey-step, " +
     ".home-faq__accordion .accordion-item, " +
@@ -987,7 +985,7 @@ document
     });
 
 document
-    .querySelectorAll(".comparison, .procedure-video__player, .procedure-carousel")
+    .querySelectorAll(".procedure-video__player, .procedure-carousel")
     .forEach((element) => {
         element.classList.add("scale-up");
     });

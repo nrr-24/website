@@ -2,7 +2,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const buttons = document.querySelectorAll(".particle-btn");
 
-    const butterflyImage = "images/side-butterfly-gold.png";
+    /* =========================================
+       PARTICLE THEMES
+       Gold butterflies disappear on yellow
+       backgrounds, so those buttons get the
+       brown set instead.
+
+       - Auto: solid yellow/light backgrounds
+         and buttons that FILL gold on hover
+         (.text-link, .hero__secondary-link)
+       - Manual override: add
+         data-particle="brown" or "gold"
+       ========================================= */
+
+    const THEMES = {
+        gold: {
+            image: "images/side-butterfly-gold.png",
+            color: "#d6b36a"
+        },
+        brown: {
+            image: "images/side-butterfly-brown.png",
+            color: "#7a5230"
+        }
+    };
+
+    const FILLS_GOLD_ON_HOVER = ".hero__secondary-link, .text-link";
+
+    function isYellowish(cssColor) {
+
+        const match = cssColor.match(
+            /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/
+        );
+
+        if (!match) return false;
+
+        const [r, g, b] = match.slice(1, 4).map(Number);
+        const alpha = match[4] === undefined ? 1 : parseFloat(match[4]);
+
+        // Must be mostly opaque, warm, and light
+        return alpha > 0.5 && r > 170 && g > 130 && b < 170 && r > b + 40;
+
+    }
+
+    function getParticleTheme(button) {
+
+        const forced = button.dataset.particle;
+
+        if (forced && THEMES[forced]) return THEMES[forced];
+
+        if (button.matches(FILLS_GOLD_ON_HOVER)) return THEMES.brown;
+
+        const background = getComputedStyle(button).backgroundColor;
+
+        return isYellowish(background) ? THEMES.brown : THEMES.gold;
+
+    }
 
 
     /* =========================================
@@ -49,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function createHoverParticles(button) {
 
         const layer = button.querySelector(".particle-layer");
+        const theme = getParticleTheme(button);
 
         /*
          * Only a few particles.
@@ -65,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const particle = document.createElement("img");
 
-            particle.src = butterflyImage;
+            particle.src = theme.image;
 
             particle.className =
                 "butterfly-particle butterfly-float";
@@ -156,10 +211,8 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-            /* Uses your existing gold */
-
             sparkle.style.color =
-                "#d6b36a";
+                theme.color;
 
 
             sparkle.style.animationDelay =
@@ -188,6 +241,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const layer =
             button.querySelector(".particle-layer");
 
+        const theme = getParticleTheme(button);
+
 
         /*
          * Keep this relatively small.
@@ -209,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.createElement("img");
 
             particle.src =
-                butterflyImage;
+                theme.image;
 
             particle.className =
                 "butterfly-particle butterfly-burst";
@@ -322,7 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             sparkle.style.color =
-                "#d6b36a";
+                theme.color;
 
 
             sparkle.style.animationDelay =

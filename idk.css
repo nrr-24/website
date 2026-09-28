@@ -771,7 +771,7 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   display:grid;
   grid-template-columns:repeat(4, 1fr);
   gap:1px;
-  /* background:rgba(238, 212, 154, 0.2) */
+  background:rgba(238, 212, 154, 0.2)
 }
 .why-card {
   min-height:17rem;
@@ -780,7 +780,7 @@ html[dir="rtl"] .project--reverse .project__details h3 {
 }
 .why-card>span {
   color:var(--gold);
-  font-size:rem;
+  font-size:0.7rem;
   font-weight:600;
   letter-spacing:0.18em
 }
@@ -2193,7 +2193,7 @@ section, article, .quick-stats, .site-footer {
   right:-1.5rem;
   top:15%;
   border-radius:50%;
-  /* background:radial-gradient( circle, var(--rose-soft) 0%, rgba(232, 184, 173, 0.25) 45%, transparent 70% ); */
+  background:radial-gradient( circle, var(--rose-soft) 0%, rgba(232, 184, 173, 0.25) 45%, transparent 70% );
   filter:blur(2px);
   animation:floatingOrb 5s ease-in-out infinite;
   pointer-events:none
@@ -2441,41 +2441,36 @@ section, article, .quick-stats, .site-footer {
   overflow:hidden;
   isolation:isolate
 }
-.section-dark::before,
-.section-light::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+.section-dark::before, .section-light::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url("images/butterfly-arrow-bg.png");
+  background-position:center;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  opacity:0.3;
+  pointer-events:none;
+  z-index:-1;
+-webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.65) 15%,
+    black 35%,
+    black 65%,
+    rgba(0, 0, 0, 0.65) 85%,
+    rgba(0, 0, 0, 0.35) 100%
+);
 
-    background-image: url("images/butterfly-arrow-bg.png");
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-
-    opacity: 0.3;
-    pointer-events: none;
-    z-index: -1;
-
-    /* Fade around ALL edges */
-    -webkit-mask-image:
-        radial-gradient(
-            ellipse at center,
-            black 35%,
-            rgba(0, 0, 0, 0.8) 55%,
-            rgba(0, 0, 0, 0.4) 82%,
-            transparent 100%
-        );
-
-    mask-image:
-        radial-gradient(
-            ellipse at center,
-            black 35%,
-            rgba(0, 0, 0, 0.8) 55%,
-            rgba(0, 0, 0, 0.4) 82%,
-            transparent 100%
-        );
-
-    animation: patternDrift 18s ease-in-out infinite alternate;
+mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.65) 15%,
+    black 35%,
+    black 65%,
+    rgba(0, 0, 0, 0.65) 85%,
+    rgba(0, 0, 0, 0.35) 100%
+);
 }
 .section-dark>*, .section-light>* {
   position:relative;
@@ -2604,14 +2599,6 @@ to {
 }
 to {
   transform:rotate(360deg) scale(1.08)
-}
-}
-@keyframes patternDrift {
-  0% {
-  background-position:48% 45%
-}
-100% {
-  background-position:53% 55%
 }
 }
 @media (max-width:575.98px) {
@@ -2950,7 +2937,7 @@ p {
 @media (max-width:575.98px) {
   .section-dark::before, .section-light::before {
   opacity:.18;
-  background-size: 100% 100%;
+  background-size:100% 100%;
   animation-duration:18s;
   -webkit-mask-image:none;
   mask-image:none
@@ -3454,6 +3441,15 @@ iframe {
     overflow: hidden !important;
 }
 
+/* Transparent animation layer */
+/* .particle-btn::after {
+    content: "";
+    position: absolute;
+    inset: -35px;
+    pointer-events: none;
+    z-index: 10;
+} */
+
 /* Container created by JS */
 .particle-layer {
     position: absolute;
@@ -3688,7 +3684,7 @@ iframe {
    ========================================= */
 
 .treatments-section .treatment-grid {
-    /* background: rgba(238, 212, 154, 0.22); */
+    background: rgba(238, 212, 154, 0.22);
 }
 
 .treatments-section .treatment-card {
@@ -3749,7 +3745,7 @@ iframe {
 }
 
 
-/* =========================================================
+/* =========================================
    ANIMATED GOLD WAVES
    Adapted from codepen.io/yy/pen/YaQBdW
    Used on: hero, "why" section, FAQ (home +
@@ -3760,25 +3756,21 @@ iframe {
    ========================================= */
 
 :root {
-    --wave-height: 10rem;
+    --wave-height: 8rem;
     --wave-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23d6b36a' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%23d6b36a' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23a)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e");
 }
 
 /* Negative z-index layers need their own stacking context */
 .procedure-faq,
 .why-section,
-.site-footer,
-.home-contact,
-.treatments-section {
+.site-footer {
     isolation: isolate;
 }
 
 .hero::before,
 .why-section::after,
 .procedure-faq::after,
-.site-footer::after,
-.home-contact::before,
-.treatments-section::before {
+.site-footer::after {
     content: "";
     position: absolute;
     left: 0;
@@ -3795,61 +3787,15 @@ iframe {
     animation: waveDrift 20s linear infinite;
 }
 
-.why-section::before,
-.procedure-faq::before,
-.site-footer::before,
-.home-contact::after,
-.treatments-section::after 
- {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-
-    height: var(--wave-height);
-
-    z-index: -1;
-    pointer-events: none;
-
-    opacity:var(--wave-opacity, 0.12);
-
-    background-image:
-        var(--wave-image),
-        var(--wave-image),
-        var(--wave-image);
-
-    background-repeat: repeat-x;
-
-    background-size:
-        1600px 100%,
-        1600px 78%,
-        1600px 58%;
-
-    background-position:
-        0 0,
-        -50px 0,
-        500px 0;
-
-    transform: scaleY(-1);
-
-    animation: waveDrift 20s linear infinite;
-}
-/* 
-@keyframes waveDriftTop {
-    to {
-        background-position:
-            1600px 0,
-            3150px 0,
-            5300px 0;
-    }
-} */
 .hero::before        { --wave-opacity: 0.28; }
-.why-section::after  { --wave-opacity: 0.23; }
+.why-section::after  { --wave-opacity: 0.18; }
 .procedure-faq::after { --wave-opacity: 0.14; }
 .site-footer::after  { --wave-opacity: 0.14; }
-.home-contact::before { --wave-opacity: 0.35; }
-.treatments-section::before { --wave-opacity: 0.22; }
+
+/* Cards are opaque, so give the "why" section room to show the waves */
+.why-section {
+    padding-bottom: calc(var(--wave-height) + 2rem) !important;
+}
 
 @keyframes waveDrift {
     to {
@@ -3859,137 +3805,6 @@ iframe {
 
 @media (max-width: 575.98px) {
     :root {
-        --wave-height: 10rem;
+        --wave-height: 5rem;
     }
-}
-/* =========================================================
-   MOBILE PROJECT CARD FIX
-========================================================= */
-
-@media (max-width: 768px) {
-
-    .project {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        padding: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-
-        overflow: hidden;
-    }
-
-    .project__details {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        padding: 1.5rem 1rem !important;
-        margin: 0 !important;
-
-        box-sizing: border-box;
-    }
-
-    .project__details h3 {
-        font-size: 1.65rem !important;
-        line-height: 1.15 !important;
-        margin-bottom: 1rem !important;
-    }
-
-    .project__details p {
-        font-size: 1rem !important;
-        line-height: 1.7 !important;
-        margin-bottom: 1.2rem !important;
-    }
-
-    .project__number {
-        font-size: .8rem !important;
-        margin-bottom: .8rem;
-    }
-
-    .project__details .book-button,
-    .project__details .text-link {
-        font-size: .85rem !important;
-    }
-
-    .project__media,
-    .comparison {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    .comparison {
-        margin-top: 0.5rem !important;
-    }
-}
-/* =========================================================
-   MOBILE WHY CARDS
-========================================================= */
-
-@media (max-width: 768px) {
-
-    .why-section .why-card {
-        width: 90% !important;
-        max-width: 90% !important;
-
-        margin-left: auto !important;
-        margin-right: auto !important;
-
-        padding: 1.25rem 1.3rem !important;
-
-        min-height: 0 !important;
-        height: auto !important;
-    }
-
-    .why-section .why-card h3 {
-        font-size: 1.25rem !important;
-        line-height: 1.2 !important;
-        margin-bottom: 0.6rem !important;
-    }
-
-    .why-section .why-card p {
-        font-size: 0.95rem !important;
-        line-height: 1.6 !important;
-        margin-bottom: 0 !important;
-    }
-
-    .why-section .why-card > span {
-        font-size: 1.4rem !important;
-    }
-}
-
-.about-section,
-.home-contact {
-    width: 100%;
-    max-width: none;
-
-    margin-left: 0;
-    margin-right: 0;
-}
-.about-section > .container,
-.home-contact > .container {
-    width: min(1200px, 92%);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-@media (max-width: 768px) {
-
-    .about-section,
-    .home-contact {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-    }
-
-    .about-section > .container,
-    .home-contact > .container {
-        width: calc(100% - 2rem) !important;
-        max-width: none !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
 }
