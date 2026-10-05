@@ -11,11 +11,13 @@
     <link rel="alternate" hreflang="x-default" href="./index.html">
 
     <meta name="theme-color" content="#17130f">
+    <link rel="icon" type="image/png" href="images/1080.png">
+    <link rel="apple-touch-icon" href="images/1080.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -23,7 +25,7 @@
     <!-- Your CSS -->
     <link rel="stylesheet" href="stylesheet.css">
 
-    <title>Dr. Reham Kolib | Specialist Dermatologist in Abu Dhabi</title>
+    <title>Dr. Rema Kolib | Dermatology &amp; Aesthetics</title>
 
     <script type="application/ld+json">
     {
@@ -50,6 +52,25 @@
 
 <body>
 
+<div class="site-loader" role="status" aria-label="Loading">
+    <div class="site-loader__artwork" aria-hidden="true">
+        <svg class="site-loader__ripple" viewBox="0 0 44 44" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <title>Loading</title>
+            <g fill="none" fill-rule="evenodd" stroke-width="2">
+                <circle cx="22" cy="22" r="1">
+                    <animate attributeName="r" begin="0s" calcMode="spline" dur="1.8s" keySplines="0.165, 0.84, 0.44, 1" keyTimes="0; 1" repeatCount="indefinite" values="1; 20" />
+                    <animate attributeName="stroke-opacity" begin="0s" calcMode="spline" dur="1.8s" keySplines="0.3, 0.61, 0.355, 1" keyTimes="0; 1" repeatCount="indefinite" values="1; 0" />
+                </circle>
+                <circle cx="22" cy="22" r="1">
+                    <animate attributeName="r" begin="-0.9s" calcMode="spline" dur="1.8s" keySplines="0.165, 0.84, 0.44, 1" keyTimes="0; 1" repeatCount="indefinite" values="1; 20" />
+                    <animate attributeName="stroke-opacity" begin="-0.9s" calcMode="spline" dur="1.8s" keySplines="0.3, 0.61, 0.355, 1" keyTimes="0; 1" repeatCount="indefinite" values="1; 0" />
+                </circle>
+            </g>
+        </svg>
+        <img class="site-loader__logo" src="images/1080.png" alt="">
+    </div>
+</div>
+
 <!-- =========================================================
      CENTRAL SIDEBAR & CONTROLS (Managed via components.js)
 ========================================================= -->
@@ -58,15 +79,16 @@
 <!-- =========================================================
      HERO
 ========================================================= -->
-<header class="hero" id="home" aria-labelledby="hero-title">
+<header class="hero hero--home" id="home" aria-labelledby="hero-title">
     <div class="hero__panel" data-hero-bg="images/healthy.png"></div>
     <div class="hero__veil" aria-hidden="true"></div>
 
     <div class="hero__content container">
         <div class="hero__copy">
-            <p class="hero__eyebrow" data-i18n="heroEyebrow">
+            <img class="hero__logo" src="images/1080.png" alt="" aria-hidden="true" width="128" height="128">
+            <!-- <p class="hero__eyebrow" data-i18n="heroEyebrow">
                 Clinical dermatology · Aesthetic medicine
-            </p>
+            </p> -->
 
             <h1 id="hero-title" data-i18n="heroTitle">
                 Dr. Reham Kolib
@@ -364,57 +386,6 @@
             <button class="comparison__knob" type="button" aria-label="Move comparison slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
         </div>
     </article>
-</section>
-
-<!-- =========================================================
-     WHY CHOOSE
-========================================================= -->
-<section class="why-section">
-    <div class="container">
-        <div class="section-heading section-heading--light">
-            <p class="section-label" data-i18n="whyLabel">
-                The approach
-            </p>
-
-            <h2 data-i18n="whyTitle">
-                Natural results start with thoughtful care.
-            </h2>
-        </div>
-
-        <div class="why-grid">
-            <article class="why-card">
-                <span>01</span>
-                <h3 data-i18n="whyOneTitle">Listen first</h3>
-                <p data-i18n="whyOneBody">
-                    Understanding your concerns and expectations is the starting point for every treatment plan.
-                </p>
-            </article>
-
-            <article class="why-card">
-                <span>02</span>
-                <h3 data-i18n="whyTwoTitle">Assess carefully</h3>
-                <p data-i18n="whyTwoBody">
-                    Your skin, facial anatomy, concerns, and individual needs are considered before treatment.
-                </p>
-            </article>
-
-            <article class="why-card">
-                <span>03</span>
-                <h3 data-i18n="whyThreeTitle">Treat precisely</h3>
-                <p data-i18n="whyThreeBody">
-                    Treatments are selected and performed with attention to proportion, balance, and natural expression.
-                </p>
-            </article>
-
-            <article class="why-card">
-                <span>04</span>
-                <h3 data-i18n="whyFourTitle">Follow up</h3>
-                <p data-i18n="whyFourBody">
-                    Your progress matters beyond the treatment itself, with appropriate follow-up and aftercare guidance.
-                </p>
-            </article>
-        </div>
-    </div>
 </section>
 
 <!-- =========================================================

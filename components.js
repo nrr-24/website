@@ -79,9 +79,7 @@
     aria-hidden="true"
 >
     <div class="site-sidebar__inner">
-        <p class="site-sidebar__eyebrow" data-i18n="brand">
-            Dr. Reham
-        </p>
+        <img class="site-sidebar__logo" src="images/1080.png" alt="Dr. Reham Kolib" width="128" height="128">
 
         <p class="site-sidebar__title" data-i18n="sidebarTitle">
             Where Skin Health Meets Beauty
@@ -225,7 +223,16 @@
         return `
 <footer class="site-footer">
     <div class="site-footer__main container">
-        <div>
+        <div class="site-footer__identity">
+            <img
+                class="site-footer__logo"
+                src="images/1080.png"
+                alt=""
+                aria-hidden="true"
+                width="64"
+                height="64"
+                loading="lazy"
+            >
             <p
                 class="site-footer__brand"
                 data-i18n="brand"

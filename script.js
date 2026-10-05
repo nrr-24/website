@@ -16,11 +16,11 @@ const translations = {
         navFaq: "FAQ",
 
         heroEyebrow: "Clinical dermatology · Aesthetic medicine",
-        heroTitle: "Dr. Reham Kolib",
+        heroTitle: "Dr. Rema Kolib | Dermatology & Aesthetics",
         heroSubtitle: "Where Skin Health Meets Beauty",
 
         heroDescription:
-            "Personalized dermatological and aesthetic care designed around your skin, your features, and your goals.",
+            "Personalized skin and aesthetic care, shaped around your features and goals.",
 
         bookConsultation: "Book a consultation",
         exploreTreatments: "Explore treatments",
@@ -35,7 +35,7 @@ const translations = {
         aboutTitle: "Expertise shaped around you.",
 
         aboutBody:
-            "Dr. Reham Kolib is a Specialist Dermatologist with over 10 years of experience assessing and treating clinical and cosmetic dermatological conditions. After earning her master’s degree in 2018, she pursued advanced certifications in laser and aesthetic treatments. Her practice is grounded in careful listening and customized treatment plans, because every patient and every skin is different.",
+            "With 10+ years in clinical and cosmetic dermatology, Dr. Reham Kolib creates thoughtful treatment plans shaped around each patient's skin and goals.",
 
         aboutSpecialtyLabel: "Specialty",
         aboutSpecialty: "Clinical and cosmetic dermatology",
@@ -52,7 +52,7 @@ const translations = {
         treatmentsTitle: "Care that starts with understanding.",
 
         treatmentsBody:
-            "From medical dermatology to aesthetic treatments, every treatment plan begins with understanding your individual needs.",
+            "Clinical and aesthetic treatments, planned around your individual needs.",
 
         treatmentFaceTitle: "Facial rejuvenation",
         treatmentFaceBody:
@@ -70,7 +70,7 @@ const translations = {
         projectsTitle: "A closer look at the work.",
 
         projectsBody:
-            "Explore selected aesthetic treatment outcomes through before and after comparisons.",
+            "View selected treatment results in before-and-after comparisons.",
 
         projectOneTitle: "Face lifts",
         projectOneBody:
@@ -90,64 +90,45 @@ const translations = {
         bookNow: "Book now",
         learnMore: "Learn more",
 
-        whyLabel: "The approach",
-        whyTitle: "Natural results start with thoughtful care.",
-
-        whyOneTitle: "Listen first",
-        whyOneBody:
-            "Understanding your concerns and expectations is the starting point for every treatment plan.",
-
-        whyTwoTitle: "Assess carefully",
-        whyTwoBody:
-            "Your skin, facial anatomy, concerns, and individual needs are considered before treatment.",
-
-        whyThreeTitle: "Treat precisely",
-        whyThreeBody:
-            "Treatments are selected and performed with attention to proportion, balance, and natural expression.",
-
-        whyFourTitle: "Follow up",
-        whyFourBody:
-            "Your progress matters beyond the treatment itself, with appropriate follow-up and aftercare guidance.",
-
         journeyLabel: "Your journey",
         journeyTitle: "From consultation to confident care.",
 
         journeyOneTitle: "Consultation",
         journeyOneBody:
-            "Discuss your concerns, goals, previous treatments, and what you would like to achieve.",
+            "Discuss your concerns, goals, and treatment options.",
 
         journeyTwoTitle: "Assessment",
         journeyTwoBody:
-            "Your skin and facial features are assessed to understand which treatment options may be appropriate.",
+            "Review your skin and features to identify suitable options.",
 
         journeyThreeTitle: "Personalized plan",
         journeyThreeBody:
-            "A treatment approach is selected according to your individual anatomy, concerns, and goals.",
+            "Build a plan around your features, concerns, and goals.",
 
         journeyFourTitle: "Follow-up",
         journeyFourBody:
-            "Your recovery and results are monitored, with guidance on aftercare and future treatment when appropriate.",
+            "Receive aftercare guidance and follow-up tailored to your progress.",
 
         faqLabel: "Frequently asked questions",
         faqHomeTitle: "Before your consultation.",
 
         homeFaqQ1: "How do I know which treatment is right for me?",
         homeFaqA1:
-            "The appropriate treatment depends on your concerns, skin condition, anatomy, medical history, and goals. A consultation allows the doctor to assess these factors and discuss suitable options.",
+            "Your skin, medical history, and goals guide the recommendation. A consultation helps identify suitable options.",
 
         homeFaqQ2: "Are aesthetic treatments personalized?",
         homeFaqA2:
-            "Yes. Treatment areas, techniques, products, and amounts are selected according to the individual rather than using a single approach for everyone.",
+            "Yes. Treatment areas, techniques, and products are chosen for each person's needs.",
 
         homeFaqQ3: "Can I discuss several concerns during one consultation?",
         homeFaqA3:
-            "Yes. A consultation can be used to discuss your different concerns and understand which treatments may be suitable individually or as part of a broader treatment plan.",
+            "Yes. We can review several concerns and discuss a plan for each.",
 
         contactLabel: "Begin a conversation",
         contactTitle: "Start with a dermatology consultation.",
 
         contactBody:
-            "Appointments are available at Cosmesurge Abu Dhabi for clinical dermatology, laser, and aesthetic treatments.",
+            "Appointments at Cosmesurge Abu Dhabi for dermatology, laser, and aesthetic care.",
 
         callNow: "Call to book",
         whatsapp: "WhatsApp",
@@ -301,11 +282,11 @@ const translations = {
         navFaq: "الأسئلة الشائعة",
 
         heroEyebrow: "الأمراض الجلدية السريرية · طب التجميل",
-        heroTitle: "د. رهام قليب",
+        heroTitle: "د. ريما قليب | الأمراض الجلدية والتجميل",
         heroSubtitle: "حيث تلتقي صحة البشرة بالجمال",
 
         heroDescription:
-            "رعاية جلدية وتجميلية مخصصة يتم تصميمها وفقًا لبشرتك وملامحك وأهدافك.",
+            "رعاية جلدية وتجميلية مخصصة لبشرتك وملامحك وأهدافك.",
 
         bookConsultation: "احجزي استشارتك",
         exploreTreatments: "استكشفي العلاجات",
@@ -320,7 +301,7 @@ const translations = {
         aboutTitle: "خبرة تُصاغ بما يناسبك.",
 
         aboutBody:
-            "د. رهام قليب طبيبة أخصائية في الأمراض الجلدية، تتمتع بخبرة تزيد عن عشر سنوات في تقييم وعلاج الحالات الجلدية السريرية والتجميلية. بعد حصولها على درجة الماجستير عام 2018، واصلت شغفها وحصلت على شهادات متخصصة في علاجات الليزر والتجميل. تعتمد في ممارستها على الاستماع الدقيق ووضع خطط علاجية مخصصة، لأن لكل مريض ولكل بشرة احتياجات مختلفة.",
+            "تتمتع د. رهام قليب بخبرة تزيد عن 10 سنوات في الأمراض الجلدية السريرية والتجميلية، وتضع خطط علاج تناسب كل بشرة وأهدافها.",
 
         aboutSpecialtyLabel: "التخصص",
         aboutSpecialty: "الأمراض الجلدية السريرية والتجميلية",
@@ -337,7 +318,7 @@ const translations = {
         treatmentsTitle: "رعاية تبدأ بفهم احتياجاتك.",
 
         treatmentsBody:
-            "من الأمراض الجلدية إلى العلاجات التجميلية، تبدأ كل خطة علاجية بفهم احتياجاتك الفردية.",
+            "علاجات جلدية وتجميلية تُخطط وفق احتياجاتك.",
 
         treatmentFaceTitle: "تجديد مظهر الوجه",
         treatmentFaceBody:
@@ -355,7 +336,7 @@ const translations = {
         projectsTitle: "نظرة أقرب على العمل.",
 
         projectsBody:
-            "استكشف نتائج مختارة من العلاجات التجميلية من خلال مقارنات قبل وبعد.",
+            "شاهدي نتائج مختارة من خلال صور قبل وبعد.",
 
         projectOneTitle: "شد الوجه",
         projectOneBody:
@@ -375,56 +356,37 @@ const translations = {
         bookNow: "احجز الآن",
         learnMore: "اعرف المزيد",
 
-        whyLabel: "نهج العلاج",
-        whyTitle: "النتائج الطبيعية تبدأ برعاية مدروسة.",
-
-        whyOneTitle: "نستمع أولًا",
-        whyOneBody:
-            "فهم مخاوفك وتوقعاتك هو نقطة البداية لكل خطة علاجية.",
-
-        whyTwoTitle: "نقيّم بعناية",
-        whyTwoBody:
-            "يتم أخذ بشرتك وتشريح الوجه واحتياجاتك ومخاوفك الفردية بعين الاعتبار قبل العلاج.",
-
-        whyThreeTitle: "نعالج بدقة",
-        whyThreeBody:
-            "يتم اختيار العلاجات وتنفيذها مع الاهتمام بالتناسق والتوازن والحفاظ على تعبيرات الوجه الطبيعية.",
-
-        whyFourTitle: "المتابعة",
-        whyFourBody:
-            "تستمر الرعاية بعد العلاج من خلال المتابعة المناسبة وإرشادات العناية.",
-
         journeyLabel: "رحلتك",
         journeyTitle: "من الاستشارة إلى رعاية مصممة لك.",
 
         journeyOneTitle: "الاستشارة",
         journeyOneBody:
-            "مناقشة مخاوفك وأهدافك والعلاجات السابقة والنتيجة التي ترغبين في الوصول إليها.",
+            "ناقشي مخاوفك وأهدافك وخيارات العلاج.",
 
         journeyTwoTitle: "التقييم",
         journeyTwoBody:
-            "يتم تقييم البشرة وملامح الوجه لفهم خيارات العلاج المناسبة.",
+            "نقيّم بشرتك وملامحك لتحديد الخيارات المناسبة.",
 
         journeyThreeTitle: "خطة مخصصة",
         journeyThreeBody:
-            "يتم اختيار نهج العلاج وفقًا لتشريح الوجه واحتياجاتك وأهدافك الفردية.",
+            "نضع خطة تناسب ملامحك واحتياجاتك وأهدافك.",
 
         journeyFourTitle: "المتابعة",
         journeyFourBody:
-            "تتم متابعة التعافي والنتائج مع تقديم الإرشادات المناسبة للعناية والعلاجات المستقبلية عند الحاجة.",
+            "نتابع النتائج ونقدم إرشادات العناية المناسبة.",
 
         faqLabel: "الأسئلة الشائعة",
         faqHomeTitle: "قبل الاستشارة.",
         homeFaqQ1: "كيف أعرف العلاج المناسب لي؟",
-        homeFaqA1:"يعتمد العلاج المناسب على احتياجاتك وحالة بشرتك وتشريح الوجه والتاريخ الطبي والأهداف المطلوبة. وتتيح الاستشارة تقييم هذه العوامل ومناقشة الخيارات المناسبة.",
+        homeFaqA1:"تحدد حالة بشرتك وتاريخك الطبي وأهدافك التوصية المناسبة. تساعد الاستشارة على مناقشة الخيارات.",
         homeFaqQ2: "هل العلاجات التجميلية مخصصة لكل شخص؟",
-        homeFaqA2:"نعم. يتم اختيار مناطق العلاج والتقنيات والمنتجات والكميات وفقًا لاحتياجات كل شخص بدلًا من اتباع أسلوب واحد للجميع.",
+        homeFaqA2:"نعم. نختار مناطق العلاج والتقنيات والمنتجات وفق احتياجات كل شخص.",
         homeFaqQ3: "هل يمكنني مناقشة أكثر من مشكلة خلال الاستشارة؟",
-        homeFaqA3:"نعم. يمكن خلال الاستشارة مناقشة مختلف مخاوفك وفهم العلاجات التي قد تكون مناسبة لكل مشكلة بشكل منفصل أو ضمن خطة علاجية متكاملة.",
+        homeFaqA3:"نعم. يمكننا مناقشة عدة مخاوف ووضع خطة مناسبة لكل منها.",
         contactLabel: "لنبدأ الحوار",
         contactTitle: "ابدأ باستشارة جلدية.",
         contactBody:
-            "المواعيد متاحة في كوزمسيرج أبوظبي لعلاجات الأمراض الجلدية والليزر والتجميل.",
+            "مواعيد في كوزمسيرج أبوظبي للأمراض الجلدية والليزر والتجميل.",
 
         callNow: "اتصل للحجز",
         whatsapp: "واتساب",
@@ -770,8 +732,8 @@ const setLanguage = (language) => {
     document.title = pageTitle
         ? `${pageTitle} | ${language === "ar" ? "د. رهام قليب" : "Dr. Reham Kolib"}`
         : language === "ar"
-            ? "د. رهام قليب | طبيبة أخصائية في الأمراض الجلدية بأبوظبي"
-            : "Dr. Reham Kolib | Specialist Dermatologist in Abu Dhabi";
+                ? "د. ريما قليب | الأمراض الجلدية والتجميل"
+                : "Dr. Rema Kolib | Dermatology & Aesthetics";
 
     document.querySelector('meta[name="description"]')?.setAttribute(
         "content",
@@ -851,6 +813,34 @@ setLanguage(
     localStorage.getItem("preferred-language") ||
     "en"
 );
+
+const siteLoader = document.querySelector(".site-loader");
+if (siteLoader) {
+    const startedAt = performance.now();
+    let dismissed = false;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        siteLoader.querySelectorAll(".site-loader__ripple animate").forEach((animation) => animation.remove());
+    }
+
+    const dismissLoader = () => {
+        if (dismissed) return;
+        dismissed = true;
+        window.clearTimeout(fallbackTimer);
+        const visibleFor = performance.now() - startedAt;
+        window.setTimeout(() => {
+            siteLoader.classList.add("is-hidden");
+            window.setTimeout(() => siteLoader.remove(), 550);
+        }, Math.max(0, 900 - visibleFor));
+    };
+
+    const fallbackTimer = window.setTimeout(dismissLoader, 4500);
+    if (document.readyState === "complete") {
+        dismissLoader();
+    } else {
+        window.addEventListener("load", dismissLoader, { once: true });
+    }
+}
 
 /* =========================================================
    HERO IMAGE LOADING
@@ -955,7 +945,6 @@ const revealTargets = document.querySelectorAll(
     ".section-heading, " +
     ".treatment-card, " +
     ".projects__intro, " +
-    ".why-card, " +
     ".journey-step, " +
     ".home-faq__accordion .accordion-item, " +
     ".home-contact__content, " +
@@ -1010,7 +999,7 @@ if ("IntersectionObserver" in window) {
     });
 
     document
-        .querySelectorAll(".treatment-grid, .why-grid, .journey-list, .procedure-info__grid")
+        .querySelectorAll(".treatment-grid, .journey-list, .procedure-info__grid")
         .forEach((group) => {
             group.classList.add("scroll-stagger");
             [...group.children].forEach((child) => {
@@ -1036,9 +1025,9 @@ if (hero) {
         if (scrollY < window.innerHeight) {
             panels.forEach((panel) => {
                 if (window.innerWidth <= 768) {
-                    panel.style.transform = `scale(1.05) translateY(${scrollY * 0.12}px)`;
+                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(-5deg) " : ""}scale(1.05) translateY(${scrollY * 0.12}px)`;
                 } else {
-                    panel.style.transform = `scale(1.02) translateY(${scrollY * 0.25}px)`;
+                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(-5deg) " : ""}scale(1.02) translateY(${scrollY * 0.25}px)`;
                 }
             });
         }

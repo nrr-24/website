@@ -9,7 +9,9 @@ h1, h2, h3, h4, h5, h6 {
   --rose:#c98f86;
   --rose-soft:#e8b8ad;
   --sage:#9eaa8d;
-  --cream:#fff8ec
+  --cream:#fff8ec;
+  --accent:#721b26;
+  --accent-wash:rgba(114, 27, 38, 0.12)
 }
 * {
   box-sizing:border-box
@@ -144,15 +146,8 @@ body.menu-is-open {
   flex:0 0 auto;
   width:100%
 }
-.site-sidebar__eyebrow, .site-sidebar__title {
+.site-sidebar__title {
   color:var(--gold)
-}
-.site-sidebar__eyebrow {
-  margin:0 0 3rem;
-  font-size:0.7rem;
-  font-weight:600;
-  letter-spacing:0.28em;
-  text-transform:uppercase
 }
 .site-sidebar__title {
   max-width:18rem;
@@ -748,54 +743,11 @@ html[dir="rtl"] .hero__actions {
 html[dir="rtl"] .project__details h3 {
   text-align:right
 }
-html[dir="rtl"] .project--dark .project__details h3 {
-  transform:skewX(-8deg);
-  transform-origin:left center
-}
-html[dir="rtl"] .project--reverse .project__details h3 {
-  transform:skewX(8deg);
-  transform-origin:right center
-}
-.why-section {
-  padding:4rem 0;
-  background:var(--ink);
-  color:var(--gold-soft)
-}
 .section-heading--light h2 {
   color:var(--gold-soft)
 }
 .section-heading--light>p:last-child {
   color:rgba(238, 212, 154, 0.72)
-}
-.why-grid {
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:1px;
-  /* background:rgba(238, 212, 154, 0.2) */
-}
-.why-card {
-  min-height:17rem;
-  padding:2rem;
-  background:var(--ink)
-}
-.why-card>span {
-  color:var(--gold);
-  font-size:rem;
-  font-weight:600;
-  letter-spacing:0.18em
-}
-.why-card h3 {
-  margin:3rem 0 1rem;
-  font-family:"Cormorant Garamond", serif;
-  font-size:2.5rem;
-  font-weight:600;
-  line-height:0.9
-}
-.why-card p {
-  margin:0;
-  color:rgba(238, 212, 154, 0.68);
-  font-size:0.9rem;
-  line-height:1.8
 }
 .journey-section {
   padding:4rem 0;
@@ -879,9 +831,6 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   padding-block:5rem;
   padding-inline:max(2rem, calc((100% - 75rem) / 2));
 }
-.home-contact__content {
-  /* max-width:52rem */
-}
 .home-contact__image {
   position:relative;
   width:100%;
@@ -893,9 +842,6 @@ html[dir="rtl"] .project--reverse .project__details h3 {
   width:100%;
   object-fit:cover;
   padding:0.65rem
-}
-.home-contact__content {
-  /* max-width:52rem */
 }
 .home-contact h2 {
   /* max-width:48rem; */
@@ -1094,17 +1040,6 @@ html[dir="rtl"] .project--reverse .project__details h3 {
 }
 .js-ready .reveal-visible>*:nth-child(5) {
   transition-delay:450ms
-}
-.js-ready html[dir="rtl"] .project--dark .project__details h3, .js-ready html[dir="rtl"] .project--reverse .project__details h3 {
-  transform:skewX(-8deg)
-}
-html[dir="rtl"] .project--dark .project__details h3 {
-  transform:skewX(-8deg);
-  transform-origin:left center
-}
-html[dir="rtl"] .project--reverse .project__details h3 {
-  transform:skewX(8deg);
-  transform-origin:right center
 }
 .detail-hero {
   position:relative;
@@ -1351,6 +1286,7 @@ html[dir="rtl"] .project--reverse .project__details h3 {
         display: none;
     }
 }
+
 .procedure-gallery-image {
   cursor:pointer;
   transition:transform 0.25s ease
@@ -1722,9 +1658,6 @@ html[dir="rtl"] .project--reverse .project__details h3 {
 .treatment-card {
   min-height:21rem
 }
-.why-grid {
-  grid-template-columns:repeat(2, 1fr)
-}
 .project {
   grid-template-columns:45% 55%
 }
@@ -1833,7 +1766,7 @@ html[dir="rtl"] .hero__actions {
 .quick-stats__item:nth-child(4) {
   border-right:0
 }
-.treatments-section, .why-section, .journey-section, .home-faq {
+.treatments-section, .journey-section, .home-faq {
   padding-block:4rem
 }
 .section-heading {
@@ -1845,16 +1778,6 @@ html[dir="rtl"] .hero__actions {
 .treatment-card {
   min-height:21rem;
   padding:2rem
-}
-.why-grid {
-  grid-template-columns:1fr
-}
-.why-card {
-  min-height:auto;
-  padding:2rem
-}
-.why-card h3 {
-  margin-top:2.5rem
 }
 .about-section {
   grid-template-columns:1fr;
@@ -1942,14 +1865,6 @@ html[dir="rtl"] .hero__actions {
 html[dir="rtl"] .project__details h3 {
   text-align:right
 }
-html[dir="rtl"] .project--dark .project__details h3 {
-  transform:skewX(-6deg);
-  transform-origin:left center
-}
-html[dir="rtl"] .project--reverse .project__details h3 {
-  transform:skewX(6deg);
-  transform-origin:right center
-}
 .journey-step {
   grid-template-columns:3rem 1fr;
   gap:1rem;
@@ -1979,9 +1894,6 @@ html[dir="rtl"] .project--reverse .project__details h3 {
 .site-sidebar {
   width:100%;
   padding:6rem 2rem 2rem
-}
-.site-sidebar__eyebrow {
-  margin-bottom:2.5rem
 }
 .site-sidebar__title {
   margin-bottom:3rem
@@ -2312,40 +2224,6 @@ section, article, .quick-stats, .site-footer {
 .comparison__knob:hover {
   box-shadow:0 0.5rem 2rem rgba(8, 6, 4, 0.28), 0 0 2rem rgba(214, 179, 106, 0.45)
 }
-.why-section {
-  background:radial-gradient( circle at 80% 20%, rgba(201, 143, 134, 0.12), transparent 25% ), radial-gradient( circle at 15% 85%, rgba(214, 179, 106, 0.10), transparent 30% ), var(--ink)
-}
-.why-card {
-  position:relative;
-  overflow:hidden;
-  transition:transform 500ms cubic-bezier(0.22, 1, 0.36, 1), background 400ms ease
-}
-.why-card::after {
-  content:"";
-  position:absolute;
-  width:7rem;
-  height:7rem;
-  right:-3rem;
-  bottom:-3rem;
-  border-radius:50%;
-  background:var(--rose);
-  opacity:0.08;
-  transition:transform 600ms ease, opacity 400ms ease
-}
-.why-card:hover {
-  transform:translateY(-0.5rem);
-  background:#211b16
-}
-.why-card:hover::after {
-  transform:scale(1.7);
-  opacity:0.14
-}
-.why-card>span {
-  transition:color 300ms ease, transform 300ms ease
-}
-.why-card:hover>span {
-  color:var(--rose-soft)
-}
 .journey-step {
   position:relative;
   transition:padding-left 400ms ease, background 400ms ease
@@ -2645,12 +2523,12 @@ to {
   transition:none !important
 }
 }
-.js-ready .reveal, .js-ready .projects__intro>*, .js-ready .project, .js-ready .why-card, .js-ready .journey-item, .js-ready .home-faq .accordion-item, .js-ready .treatment-card, .js-ready .quick-stats__item, .js-ready .home-contact__content>*, .js-ready .about-section__content>* {
+.js-ready .reveal, .js-ready .projects__intro>*, .js-ready .project, .js-ready .journey-item, .js-ready .home-faq .accordion-item, .js-ready .treatment-card, .js-ready .quick-stats__item, .js-ready .home-contact__content>*, .js-ready .about-section__content>* {
   opacity:0;
   transform:translateY(45px);
   transition:opacity 900ms cubic-bezier(.22, 1, .36, 1), transform 900ms cubic-bezier(.22, 1, .36, 1)
 }
-.js-ready .reveal-visible, .js-ready .reveal-visible>*, .js-ready .projects__intro.reveal-visible>*, .js-ready .project.reveal-visible, .js-ready .why-card.reveal-visible, .js-ready .journey-item.reveal-visible, .js-ready .home-faq .accordion-item.reveal-visible, .js-ready .treatment-card.reveal-visible, .js-ready .quick-stats__item.reveal-visible, .js-ready .home-contact__content.reveal-visible>*, .js-ready .about-section__content.reveal-visible>* {
+.js-ready .reveal-visible, .js-ready .reveal-visible>*, .js-ready .projects__intro.reveal-visible>*, .js-ready .project.reveal-visible, .js-ready .journey-item.reveal-visible, .js-ready .home-faq .accordion-item.reveal-visible, .js-ready .treatment-card.reveal-visible, .js-ready .quick-stats__item.reveal-visible, .js-ready .home-contact__content.reveal-visible>*, .js-ready .about-section__content.reveal-visible>* {
   opacity:1;
   transform:translateY(0)
 }
@@ -2672,13 +2550,13 @@ to {
 .js-ready .reveal-visible>*:nth-child(6) {
   transition-delay:480ms
 }
-.js-ready .section-heading, .js-ready .projects__intro h2, .js-ready .why-section h2, .js-ready .journey-section h2, .js-ready .home-faq h2, .js-ready .treatments-section h2 {
+.js-ready .section-heading, .js-ready .projects__intro h2, .js-ready .journey-section h2, .js-ready .home-faq h2, .js-ready .treatments-section h2 {
   opacity:0;
   transform:translateY(30px);
   letter-spacing:.08em;
   transition:opacity 900ms ease, transform 900ms cubic-bezier(.22, 1, .36, 1), letter-spacing 900ms ease
 }
-.js-ready .section-heading.reveal-visible, .js-ready .projects__intro.reveal-visible h2, .js-ready .why-section.reveal-visible h2, .js-ready .journey-section.reveal-visible h2, .js-ready .home-faq.reveal-visible h2, .js-ready .treatments-section.reveal-visible h2 {
+.js-ready .section-heading.reveal-visible, .js-ready .projects__intro.reveal-visible h2, .js-ready .journey-section.reveal-visible h2, .js-ready .home-faq.reveal-visible h2, .js-ready .treatments-section.reveal-visible h2 {
   opacity:1;
   transform:translateY(0);
   letter-spacing:0
@@ -2816,20 +2694,6 @@ p {
 .project__number {
   font-size:.7rem
 }
-.why-section {
-  padding-top:3rem !important;
-  padding-bottom:3rem !important
-}
-.why-card {
-  padding:1.1rem !important;
-  margin-bottom:.7rem
-}
-.why-card h3 {
-  font-size:1.05rem
-}
-.why-card p {
-  font-size:.78rem
-}
 .journey-section {
   padding-top:3rem !important;
   padding-bottom:3rem !important
@@ -2912,25 +2776,25 @@ p {
 }
 }
 @media (max-width:575.98px) {
-  .js-ready .treatment-card, .js-ready .why-card, .js-ready .journey-item, .js-ready .project, .js-ready .quick-stats__item {
+  .js-ready .treatment-card, .js-ready .journey-item, .js-ready .project, .js-ready .quick-stats__item {
   opacity:0;
   transform:translateY(35px) scale(.97);
   transition:opacity 700ms ease, transform 700ms cubic-bezier(.22, 1, .36, 1)
 }
-.js-ready .treatment-card.reveal-visible, .js-ready .why-card.reveal-visible, .js-ready .journey-item.reveal-visible, .js-ready .project.reveal-visible, .js-ready .quick-stats__item.reveal-visible {
+  .js-ready .treatment-card.reveal-visible, .js-ready .journey-item.reveal-visible, .js-ready .project.reveal-visible, .js-ready .quick-stats__item.reveal-visible {
   opacity:1;
   transform:translateY(0) scale(1)
 }
-.js-ready .treatment-card:nth-child(even), .js-ready .why-card:nth-child(even) {
+  .js-ready .treatment-card:nth-child(even) {
   transform:translateX(25px)
 }
-.js-ready .treatment-card:nth-child(even).reveal-visible, .js-ready .why-card:nth-child(even).reveal-visible {
+  .js-ready .treatment-card:nth-child(even).reveal-visible {
   transform:translateX(0)
 }
-.js-ready .treatment-card:nth-child(odd), .js-ready .why-card:nth-child(odd) {
+  .js-ready .treatment-card:nth-child(odd) {
   transform:translateX(-25px)
 }
-.js-ready .treatment-card:nth-child(odd).reveal-visible, .js-ready .why-card:nth-child(odd).reveal-visible {
+  .js-ready .treatment-card:nth-child(odd).reveal-visible {
   transform:translateX(0)
 }
 }
@@ -3687,10 +3551,6 @@ iframe {
    TREATMENTS SECTION — DARK THEME
    ========================================= */
 
-.treatments-section .treatment-grid {
-    /* background: rgba(238, 212, 154, 0.22); */
-}
-
 .treatments-section .treatment-card {
     background: #211b16;
     color: var(--gold-soft);
@@ -3751,9 +3611,8 @@ iframe {
 
 /* =========================================================
    ANIMATED GOLD WAVES
-   Adapted from codepen.io/yy/pen/YaQBdW
-   Used on: hero, "why" section, FAQ (home +
-   procedure pages) and the footer.
+  Layered section waves for the hero, FAQ,
+  consultation, treatments, and footer.
    Three tiled SVG layers drift at 1x / 2x / 3x
    speed; every distance is a multiple of the
    1600px tile so the loop is seamless.
@@ -3766,7 +3625,6 @@ iframe {
 
 /* Negative z-index layers need their own stacking context */
 .procedure-faq,
-.why-section,
 .site-footer,
 .home-contact,
 .treatments-section {
@@ -3774,7 +3632,6 @@ iframe {
 }
 
 .hero::before,
-.why-section::after,
 .procedure-faq::after,
 .site-footer::after,
 .home-contact::before,
@@ -3795,9 +3652,7 @@ iframe {
     animation: waveDrift 20s linear infinite;
 }
 
-.why-section::before,
 .procedure-faq::before,
-.site-footer::before,
 .home-contact::after,
 .treatments-section::after 
  {
@@ -3845,7 +3700,6 @@ iframe {
     }
 } */
 .hero::before        { --wave-opacity: 0.28; }
-.why-section::after  { --wave-opacity: 0.23; }
 .procedure-faq::after { --wave-opacity: 0.14; }
 .site-footer::after  { --wave-opacity: 0.14; }
 .home-contact::before { --wave-opacity: 0.35; }
@@ -3924,42 +3778,6 @@ iframe {
         margin-top: 0.5rem !important;
     }
 }
-/* =========================================================
-   MOBILE WHY CARDS
-========================================================= */
-
-@media (max-width: 768px) {
-
-    .why-section .why-card {
-        width: 90% !important;
-        max-width: 90% !important;
-
-        margin-left: auto !important;
-        margin-right: auto !important;
-
-        padding: 1.25rem 1.3rem !important;
-
-        min-height: 0 !important;
-        height: auto !important;
-    }
-
-    .why-section .why-card h3 {
-        font-size: 1.25rem !important;
-        line-height: 1.2 !important;
-        margin-bottom: 0.6rem !important;
-    }
-
-    .why-section .why-card p {
-        font-size: 0.95rem !important;
-        line-height: 1.6 !important;
-        margin-bottom: 0 !important;
-    }
-
-    .why-section .why-card > span {
-        font-size: 1.4rem !important;
-    }
-}
-
 .about-section,
 .home-contact {
     width: 100%;
@@ -3993,3 +3811,166 @@ iframe {
     }
 
 }
+
+  /* =========================================================
+    BRAND REFINEMENTS
+    Burgundy is a secondary accent; the warm palette stays primary.
+  ========================================================= */
+
+  .language-switcher {
+    border-color: rgba(114, 27, 38, 0.45);
+  }
+
+  .menu-toggle:hover,
+  .menu-toggle:focus-visible {
+    border-color: var(--accent);
+  }
+
+  .quick-stats__item strong {
+    color: var(--accent);
+  }
+
+  .treatments-section .treatment-card {
+    border: 1px solid rgba(114, 27, 38, 0.22);
+  }
+
+  .treatments-section .treatment-card:hover,
+  .treatments-section .treatment-card:focus-visible {
+    border-color: var(--accent);
+    box-shadow: 0 1rem 2.5rem rgba(114, 27, 38, 0.16);
+  }
+
+  .project__number {
+    color: var(--accent);
+  }
+
+  .hero__copy h1 {
+    max-width: 56rem;
+    font-size: clamp(2.6rem, 5.3vw, 5rem);
+    line-height: 1.05;
+  }
+
+  /* Scheherazade New is the single Arabic face; avoid synthetic italics. */
+  html[dir="rtl"] body,
+  html[dir="rtl"] body * {
+    font-family: "Scheherazade New", serif;
+    font-style: normal;
+  }
+
+  html[dir="rtl"] .project__details h3 {
+    transform: none;
+  }
+
+  html[dir="rtl"] .hero__copy h1 {
+    font-size: clamp(2.4rem, 4.8vw, 4.4rem);
+    line-height: 1.2;
+  }
+
+  /* Short branded interstitial; it dismisses on load and has a timeout fallback. */
+  .site-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 1rem;
+    background:
+      radial-gradient(circle at 50% 45%, var(--accent-wash), transparent 18rem),
+      var(--paper);
+    color: var(--ink);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 500ms ease, visibility 500ms ease;
+  }
+
+  .site-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .site-loader__artwork {
+    position: relative;
+    display: grid;
+    width: clamp(13rem, 48vw, 18rem);
+    aspect-ratio: 1;
+    place-items: center;
+  }
+
+  .site-loader__ripple {
+    position: absolute;
+    width: 78%;
+    height: 78%;
+    display: block;
+    color: var(--accent);
+  }
+
+  .site-loader__logo {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 40%;
+    height: 40%;
+    object-fit: contain;
+  }
+
+  .site-footer__identity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .site-footer__logo {
+    width: 4rem;
+    height: 4rem;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+
+  .site-footer__brand {
+    margin: 0;
+  }
+
+  .hero__logo {
+    display: block;
+    width: 180px;
+    height: 64px;
+    /* margin: 0 0 1rem auto; */
+    object-fit: contain;
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.24));
+  }
+
+  .site-sidebar__logo {
+    display: block;
+    width: 180px;
+    height: 90px;
+    /* margin: 0 0 3rem; */
+    object-fit: contain;
+  }
+
+  .hero--home .hero__panel {
+    transform: skewX(-5deg) scale(1.16);
+    animation-name: heroImageFloatSkew;
+  }
+
+  @keyframes heroImageFloatSkew {
+    0% { transform: skewX(-5deg) scale(1.14) translate3d(0, 0, 0); }
+    50% { transform: skewX(-5deg) scale(1.18) translate3d(-0.4%, -0.3%, 0); }
+    100% { transform: skewX(-5deg) scale(1.14) translate3d(0.4%, 0.3%, 0); }
+  }
+
+  /* Keep tap feedback visible longer on touchscreens. */
+  @media (hover: none) and (pointer: coarse) {
+    .butterfly-burst { animation-duration: 1.8s; }
+    .sparkle-burst { animation-duration: 1.2s; }
+  }
+
+  @media (max-width: 575.98px) {
+    .hero__copy h1 { font-size: clamp(2.25rem, 9vw, 3.2rem); }
+    html[dir="rtl"] .hero__copy h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-loader { transition-duration: 1ms; }
+  }
