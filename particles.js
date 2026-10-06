@@ -100,18 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
        HOVER PARTICLES
        ========================================= */
 
-    function createHoverParticles(button) {
+    function createHoverParticles(button, { butterflyCount = 2, sparkleCount = 3, ambient = false } = {}) {
 
         const layer = button.querySelector(".particle-layer");
         const theme = getParticleTheme(button);
-
-        /*
-         * Only a few particles.
-         * Change these numbers if you want more.
-         */
-
-        const butterflyCount = 2;
-        const sparkleCount = 3;
 
 
         /* Butterflies */
@@ -122,22 +114,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
             particle.src = theme.image;
 
-            particle.className =
-                "butterfly-particle butterfly-float";
+            particle.className = ambient
+                ? "butterfly-particle butterfly-float butterfly-ambient"
+                : "butterfly-particle butterfly-float";
 
 
             const startX =
                 20 + Math.random() * 60;
 
-            const startY =
-                40 + Math.random() * 20;
+            const startY = ambient ? 50 : 40 + Math.random() * 20;
 
 
             const x =
-                (Math.random() - 0.5) * 90;
+                (Math.random() - 0.5) * (ambient ? 40 : 90);
 
-            const y =
-                -25 - Math.random() * 55;
+            const y = ambient ? -8 - Math.random() * 12 : -25 - Math.random() * 55;
 
 
             const rotation =
@@ -229,6 +220,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+    }
+
+
+    /* =========================================
+       MOBILE AMBIENT BUTTERFLIES
+       Only animate buttons while they are visible.
+       ========================================= */
+
+    const isMobileViewport = window.matchMedia(
+        "(max-width: 768px), (hover: none) and (pointer: coarse)"
+    ).matches;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (isMobileViewport && !prefersReducedMotion && "IntersectionObserver" in window) {
+        const timers = new Map();
+
+        const stopParticles = (button) => {
+            window.clearTimeout(timers.get(button));
+            timers.delete(button);
+        };
+
+        const startParticles = (button) => {
+            if (timers.has(button)) return;
+
+            const emitButterfly = () => {
+                if (!button.isConnected || document.visibilityState !== "visible") {
+                    stopParticles(button);
+                    return;
+                }
+
+                createHoverParticles(button, { butterflyCount: 1, sparkleCount: 0, ambient: true });
+                timers.set(button, window.setTimeout(emitButterfly, 1200 + Math.random() * 400));
+            };
+
+            timers.set(button, window.setTimeout(emitButterfly, 250 + Math.random() * 1200));
+        };
+
+        const particleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(({ target, isIntersecting }) => {
+                if (isIntersecting) {
+                    startParticles(target);
+                } else {
+                    stopParticles(target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        buttons.forEach((button) => particleObserver.observe(button));
+
+        document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") {
+                buttons.forEach(stopParticles);
+                return;
+            }
+
+            buttons.forEach((button) => {
+                const bounds = button.getBoundingClientRect();
+                if (bounds.bottom > 0 && bounds.top < window.innerHeight) {
+                    startParticles(button);
+                }
+            });
+        });
     }
 
 

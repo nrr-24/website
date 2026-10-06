@@ -819,10 +819,6 @@ if (siteLoader) {
     const startedAt = performance.now();
     let dismissed = false;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        siteLoader.querySelectorAll(".site-loader__ripple animate").forEach((animation) => animation.remove());
-    }
-
     const dismissLoader = () => {
         if (dismissed) return;
         dismissed = true;
@@ -1025,9 +1021,9 @@ if (hero) {
         if (scrollY < window.innerHeight) {
             panels.forEach((panel) => {
                 if (window.innerWidth <= 768) {
-                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(-5deg) " : ""}scale(1.05) translateY(${scrollY * 0.12}px)`;
+                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(5deg) " : ""}scale(1.05) translateY(${scrollY * 0.12}px)`;
                 } else {
-                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(-5deg) " : ""}scale(1.02) translateY(${scrollY * 0.25}px)`;
+                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(5deg) " : ""}scale(1.02) translateY(${scrollY * 0.25}px)`;
                 }
             });
         }
