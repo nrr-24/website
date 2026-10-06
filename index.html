@@ -75,40 +75,23 @@
 <!-- =========================================================
      HERO
 ========================================================= -->
-<header class="hero hero--home" id="home" aria-labelledby="hero-title">
-    <div class="hero__panel" data-hero-bg="images/healthy.png"></div>
+<header class="hero hero--home" id="home" aria-label="Dr. Rema Kolib video introduction">
+    <video class="hero__video" data-hero-video autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+        <source src="images/montage.mp4" type="video/mp4">
+    </video>
     <div class="hero__veil" aria-hidden="true"></div>
 
-    <div class="hero__content container">
-        <div class="hero__copy">
-            <img class="hero__logo" src="images/1080.png" alt="" aria-hidden="true" width="128" height="128">
-            <!-- <p class="hero__eyebrow" data-i18n="heroEyebrow">
-                Clinical dermatology · Aesthetic medicine
-            </p> -->
-
-            <h1 id="hero-title" data-i18n="heroTitle">
-                Dr. Reham Kolib
-            </h1>
-
-            <p class="hero__subtitle" data-i18n="heroSubtitle">
-                Where Skin Health Meets Beauty
-            </p>
-
-            <!-- <p class="hero__description" data-i18n="heroDescription">
-                Personalized dermatological and aesthetic care designed around your skin, your features, and your goals.
-            </p> -->
-
-            <div class="hero__actions">
-                <a class="book-button particle-btn" href="#contact" data-i18n="bookConsultation">
-                    Book a consultation
-                </a>
-
-                <a class="hero__secondary-link particle-btn" href="#treatments" data-i18n="exploreTreatments">
-                    Explore treatments
-                    <span aria-hidden="true">↓</span>
-                </a>
-            </div>
-        </div>
+    <div class="hero__video-controls" role="group" aria-label="Video controls">
+        <button class="hero__video-control" type="button" data-video-toggle aria-label="Pause video">
+            <svg class="hero__video-icon hero__video-icon--pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" /></svg>
+            <svg class="hero__video-icon hero__video-icon--play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z" /></svg>
+            <span class="visually-hidden" data-video-toggle-label>Pause video</span>
+        </button>
+        <button class="hero__video-control is-muted" type="button" data-video-mute aria-label="Unmute video" aria-pressed="false">
+            <svg class="hero__video-icon hero__video-icon--muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM16 9l5 6m0-6-5 6" /></svg>
+            <svg class="hero__video-icon hero__video-icon--sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7m3-10a9 9 0 0 1 0 13" /></svg>
+            <span class="visually-hidden" data-video-mute-label>Unmute video</span>
+        </button>
     </div>
 </header>
 
@@ -145,15 +128,15 @@
 <section class="about-section about-section--new container section-light" id="about" aria-labelledby="about-title">
     <div class="about-section__content">
         <p class="section-label" data-i18n="aboutLabel">
-            About Dr. Reham
+            About Dr. Rema
         </p>
 
-        <h2 id="about-title" data-i18n="aboutTitle">
-            Expertise shaped around you.
+        <h1 id="about-title" class="about-section__title" data-i18n="aboutTitle">
+            Dr. Rema Kolib | Dermatology &amp; Aesthetics
         </h2>
 
-        <p data-i18n="aboutBody">
-            Dr. Reham Kolib is a Specialist Dermatologist with over 10 years of experience assessing and treating clinical and cosmetic dermatological conditions. After earning her master’s degree in 2018, she pursued advanced certifications in laser and aesthetic treatments. Her practice is grounded in careful listening and customized treatment plans, because every patient and every skin is different.
+        <p class="about-section__intro" data-i18n="aboutBody">
+            Where skin health meets beauty. Dr. Rema Kolib brings 10+ years of specialist dermatology experience to personalized clinical, laser, and aesthetic care, with each plan shaped around your skin, features, and goals.
         </p>
 
         <a class="text-link particle-btn" href="#journey" data-i18n="aboutLearnMore">

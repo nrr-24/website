@@ -22,6 +22,11 @@ const translations = {
         heroDescription:
             "Personalized skin and aesthetic care, shaped around your features and goals.",
 
+        pauseVideo: "Pause video",
+        playVideo: "Play video",
+        muteVideo: "Mute video",
+        unmuteVideo: "Unmute video",
+
         bookConsultation: "Book a consultation",
         exploreTreatments: "Explore treatments",
         scrollExplore: "Scroll to explore",
@@ -31,11 +36,11 @@ const translations = {
         statLanguages: "Languages",
         statCare: "Patient-focused care",
 
-        aboutLabel: "About Dr. Reham",
-        aboutTitle: "Expertise shaped around you.",
+        aboutLabel: "About Dr. Rema",
+        aboutTitle: "Dr. Rema Kolib | Dermatology & Aesthetics",
 
         aboutBody:
-            "With 10+ years in clinical and cosmetic dermatology, Dr. Reham Kolib creates thoughtful treatment plans shaped around each patient's skin and goals.",
+            "Where skin health meets beauty. Dr. Rema Kolib brings 10+ years of specialist dermatology experience to personalized clinical, laser, and aesthetic care, with each plan shaped around your skin, features, and goals.",
 
         aboutSpecialtyLabel: "Specialty",
         aboutSpecialty: "Clinical and cosmetic dermatology",
@@ -288,6 +293,11 @@ const translations = {
         heroDescription:
             "رعاية جلدية وتجميلية مخصصة لبشرتك وملامحك وأهدافك.",
 
+        pauseVideo: "إيقاف الفيديو مؤقتًا",
+        playVideo: "تشغيل الفيديو",
+        muteVideo: "كتم الصوت",
+        unmuteVideo: "تشغيل الصوت",
+
         bookConsultation: "احجزي استشارتك",
         exploreTreatments: "استكشفي العلاجات",
         scrollExplore: "مرري لاستكشاف المزيد",
@@ -297,11 +307,11 @@ const translations = {
         statLanguages: "لغتان",
         statCare: "رعاية تركز على المريض",
 
-        aboutLabel: "نبذة عن د. رهام",
-        aboutTitle: "خبرة تُصاغ بما يناسبك.",
+        aboutLabel: "نبذة عن د. ريما",
+        aboutTitle: "د. ريما قليب | الأمراض الجلدية والتجميل",
 
         aboutBody:
-            "تتمتع د. رهام قليب بخبرة تزيد عن 10 سنوات في الأمراض الجلدية السريرية والتجميلية، وتضع خطط علاج تناسب كل بشرة وأهدافها.",
+            "حيث تلتقي صحة البشرة بالجمال. تقدم د. ريما قليب خبرة تزيد عن 10 سنوات في طب الجلد، مع رعاية سريرية وتجميلية وعلاجات ليزر مخصصة لبشرتك وملامحك وأهدافك.",
 
         aboutSpecialtyLabel: "التخصص",
         aboutSpecialty: "الأمراض الجلدية السريرية والتجميلية",
@@ -844,6 +854,53 @@ if (siteLoader) {
 
 const hero = document.querySelector(".hero");
 const panels = document.querySelectorAll(".hero__panel");
+const heroVideo = document.querySelector("[data-hero-video]");
+
+if (heroVideo) {
+    const toggleButton = document.querySelector("[data-video-toggle]");
+    const muteButton = document.querySelector("[data-video-mute]");
+    const languageCopy = () => translations[document.documentElement.lang] || translations.en;
+
+    const updateVideoControls = () => {
+        const copy = languageCopy();
+        const isPaused = heroVideo.paused;
+        const isMuted = heroVideo.muted;
+
+        toggleButton?.classList.toggle("is-paused", isPaused);
+        toggleButton?.setAttribute("aria-label", isPaused ? copy.playVideo : copy.pauseVideo);
+        toggleButton?.querySelector("[data-video-toggle-label]")?.replaceChildren(
+            document.createTextNode(isPaused ? copy.playVideo : copy.pauseVideo)
+        );
+
+        muteButton?.classList.toggle("is-muted", isMuted);
+        muteButton?.setAttribute("aria-label", isMuted ? copy.unmuteVideo : copy.muteVideo);
+        muteButton?.setAttribute("aria-pressed", String(!isMuted));
+        muteButton?.querySelector("[data-video-mute-label]")?.replaceChildren(
+            document.createTextNode(isMuted ? copy.unmuteVideo : copy.muteVideo)
+        );
+    };
+
+    toggleButton?.addEventListener("click", () => {
+        if (heroVideo.paused) {
+            heroVideo.play().catch(() => {});
+        } else {
+            heroVideo.pause();
+        }
+        updateVideoControls();
+    });
+
+    muteButton?.addEventListener("click", () => {
+        heroVideo.muted = !heroVideo.muted;
+        updateVideoControls();
+    });
+
+    ["play", "pause", "volumechange"].forEach((eventName) => {
+        heroVideo.addEventListener(eventName, updateVideoControls);
+    });
+
+    updateVideoControls();
+    heroVideo.play().catch(() => updateVideoControls());
+}
 
 // Apply hero background from data-hero-bg attribute (set per page in HTML)
 panels.forEach((panel) => {
