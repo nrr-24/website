@@ -1021,9 +1021,9 @@ if (hero) {
         if (scrollY < window.innerHeight) {
             panels.forEach((panel) => {
                 if (window.innerWidth <= 768) {
-                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(5deg) " : ""}scale(1.05) translateY(${scrollY * 0.12}px)`;
+                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(-5deg) " : ""}scale(1.05) translateY(${scrollY * 0.12}px)`;
                 } else {
-                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(5deg) " : ""}scale(1.02) translateY(${scrollY * 0.25}px)`;
+                    panel.style.transform = `${hero.classList.contains("hero--home") ? "skewX(-5deg) " : ""}scale(1.02) translateY(${scrollY * 0.25}px)`;
                 }
             });
         }

@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const buttons = document.querySelectorAll(".particle-btn");
+    const isMobileViewport = window.matchMedia(
+        "(max-width: 768px), (hover: none) and (pointer: coarse)"
+    ).matches;
 
     /* =========================================
        PARTICLE THEMES
@@ -77,8 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
            ===================================== */
 
         button.addEventListener("mouseenter", () => {
-
+            if (isMobileViewport) return;
             createHoverParticles(button);
+            createButtonWipe(button);
 
         });
 
@@ -90,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", () => {
 
             createBurst(button);
+            createButtonWipe(button);
 
         });
 
@@ -223,14 +228,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    function createButtonWipe(button, delay = 0) {
+        if (delay > 0) {
+            window.setTimeout(() => {
+                if (button.isConnected) createButtonWipe(button);
+            }, delay);
+            return;
+        }
+
+        const layer = button.querySelector(".particle-layer");
+        if (!layer) return;
+
+        layer.querySelector(".button-wipe-reveal")?.remove();
+
+        const isRtl = document.documentElement.dir === "rtl";
+        const buttonWidth = button.getBoundingClientRect().width;
+        const travel = Math.max(0, buttonWidth - 60);
+        const theme = getParticleTheme(button);
+
+        const reveal = document.createElement("span");
+        reveal.className = "button-wipe-reveal";
+        if (isRtl) reveal.classList.add("button-wipe-reveal--rtl");
+        layer.appendChild(reveal);
+        reveal.addEventListener("animationend", () => reveal.remove(), { once: true });
+        window.setTimeout(() => reveal.remove(), 1000);
+
+        const butterfly = document.createElement("img");
+        butterfly.src = theme.image;
+        butterfly.className = "butterfly-particle butterfly-wipe";
+        butterfly.style.left = isRtl ? `${buttonWidth + 60}px` : "60px";
+        butterfly.style.top = `${button.offsetHeight / 2 + 60}px`;
+        butterfly.style.setProperty("--travel", `${isRtl ? -travel : travel}px`);
+        layer.appendChild(butterfly);
+        butterfly.addEventListener("animationend", () => butterfly.remove(), { once: true });
+        window.setTimeout(() => butterfly.remove(), 1000);
+    }
+
+
     /* =========================================
        MOBILE AMBIENT BUTTERFLIES
        Only animate buttons while they are visible.
        ========================================= */
 
-    const isMobileViewport = window.matchMedia(
-        "(max-width: 768px), (hover: none) and (pointer: coarse)"
-    ).matches;
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (isMobileViewport && !prefersReducedMotion && "IntersectionObserver" in window) {
@@ -258,13 +297,26 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const particleObserver = new IntersectionObserver((entries) => {
-            entries.forEach(({ target, isIntersecting }) => {
-                if (isIntersecting) {
-                    startParticles(target);
-                } else {
-                    stopParticles(target);
-                }
+            const entering = entries.filter((entry) => entry.isIntersecting);
+            const direction = document.documentElement.dir === "rtl" ? -1 : 1;
+
+            entering.sort((first, second) => {
+                const firstBounds = first.target.getBoundingClientRect();
+                const secondBounds = second.target.getBoundingClientRect();
+                const verticalOrder = firstBounds.top - secondBounds.top;
+                return Math.abs(verticalOrder) > 8
+                    ? verticalOrder
+                    : (firstBounds.left - secondBounds.left) * direction;
             });
+
+            entering.forEach(({ target }, index) => {
+                createButtonWipe(target, index * 350);
+                startParticles(target);
+            });
+
+            entries
+                .filter((entry) => !entry.isIntersecting)
+                .forEach(({ target }) => stopParticles(target));
         }, { threshold: 0.2 });
 
         buttons.forEach((button) => particleObserver.observe(button));
