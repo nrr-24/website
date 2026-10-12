@@ -142,7 +142,12 @@
             }
         });
     });
-
+ function centerThumb(item) {
+    var listRect = playlistEl.getBoundingClientRect();
+    var itemRect = item.getBoundingClientRect();
+    var delta = (itemRect.left + itemRect.width / 2) - (listRect.left + listRect.width / 2);
+    playlistEl.scrollTo({ left: playlistEl.scrollLeft + delta, behavior: 'smooth' });
+}
     // ── Auto-load the first video on page load ────────────────────────────────
     playVideo(items[0]);
 
@@ -171,7 +176,7 @@
         items.forEach(function (el) { el.classList.remove('is-active'); });
         item.classList.add('is-active');
 
-        item.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+        centerThumb(item);
     }
 
     // ── Auto-advance to the next video when the current one ends ─────────────
