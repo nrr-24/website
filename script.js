@@ -16,7 +16,7 @@ const translations = {
         navFaq: "FAQ",
 
         heroEyebrow: "Clinical dermatology · Aesthetic medicine",
-        heroTitle: "Dr. Rema Kolib | Dermatology & Aesthetics",
+        heroTitle: "Dr. Reham Kolib | Dermatology & Aesthetics",
         heroSubtitle: "Where Skin Health Meets Beauty",
 
         heroDescription:
@@ -36,11 +36,11 @@ const translations = {
         statLanguages: "Languages",
         statCare: "Patient-focused care",
 
-        aboutLabel: "About Dr. Rema",
-        aboutTitle: "Dr. Rema Kolib | Dermatology & Aesthetics",
+        aboutLabel: "About Dr. Reham",
+        aboutTitle: "Dr. Reham Kolib | Dermatology & Aesthetics",
 
         aboutBody:
-            "Where skin health meets beauty. Dr. Rema Kolib brings 10+ years of specialist dermatology experience to personalized clinical, laser, and aesthetic care, with each plan shaped around your skin, features, and goals.",
+            "Where skin health meets beauty. Dr. Reham Kolib brings 10+ years of specialist dermatology experience to personalized clinical, laser, and aesthetic care, with each plan shaped around your skin, features, and goals.",
 
         aboutSpecialtyLabel: "Specialty",
         aboutSpecialty: "Clinical and cosmetic dermatology",
@@ -323,11 +323,11 @@ const translations = {
         statLanguages: "لغتان",
         statCare: "رعاية تركز على المريض",
 
-        aboutLabel: "نبذة عن د. ريما",
-        aboutTitle: "د. ريما قليب | الأمراض الجلدية والتجميل",
+        aboutLabel: "نبذة عن د. رهام",
+        aboutTitle: "د. رهام قليب | الأمراض الجلدية والتجميل",
 
         aboutBody:
-            "حيث تلتقي صحة البشرة بالجمال. تقدم د. ريما قليب خبرة تزيد عن 10 سنوات في طب الجلد، مع رعاية سريرية وتجميلية وعلاجات ليزر مخصصة لبشرتك وملامحك وأهدافك.",
+            "حيث تلتقي صحة البشرة بالجمال. تقدم د. رهام قليب خبرة تزيد عن 10 سنوات في طب الجلد، مع رعاية سريرية وتجميلية وعلاجات ليزر مخصصة لبشرتك وملامحك وأهدافك.",
 
         aboutSpecialtyLabel: "التخصص",
         aboutSpecialty: "الأمراض الجلدية السريرية والتجميلية",
