@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const THEMES = {
         gold: {
-            image: "images/side-butterfly-gold.png",
+            image: "images/decorative/side-butterfly-gold.png",
             color: "#d6b36a"
         },
         brown: {
-            image: "images/side-butterfly-brown.png",
+            image: "images/decorative/side-butterfly-brown.png",
             color: "#7a5230"
         }
     };

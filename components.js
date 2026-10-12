@@ -79,7 +79,7 @@
     aria-hidden="true"
 >
     <div class="site-sidebar__inner">
-        <img class="site-sidebar__logo" src="images/1080.png" alt="Dr. Reham Kolib" width="128" height="128">
+        <img class="site-sidebar__logo" src="images/branding/1080.png" alt="Dr. Reham Kolib" width="128" height="128">
 
         <p class="site-sidebar__title" data-i18n="sidebarTitle">
             Where Skin Health Meets Beauty
@@ -208,7 +208,7 @@
     <!-- Consultation image -->
     <figure class="home-contact__image">
         <img
-            src="images/consult.png"
+            src="images/contact/consult.png"
             alt="Dermatology consultation"
         >
     </figure>
@@ -226,7 +226,7 @@
         <div class="site-footer__identity">
             <img
                 class="site-footer__logo"
-                src="images/1080.png"
+                src="images/branding/1080.png"
                 alt=""
                 aria-hidden="true"
                 width="64"

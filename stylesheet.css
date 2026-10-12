@@ -294,7 +294,7 @@ body.menu-is-open {
   z-index:-3;
   width:100%;
   background-color:#514233;
-  background-image:url("images/healthy.png");
+  background-image:url("images/backgrounds/healthy.png");
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
@@ -1068,13 +1068,13 @@ html[dir="rtl"] .project__details h3 {
 }
 /* hero project background bg*/
 .detail-hero--face {                
-  background-image:url("images/facelift-stock.jpg")
+  background-image:url("images/facelift/facelift-stock.jpg")
 }
 .detail-hero--filler {
-  background-image:url("images/filler-stock.jpg")
+  background-image:url("images/filler/filler-stock.jpg")
 }
 .detail-hero--botox {
-  background-image:url("images/botox-stock.jpg")
+  background-image:url("images/botox/botox-stock.jpg")
 }
 .detail-hero__veil {
   position:absolute;
@@ -2347,7 +2347,7 @@ section, article, .quick-stats, .site-footer {
     position: absolute;
     inset: 0;
 
-    background-image: url("images/new-bg.png");
+    background-image: url("images/backgrounds/new-bg.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -3593,7 +3593,7 @@ iframe {
 
     .section-dark::before,
     .section-light::before {
-    background-image: url("images/mobile-new-bg.png");
+    background-image: url("images/backgrounds/mobile-new-bg.png");
     }
 
 }
