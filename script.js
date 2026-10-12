@@ -683,6 +683,18 @@ const initializeProcedureGallery = () => {
         }
     });
 
+    modal?.addEventListener("show.bs.modal", () => {
+        document.body.classList.add("image-modal-open");
+        const menuToggle = document.querySelector(".menu-toggle");
+        if (menuToggle) menuToggle.style.setProperty("display", "none", "important");
+    });
+
+    modal?.addEventListener("hidden.bs.modal", () => {
+        document.body.classList.remove("image-modal-open");
+        const menuToggle = document.querySelector(".menu-toggle");
+        if (menuToggle) menuToggle.style.removeProperty("display");
+    });
+
     document.querySelectorAll(".procedure-carousel").forEach((carousel) => {
         const carouselInner = carousel.querySelector(".swiper-wrapper");
         if (!carouselInner) return;
@@ -694,7 +706,11 @@ const initializeProcedureGallery = () => {
 
         carouselInner.replaceChildren();
 
-        [...images, ...images, ...images].forEach((image, index) => {
+        const slidesToRender = images.length < 6
+            ? Array.from({ length: Math.ceil(6 / images.length) }, () => images).flat()
+            : images;
+
+        slidesToRender.forEach((image, index) => {
             const slide = document.createElement("div");
             slide.className = "swiper-slide";
 
@@ -721,7 +737,7 @@ const initializeProcedureGallery = () => {
             slidesPerView: "auto",
             spaceBetween: 25,
             loop: true,
-            loopAdditionalSlides: images.length,
+            loopAdditionalSlides: Math.min(images.length, 2),
             speed: 900,
             autoplay: {
                 delay: 2600,
@@ -741,10 +757,6 @@ const initializeProcedureGallery = () => {
             navigation: {
                 nextEl: carousel.querySelector(".swiper-button-next"),
                 prevEl: carousel.querySelector(".swiper-button-prev")
-            },
-            pagination: {
-                el: carousel.querySelector(".swiper-pagination"),
-                clickable: true
             }
         });
     });
@@ -868,13 +880,14 @@ if (siteLoader) {
         window.setTimeout(() => {
             siteLoader.classList.add("is-hidden");
             window.setTimeout(() => siteLoader.remove(), 550);
-        }, Math.max(0, 900 - visibleFor));
+        }, Math.max(0, 400 - visibleFor));
     };
 
-    const fallbackTimer = window.setTimeout(dismissLoader, 4500);
-    if (document.readyState === "complete") {
+    const fallbackTimer = window.setTimeout(dismissLoader, 1500);
+    if (document.readyState === "complete" || document.readyState === "interactive") {
         dismissLoader();
     } else {
+        document.addEventListener("DOMContentLoaded", dismissLoader, { once: true });
         window.addEventListener("load", dismissLoader, { once: true });
     }
 }
@@ -943,13 +956,20 @@ panels.forEach((panel) => {
 const videoEl = document.querySelector(".procedure-video__player");
 if (videoEl) {
     const { video, poster } = document.body.dataset;
-    if (poster) videoEl.poster = poster;
+    if (poster && !videoEl.poster) videoEl.poster = poster;
     if (video) {
         let src = videoEl.querySelector("source");
-        if (!src) { src = document.createElement("source"); videoEl.appendChild(src); }
-        src.type = "video/mp4";
-        src.src = video;
-        videoEl.load();
+        if (!src) {
+            src = document.createElement("source");
+            src.type = "video/mp4";
+            src.src = video;
+            videoEl.appendChild(src);
+            videoEl.load();
+        } else if (src.getAttribute("src") !== video) {
+            src.type = "video/mp4";
+            src.src = video;
+            videoEl.load();
+        }
     }
 }
 
@@ -959,9 +979,14 @@ const waitForPanel = (panel) => {
     if (!imageUrl) return Promise.resolve();
 
     return new Promise((resolve) => {
+        const timer = setTimeout(resolve, 1200);
         const image = new Image();
-        image.addEventListener("load", resolve, { once: true });
-        image.addEventListener("error", resolve, { once: true });
+        const finish = () => {
+            clearTimeout(timer);
+            resolve();
+        };
+        image.addEventListener("load", finish, { once: true });
+        image.addEventListener("error", finish, { once: true });
         image.src = imageUrl;
     });
 };
@@ -1244,8 +1269,138 @@ comparisons.forEach((comparison) => {
 });
 
 /* =========================================================
+   HOMEPAGE INFINITE CAROUSEL MOBILE SWIPING
+========================================================= */
+
+const initializeInfiniteCarousels = () => {
+    const carousels = document.querySelectorAll(".infinite-carousel");
+    if (!carousels.length) return;
+
+    carousels.forEach((carousel) => {
+        const track = carousel.querySelector(".infinite-carousel__track");
+        if (!track) return;
+
+        let startX = 0;
+        let startY = 0;
+        let currentTranslateX = 0;
+        let isDragging = false;
+        let isHorizontalSwipe = null;
+        let lastX = 0;
+        let lastTime = 0;
+        let velocityX = 0;
+        const animationDuration = 55;
+
+        const getGroupWidth = () => {
+            const group = track.querySelector(".infinite-carousel__group");
+            return group ? group.getBoundingClientRect().width : (track.scrollWidth / 2);
+        };
+
+        const getCurrentTranslateX = () => {
+            const style = window.getComputedStyle(track);
+            const matrix = new DOMMatrixReadOnly(style.transform);
+            return matrix.m41;
+        };
+
+        const onTouchStart = (e) => {
+            const touch = e.touches ? e.touches[0] : e;
+            startX = touch.clientX;
+            startY = touch.clientY;
+            lastX = touch.clientX;
+            lastTime = performance.now();
+            velocityX = 0;
+            isHorizontalSwipe = null;
+            isDragging = true;
+
+            const groupWidth = getGroupWidth();
+            let currentX = getCurrentTranslateX();
+            if (groupWidth > 0) {
+                while (currentX > 0) currentX -= groupWidth;
+                while (currentX < -groupWidth) currentX += groupWidth;
+            }
+            currentTranslateX = currentX;
+
+            track.style.animationPlayState = "paused";
+            track.style.transform = `translateX(${currentTranslateX}px)`;
+            track.style.transition = "none";
+        };
+
+        const onTouchMove = (e) => {
+            if (!isDragging) return;
+            const touch = e.touches ? e.touches[0] : e;
+            const diffX = touch.clientX - startX;
+            const diffY = touch.clientY - startY;
+
+            if (isHorizontalSwipe === null) {
+                if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
+                    isHorizontalSwipe = Math.abs(diffX) >= Math.abs(diffY);
+                }
+            }
+
+            if (!isHorizontalSwipe) return;
+
+            if (e.cancelable) e.preventDefault();
+
+            const now = performance.now();
+            const dt = now - lastTime;
+            if (dt > 0) {
+                velocityX = (touch.clientX - lastX) / dt;
+                lastX = touch.clientX;
+                lastTime = now;
+            }
+
+            const groupWidth = getGroupWidth();
+            let newX = currentTranslateX + diffX;
+            if (groupWidth > 0) {
+                while (newX > 0) newX -= groupWidth;
+                while (newX < -groupWidth) newX += groupWidth;
+            }
+            track.style.transform = `translateX(${newX}px)`;
+        };
+
+        const onTouchEnd = () => {
+            if (!isDragging) return;
+            isDragging = false;
+
+            if (!isHorizontalSwipe) {
+                track.style.animationPlayState = "running";
+                return;
+            }
+
+            const groupWidth = getGroupWidth();
+            let finalX = getCurrentTranslateX();
+            if (groupWidth > 0) {
+                if (Math.abs(velocityX) > 0.25) {
+                    finalX += velocityX * 120;
+                }
+                while (finalX > 0) finalX -= groupWidth;
+                while (finalX < -groupWidth) finalX += groupWidth;
+
+                const progress = Math.abs(finalX) / groupWidth;
+                const delay = -(progress * animationDuration);
+
+                track.style.transition = "none";
+                track.style.transform = "";
+                track.style.animation = "none";
+                void track.offsetWidth;
+                track.style.animation = "";
+                track.style.animationDelay = `${delay}s`;
+                track.style.animationPlayState = "running";
+            } else {
+                track.style.animationPlayState = "running";
+            }
+        };
+
+        carousel.addEventListener("touchstart", onTouchStart, { passive: true });
+        carousel.addEventListener("touchmove", onTouchMove, { passive: false });
+        carousel.addEventListener("touchend", onTouchEnd, { passive: true });
+        carousel.addEventListener("touchcancel", onTouchEnd, { passive: true });
+    });
+};
+
+/* =========================================================
    INITIALIZE
 ========================================================= */
 
 setupProjectDropdown();
 initializeProcedureGallery();
+initializeInfiniteCarousels();

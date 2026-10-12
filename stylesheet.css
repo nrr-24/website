@@ -1220,7 +1220,7 @@ html[dir="rtl"] .project__details h3 {
     width: 100%;
     max-width: 1100px;
     margin: 3rem auto 0;
-    padding: 2rem 0 4rem;
+    padding: 2rem 0;
     overflow: hidden;
 }
 
@@ -1252,19 +1252,7 @@ html[dir="rtl"] .project__details h3 {
 /* Pagination */
 
 .procedure-carousel .swiper-pagination {
-    bottom: 0;
-}
-
-.procedure-carousel .swiper-pagination-bullet {
-    width: 8px;
-    height: 8px;
-    background: var(--gold-soft);
-    opacity: 0.4;
-}
-
-.procedure-carousel .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: var(--gold);
+    display: none;
 }
 
 /* Arrows */
@@ -1287,7 +1275,7 @@ html[dir="rtl"] .project__details h3 {
 
     .procedure-carousel {
         width: 100%;
-        padding: 1.5rem 0 3.5rem;
+        padding: 1.5rem 0 2rem;
     }
 
     .procedure-carousel .swiper-slide {
@@ -1324,6 +1312,28 @@ html[dir="rtl"] .project__details h3 {
 }
 #procedure-image-modal .carousel-control-prev, #procedure-image-modal .carousel-control-next {
   width:12%
+}
+body.modal-open .menu-toggle,
+body.image-modal-open .menu-toggle,
+body:has(#procedure-image-modal.show) .menu-toggle {
+  display: none !important;
+}
+#procedure-image-modal .btn-close {
+  z-index: 1060;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.75rem;
+  background-color: rgba(23, 19, 15, 0.65);
+  border: 1px solid rgba(238, 212, 154, 0.35);
+  border-radius: 50%;
+  opacity: 0.9;
+  transition: opacity 200ms ease, transform 200ms ease, background-color 200ms ease;
+}
+#procedure-image-modal .btn-close:hover,
+#procedure-image-modal .btn-close:focus-visible {
+  opacity: 1;
+  transform: scale(1.08);
+  background-color: rgba(23, 19, 15, 0.9);
 }
 .procedure-faq {
   width:100%;
@@ -4247,6 +4257,14 @@ iframe {
     overflow: hidden;
     direction: ltr;
     mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: grab;
+}
+
+.infinite-carousel:active {
+    cursor: grabbing;
 }
 
 .infinite-carousel:focus-visible {
@@ -4294,6 +4312,9 @@ iframe {
     background: #fff;
     box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
     object-fit: contain;
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
 }
 
 .infinite-carousel:hover .infinite-carousel__track,
@@ -4441,7 +4462,7 @@ iframe {
 .procedure-carousel {
     width: min(100%, 1480px);
     max-width: none;
-    padding-block: 2.5rem 4.5rem;
+    padding-block: 2.5rem 3rem;
 }
 
 .procedure-carousel .swiper-slide {
@@ -4546,7 +4567,7 @@ iframe {
 
 @media (max-width: 575.98px) {
     .procedure-carousel {
-        padding-block: 1.5rem 3.5rem;
+        padding-block: 1.5rem 2rem;
     }
 
     .procedure-carousel .swiper-slide {
