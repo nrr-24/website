@@ -1269,124 +1269,165 @@ comparisons.forEach((comparison) => {
 });
 
 /* =========================================================
-   HOMEPAGE INFINITE CAROUSEL MOBILE SWIPING
+   HOMEPAGE INFINITE CAROUSEL - ULTRA-SMOOTH MOBILE SWIPE & AUTOPLAY
 ========================================================= */
 
 const initializeInfiniteCarousels = () => {
     const carousels = document.querySelectorAll(".infinite-carousel");
     if (!carousels.length) return;
 
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     carousels.forEach((carousel) => {
         const track = carousel.querySelector(".infinite-carousel__track");
         if (!track) return;
 
-        let startX = 0;
-        let startY = 0;
-        let currentTranslateX = 0;
+        const firstGroup = track.querySelector(".infinite-carousel__group");
+        if (!firstGroup) return;
+
+        let groupWidth = firstGroup.offsetWidth || 1;
+        let position = 0;
+        let velocity = 0;
         let isDragging = false;
-        let isHorizontalSwipe = null;
-        let lastX = 0;
-        let lastTime = 0;
-        let velocityX = 0;
-        const animationDuration = 55;
+        let isPaused = false;
+        let isVisible = true;
+        let isLockedHorizontal = null;
 
-        const getGroupWidth = () => {
-            const group = track.querySelector(".infinite-carousel__group");
-            return group ? group.getBoundingClientRect().width : (track.scrollWidth / 2);
-        };
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let dragOriginPos = 0;
+        let lastTouchX = 0;
+        let lastTouchTime = 0;
+        let animationFrameId = null;
+        let lastFrameTime = performance.now();
 
-        const getCurrentTranslateX = () => {
-            const style = window.getComputedStyle(track);
-            const matrix = new DOMMatrixReadOnly(style.transform);
-            return matrix.m41;
-        };
+        // 55s to travel one full group width at baseline
+        const getBaseSpeed = () => prefersReducedMotion ? 0 : (groupWidth / 55000);
 
-        const onTouchStart = (e) => {
-            const touch = e.touches ? e.touches[0] : e;
-            startX = touch.clientX;
-            startY = touch.clientY;
-            lastX = touch.clientX;
-            lastTime = performance.now();
-            velocityX = 0;
-            isHorizontalSwipe = null;
-            isDragging = true;
-
-            const groupWidth = getGroupWidth();
-            let currentX = getCurrentTranslateX();
-            if (groupWidth > 0) {
-                while (currentX > 0) currentX -= groupWidth;
-                while (currentX < -groupWidth) currentX += groupWidth;
+        const updateGroupWidth = () => {
+            const newWidth = firstGroup.offsetWidth;
+            if (newWidth > 0) {
+                groupWidth = newWidth;
             }
-            currentTranslateX = currentX;
+        };
 
-            track.style.animationPlayState = "paused";
-            track.style.transform = `translateX(${currentTranslateX}px)`;
-            track.style.transition = "none";
+        const render = () => {
+            track.style.transform = `translate3d(${position}px, 0, 0)`;
+        };
+
+        const loop = (now) => {
+            const dt = Math.min(32, Math.max(1, now - lastFrameTime));
+            lastFrameTime = now;
+
+            const baseSpeed = getBaseSpeed();
+
+            if (isDragging) {
+                // Position handled synchronously in touchmove
+            } else if (Math.abs(velocity) > 0.005) {
+                // Inertial coasting with exponential decay friction
+                position += velocity * dt;
+                velocity *= Math.pow(0.92, dt / 16);
+
+                if (Math.abs(velocity) <= baseSpeed && velocity <= 0) {
+                    velocity = 0;
+                }
+            } else if (!isPaused && baseSpeed > 0) {
+                // Gentle continuous auto-scroll
+                position -= baseSpeed * dt;
+            }
+
+            // Seamless infinite wrap
+            if (groupWidth > 0) {
+                while (position <= -groupWidth) position += groupWidth;
+                while (position > 0) position -= groupWidth;
+            }
+
+            render();
+
+            if (isVisible) {
+                animationFrameId = requestAnimationFrame(loop);
+            } else {
+                animationFrameId = null;
+            }
+        };
+
+        const startLoop = () => {
+            if (!animationFrameId && isVisible) {
+                lastFrameTime = performance.now();
+                animationFrameId = requestAnimationFrame(loop);
+            }
+        };
+
+        const stopLoop = () => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+        };
+
+        // Touch handling with momentum
+        const onTouchStart = (e) => {
+            const touch = e.touches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+            dragOriginPos = position;
+            lastTouchX = touch.clientX;
+            lastTouchTime = performance.now();
+            velocity = 0;
+            isDragging = true;
+            isLockedHorizontal = null;
+
+            updateGroupWidth();
+            startLoop();
         };
 
         const onTouchMove = (e) => {
             if (!isDragging) return;
-            const touch = e.touches ? e.touches[0] : e;
-            const diffX = touch.clientX - startX;
-            const diffY = touch.clientY - startY;
+            const touch = e.touches[0];
+            const deltaX = touch.clientX - touchStartX;
+            const deltaY = touch.clientY - touchStartY;
 
-            if (isHorizontalSwipe === null) {
-                if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
-                    isHorizontalSwipe = Math.abs(diffX) >= Math.abs(diffY);
+            if (isLockedHorizontal === null) {
+                if (Math.abs(deltaX) > 6 || Math.abs(deltaY) > 6) {
+                    isLockedHorizontal = Math.abs(deltaX) >= Math.abs(deltaY);
                 }
             }
 
-            if (!isHorizontalSwipe) return;
+            if (!isLockedHorizontal) return;
 
             if (e.cancelable) e.preventDefault();
 
-            const now = performance.now();
-            const dt = now - lastTime;
-            if (dt > 0) {
-                velocityX = (touch.clientX - lastX) / dt;
-                lastX = touch.clientX;
-                lastTime = now;
-            }
-
-            const groupWidth = getGroupWidth();
-            let newX = currentTranslateX + diffX;
+            position = dragOriginPos + deltaX;
             if (groupWidth > 0) {
-                while (newX > 0) newX -= groupWidth;
-                while (newX < -groupWidth) newX += groupWidth;
+                while (position <= -groupWidth) position += groupWidth;
+                while (position > 0) position -= groupWidth;
             }
-            track.style.transform = `translateX(${newX}px)`;
+            render();
+
+            const now = performance.now();
+            const dt = now - lastTouchTime;
+            if (dt > 8) {
+                const instantV = (touch.clientX - lastTouchX) / dt;
+                velocity = velocity * 0.35 + instantV * 0.65;
+                lastTouchX = touch.clientX;
+                lastTouchTime = now;
+            }
         };
 
         const onTouchEnd = () => {
             if (!isDragging) return;
             isDragging = false;
 
-            if (!isHorizontalSwipe) {
-                track.style.animationPlayState = "running";
+            if (!isLockedHorizontal) {
+                velocity = 0;
                 return;
             }
 
-            const groupWidth = getGroupWidth();
-            let finalX = getCurrentTranslateX();
-            if (groupWidth > 0) {
-                if (Math.abs(velocityX) > 0.25) {
-                    finalX += velocityX * 120;
-                }
-                while (finalX > 0) finalX -= groupWidth;
-                while (finalX < -groupWidth) finalX += groupWidth;
-
-                const progress = Math.abs(finalX) / groupWidth;
-                const delay = -(progress * animationDuration);
-
-                track.style.transition = "none";
-                track.style.transform = "";
-                track.style.animation = "none";
-                void track.offsetWidth;
-                track.style.animation = "";
-                track.style.animationDelay = `${delay}s`;
-                track.style.animationPlayState = "running";
+            const now = performance.now();
+            if (now - lastTouchTime > 120) {
+                velocity = 0;
             } else {
-                track.style.animationPlayState = "running";
+                velocity = Math.max(-2.2, Math.min(2.2, velocity));
             }
         };
 
@@ -1394,6 +1435,30 @@ const initializeInfiniteCarousels = () => {
         carousel.addEventListener("touchmove", onTouchMove, { passive: false });
         carousel.addEventListener("touchend", onTouchEnd, { passive: true });
         carousel.addEventListener("touchcancel", onTouchEnd, { passive: true });
+
+        carousel.addEventListener("mouseenter", () => { isPaused = true; });
+        carousel.addEventListener("mouseleave", () => { isPaused = false; });
+        carousel.addEventListener("focusin", () => { isPaused = true; });
+        carousel.addEventListener("focusout", () => { isPaused = false; });
+
+        window.addEventListener("resize", updateGroupWidth, { passive: true });
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    isVisible = entry.isIntersecting;
+                    if (isVisible) {
+                        updateGroupWidth();
+                        startLoop();
+                    } else {
+                        stopLoop();
+                    }
+                });
+            }, { rootMargin: "150px" });
+            observer.observe(carousel);
+        } else {
+            startLoop();
+        }
     });
 };
 

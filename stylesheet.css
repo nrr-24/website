@@ -4280,8 +4280,8 @@ iframe {
 }
 
 .infinite-carousel__track {
-    animation: reviews-marquee 55s linear infinite;
     will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 .infinite-carousel__group {
@@ -4317,16 +4317,6 @@ iframe {
     pointer-events: none;
 }
 
-.infinite-carousel:hover .infinite-carousel__track,
-.infinite-carousel:focus-within .infinite-carousel__track {
-    animation-play-state: paused;
-}
-
-@keyframes reviews-marquee {
-    to {
-        transform: translateX(-50%);
-    }
-}
 
 @media (max-width: 575.98px) {
     .reviews-section {
@@ -4392,22 +4382,45 @@ iframe {
     text-decoration: none;
 }
 
-.treatment-card__link > span:last-child {
-    font-size: 1.15rem;
+.treatment-card__link .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 220ms ease;
 }
 
+.treatment-card__link .link-arrow svg {
+    display: block;
+    width: 0.95rem;
+    height: 0.95rem;
+}
+
 .treatment-card:hover .treatment-card__link,
-.treatment-card:focus-visible .treatment-card__link {
+.treatment-card:focus-visible .treatment-card__link,
+.treatment-card__link:hover,
+.treatment-card__link:focus-visible {
     border-color: #8a3541;
     background: #8a3541;
     color: var(--cream);
     transform: translateY(-2px);
 }
 
-.treatment-card:hover .treatment-card__link > span:last-child,
-.treatment-card:focus-visible .treatment-card__link > span:last-child {
+.treatment-card:hover .treatment-card__link .link-arrow,
+.treatment-card:focus-visible .treatment-card__link .link-arrow,
+.treatment-card__link:hover .link-arrow,
+.treatment-card__link:focus-visible .link-arrow {
     transform: translate(2px, -2px);
+}
+
+html[dir="rtl"] .treatment-card__link .link-arrow {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .treatment-card:hover .treatment-card__link .link-arrow,
+html[dir="rtl"] .treatment-card:focus-visible .treatment-card__link .link-arrow,
+html[dir="rtl"] .treatment-card__link:hover .link-arrow,
+html[dir="rtl"] .treatment-card__link:focus-visible .link-arrow {
+    transform: scaleX(-1) translate(-2px, -2px);
 }
 
 .treatment-card--dark .treatment-card__link {
