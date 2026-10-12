@@ -124,6 +124,22 @@ const translations = {
         journeyFourBody:
             "Receive aftercare guidance and follow-up tailored to your progress.",
 
+        videosLabel: "Watch & learn",
+        videosTitle: "Treatments, explained.",
+        videosBody: "Short videos on what to expect from each procedure.",
+
+        videoTitleBotox: "Botulinum Toxin",
+        videoTitleFaceLift: "Facial Rejuvenation",
+        videoTitleFiller: "Dermal Fillers",
+        videoTitleOverview: "Treatment Overview",
+        videoTitleSkinCare: "Skin Care Tips",
+        videoTitleConsultation: "Aesthetic Consultation",
+        videoTitleLaser: "Laser Treatment",
+        videoTitleClinical: "Clinical Dermatology",
+        videoTitlePatient: "Patient Care",
+        videoTitleProcedure: "Procedure Highlights",
+        videoTitleResults: "Results & Recovery",
+
         faqLabel: "Frequently asked questions",
         faqHomeTitle: "Before your consultation.",
 
@@ -291,7 +307,7 @@ const translations = {
     },
 
     ar: {
-        brand: "د. ريهام قليب",
+        brand: "د. ريهام كليب",
         sidebarTitle: "حيث تلتقي صحة البشرة بالجمال",
 
         navHome: "الرئيسية",
@@ -303,7 +319,7 @@ const translations = {
         navFaq: "الأسئلة الشائعة",
 
         heroEyebrow: "الأمراض الجلدية السريرية · طب التجميل",
-        heroTitle: "د. ريما قليب | الأمراض الجلدية والتجميل",
+        heroTitle: "د. ريهام كليب | الأمراض الجلدية والتجميل",
         heroSubtitle: "حيث تلتقي صحة البشرة بالجمال",
 
         heroDescription:
@@ -324,10 +340,10 @@ const translations = {
         statCare: "رعاية تركز على المريض",
 
         aboutLabel: "نبذة عن د. ريهام",
-        aboutTitle: "د. ريهام قليب | الأمراض الجلدية والتجميل",
+        aboutTitle: "د. ريهام كليب | الأمراض الجلدية والتجميل",
 
         aboutBody:
-            "حيث تلتقي صحة البشرة بالجمال. تقدم د. ريهام قليب خبرة تزيد عن 10 سنوات في طب الجلد، مع رعاية سريرية وتجميلية وعلاجات ليزر مخصصة لبشرتك وملامحك وأهدافك.",
+            "حيث تلتقي صحة البشرة بالجمال. تقدم د. ريهام كليب خبرة تزيد عن 10 سنوات في طب الجلد، مع رعاية سريرية وتجميلية وعلاجات ليزر مخصصة لبشرتك وملامحك وأهدافك.",
 
         aboutSpecialtyLabel: "التخصص",
         aboutSpecialty: "الأمراض الجلدية السريرية والتجميلية",
@@ -411,6 +427,22 @@ const translations = {
         journeyFourBody:
             "نتابع النتائج ونقدم إرشادات العناية المناسبة.",
 
+        videosLabel: "شاهدي وتعلمي",
+        videosTitle: "العلاجات، موضحة.",
+        videosBody: "مقاطع فيديو قصيرة عمّا يمكن توقعه من كل إجراء.",
+
+        videoTitleBotox: "توكسين البوتولينوم",
+        videoTitleFaceLift: "تجديد مظهر الوجه",
+        videoTitleFiller: "الفيلر الجلدي",
+        videoTitleOverview: "نظرة عامة على العلاجات",
+        videoTitleSkinCare: "نصائح العناية بالبشرة",
+        videoTitleConsultation: "استشارة تجميلية",
+        videoTitleLaser: "علاج الليزر",
+        videoTitleClinical: "الأمراض الجلدية السريرية",
+        videoTitlePatient: "رعاية المريض",
+        videoTitleProcedure: "أبرز الإجراءات",
+        videoTitleResults: "النتائج والتعافي",
+
         faqLabel: "الأسئلة الشائعة",
         faqHomeTitle: "قبل الاستشارة.",
         homeFaqQ1: "كيف أعرف العلاج المناسب لي؟",
@@ -440,7 +472,7 @@ const translations = {
         viewLocation: "عرض تفاصيل الموقع",
 
         footerCopyright:
-            "© 2026 د. ريهام قليب. جميع الحقوق محفوظة.",
+            "© 2026 د. ريهام كليب. جميع الحقوق محفوظة.",
 
         profileSource: "الملف المهني",
 
@@ -776,9 +808,9 @@ const setLanguage = (language) => {
     const pageTitle = pageKey ? content[`${pageKey}Title`] : null;
 
     document.title = pageTitle
-        ? `${pageTitle} | ${language === "ar" ? "د. ريهام قليب" : "Dr. Reham Kolib"}`
+        ? `${pageTitle} | ${language === "ar" ? "د. ريهام كليب" : "Dr. Reham Kolib"}`
         : language === "ar"
-                ? "د. ريهام قليب | الأمراض الجلدية والتجميل"
+                ? "د. ريهام كليب | الأمراض الجلدية والتجميل"
                 : "Dr. Reham Kolib | Dermatology & Aesthetics";
 
     document.querySelector('meta[name="description"]')?.setAttribute(
@@ -786,14 +818,14 @@ const setLanguage = (language) => {
         pageKey && content[`${pageKey}Body`]
             ? content[`${pageKey}Body`]
             : language === "ar"
-                ? "د. ريهام قليب طبيبة أخصائية في الأمراض الجلدية بأبوظبي، تتمتع بخبرة تزيد عن 10 سنوات في الأمراض الجلدية السريرية والتجميلية وعلاجات الليزر والتجميل."
+                ? "د. ريهام كليب طبيبة أخصائية في الأمراض الجلدية بأبوظبي، تتمتع بخبرة تزيد عن 10 سنوات في الأمراض الجلدية السريرية والتجميلية وعلاجات الليزر والتجميل."
                 : "Dr. Reham Kolib is a specialist dermatologist in Abu Dhabi with over 10 years of experience in clinical and cosmetic dermatology, laser, and aesthetic treatments."
     );
 
     document.querySelector('meta[name="keywords"]')?.setAttribute(
         "content",
         language === "ar"
-            ? "د. ريهام قليب, طبيبة جلدية أبوظبي, طبيبة جلدية تجميلية, علاجات الليزر أبوظبي, تجميل البشرة الإمارات"
+            ? "د. ريهام كليب, طبيبة جلدية أبوظبي, طبيبة جلدية تجميلية, علاجات الليزر أبوظبي, تجميل البشرة الإمارات"
             : "Dr. Reham Kolib, dermatologist Abu Dhabi, cosmetic dermatologist UAE, laser treatments Abu Dhabi, aesthetic dermatology"
     );
 
@@ -850,6 +882,10 @@ const setLanguage = (language) => {
     );
 
     localStorage.setItem("preferred-language", language);
+
+    // Notify other modules (e.g. video-playlist.js) that the language changed.
+    // They can listen with: document.documentElement.addEventListener('languagechange', fn)
+    document.documentElement.dispatchEvent(new Event('languagechange'));
 };
 
 // Language Button Listener via Delegation

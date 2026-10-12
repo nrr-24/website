@@ -65,6 +65,8 @@
         </svg>
         <img class="site-loader__logo" src="images/branding/1080.png" alt="">
     </div>
+    <!-- Slogan sits below the circle in the loader grid -->
+    <p class="site-loader__slogan" aria-hidden="true">Where Skin Health Meets Beauty</p>
 </div>
 
 <!-- =========================================================
@@ -298,7 +300,169 @@
         </div>
     </div>
 </section>
+<!-- =========================================================
+     VIDEO PLAYLIST
+     ─────────────────────────────────────────────────────────
+     HOW TO ADD MORE VIDEOS
+     ──────────────────────
+     1. Drop your .mp4 file into  images/playlist/
+     2. Copy one of the <li> blocks inside .vp-playlist__list
+        and paste it after the last </li>
+     3. Update these two attributes on the new <li>:
+          data-src  → path to the new .mp4 (e.g. images/playlist/new-video.mp4)
+          data-title → the title that appears under the main player
+     4. Add a poster image (optional but recommended):
+          data-poster → path to a thumbnail image (e.g. images/playlist/thumbs/new-thumb.jpg)
+          If omitted, the first video frame is used automatically.
+     That's it — the JS wires everything up automatically.
+========================================================= -->
+<section class="vp-section section-dark" id="videos" aria-labelledby="vp-title">
+    <div class="container">
+        <header class="vp-section__intro text-center">
+            <p class="section-label" data-i18n="videosLabel">Watch &amp; learn</p>
+            <h2 id="vp-title" data-i18n="videosTitle">Treatments, explained.</h2>
+            <p data-i18n="videosBody">Short videos on what to expect from each procedure.</p>
+        </header>
 
+        <!-- ── Main player ── -->
+        <div class="vp-player-wrap">
+            <video
+                class="vp-player"
+                id="vp-main"
+                controls
+                playsinline
+                preload="metadata"
+                aria-label="Currently playing video"
+            >
+                <!-- src is set by JavaScript when a thumbnail is clicked -->
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- Title shown under the player — updated by JS -->
+            <p class="vp-player__title" id="vp-current-title" aria-live="polite"></p>
+        </div>
+
+        <!-- ── Thumbnail playlist strip ── -->
+        <!-- To add a video: copy one <li> block, update data-src and data-title -->
+        <div class="vp-playlist-wrap" role="region" aria-label="Video playlist">
+
+            <!-- Prev / Next scroll buttons (optional, also works by drag/swipe) -->
+            <button class="vp-nav vp-nav--prev" type="button" aria-label="Scroll playlist left" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button class="vp-nav vp-nav--next" type="button" aria-label="Scroll playlist right" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <ol class="vp-playlist__list" id="vp-playlist" aria-label="Video playlist">
+
+                <!--
+                    ═══════════════════════════════════════════
+                    ADD VIDEOS HERE — one <li> per video
+                    ───────────────────────────────────────────
+                    Required attributes:
+                      data-src    — path to the .mp4 file
+                      data-title  — display title
+
+                    Optional attributes:
+                      data-poster — path to a thumbnail image
+                                    (falls back to video first frame)
+                    ═══════════════════════════════════════════
+                -->
+
+                <!-- VIDEO 1 ─ Botox -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/botox.mp4"
+                    data-title="Botulinum Toxin"
+                    data-title-key="videoTitleBotox">
+                    <!-- Thumbnail is generated automatically from the video -->
+                </li>
+
+                <!-- VIDEO 2 ─ Face Lift -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/face-lift.mp4"
+                    data-title="Facial Rejuvenation"
+                    data-title-key="videoTitleFaceLift">
+                </li>
+
+                <!-- VIDEO 3 ─ Filler Info -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/filler_info.mp4"
+                    data-title="Dermal Fillers"
+                    data-title-key="videoTitleFiller">
+                </li>
+
+                <!-- VIDEO 4 -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/savekit-video-e694475fd477671a.mp4"
+                    data-title="Treatment Overview"
+                    data-title-key="videoTitleOverview">
+                </li>
+
+                <!-- VIDEO 5 -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/savekit-video-433ed2aef5dba835.mp4"
+                    data-title="Skin Care Tips"
+                    data-title-key="videoTitleSkinCare">
+                </li>
+
+                <!-- VIDEO 6 -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/savekit-video-45ef1a2419253083.mp4"
+                    data-title="Aesthetic Consultation"
+                    data-title-key="videoTitleConsultation">
+                </li>
+
+                <!-- VIDEO 7 -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/savekit-video-3055a419d3535a94.mp4"
+                    data-title="Laser Treatment"
+                    data-title-key="videoTitleLaser">
+                </li>
+
+                <!-- VIDEO 8 -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/savekit-video-3db4b0262f67cb57.mp4"
+                    data-title="Clinical Dermatology"
+                    data-title-key="videoTitleClinical">
+                </li>
+
+                <!-- VIDEO 9 -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/savekit-video-67bc7bb137a54047.mp4"
+                    data-title="Patient Care"
+                    data-title-key="videoTitlePatient">
+                </li>
+
+                <!-- VIDEO 10 -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/savekit-video-843e026cfec00ab1.mp4"
+                    data-title="Procedure Highlights"
+                    data-title-key="videoTitleProcedure">
+                </li>
+
+                <!-- VIDEO 11 -->
+                <li class="vp-playlist__item"
+                    data-src="images/playlist/savekit-video-ef457b9f883e9a9e.mp4"
+                    data-title="Results &amp; Recovery"
+                    data-title-key="videoTitleResults">
+                </li>
+
+                <!--
+                    ─────────────────────────────────────────
+                    PASTE NEW VIDEOS ABOVE THIS COMMENT LINE
+                    Example:
+                    <li class="vp-playlist__item"
+                        data-src="images/playlist/my-new-video.mp4"
+                        data-title="My New Video Title">
+                    </li>
+                    ─────────────────────────────────────────
+                -->
+
+            </ol>
+        </div>
+    </div>
+</section>
 <!-- =========================================================
      RESULTS
 ========================================================= -->
@@ -644,6 +808,8 @@
     </div>
 </section>
 
+
+
 <!-- =========================================================
      CENTRAL CONTACT / CTA (Managed via components.js)
 ========================================================= -->
@@ -673,6 +839,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="project-reveal.js" defer></script>
+
+<!-- Video Playlist -->
+<script src="video-playlist.js" defer></script>
 
 </body>
 </html>
