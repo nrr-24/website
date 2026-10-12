@@ -77,6 +77,11 @@ const translations = {
         projectsBody:
             "View selected treatment results in before-and-after comparisons.",
 
+        credentialsLabel: "Training & credentials",
+        credentialsTitle: "A commitment to continued learning.",
+        credentialsBody: "Selected certificates and professional training.",
+        credentialsImageAlt: "Professional certificate or training record",
+
         projectOneTitle: "Face lifts",
         projectOneBody:
             "Refined facial proportions through a personalized aesthetic treatment plan designed to preserve natural expression.",
@@ -88,6 +93,11 @@ const translations = {
         projectThreeTitle: "Botox",
         projectThreeBody:
             "Targeted wrinkle treatment planned with precision to soften lines while keeping the face expressive and recognizably yours.",
+
+        reviewsLabel: "Patient reviews",
+        reviewsTitle: "Kind words from our patients.",
+        reviewsBody: "A selection of feedback shared by patients.",
+        reviewsImageAlt: "Patient review screenshot",
 
         before: "Before",
         after: "After",
@@ -213,7 +223,13 @@ const translations = {
         fillerEyebrow: "Injectable aesthetics",
         fillerBody:
             "Subtle, carefully placed filler can restore balance and definition while respecting the character of your features.",
-
+        fillerLipGalleryTitle: "Lip filler results",
+        fillerFaceEyebrow: "Beyond lip filler",
+        fillerFaceTitle: "Facial filler, thoughtfully balanced.",
+        fillerFaceBody:
+            "Filler can also be considered for areas such as the cheeks, chin, nose, and under-eyes when clinically appropriate. Allergan's Juvéderm is a hyaluronic-acid filler range; the right product and plan depend on your features and a careful consultation.",
+        fillerFaceNote: "Every treatment is planned individually.",
+        fillerFaceGalleryTitle: "Facial filler results",
         botoxTitle: "Wrinkle treatment and softening",
         botoxEyebrow: "Expression-conscious treatment",
         botoxBody:
@@ -348,6 +364,11 @@ const translations = {
         projectsBody:
             "شاهدي نتائج مختارة من خلال صور قبل وبعد.",
 
+        credentialsLabel: "الشهادات والتدريب",
+        credentialsTitle: "التزام بالتعلم والتطور المستمر.",
+        credentialsBody: "مجموعة مختارة من الشهادات والتدريب المهني.",
+        credentialsImageAlt: "شهادة مهنية أو سجل تدريبي",
+
         projectOneTitle: "شد الوجه",
         projectOneBody:
             "تحسين تناسق ملامح الوجه من خلال خطة تجميلية مخصصة تحافظ على التعبير الطبيعي.",
@@ -359,6 +380,11 @@ const translations = {
         projectThreeTitle: "بوتوكس",
         projectThreeBody:
             "علاج موجه للتجاعيد بدقة لتنعيم الخطوط مع الحفاظ على تعابير الوجه وشكله الطبيعي.",
+
+        reviewsLabel: "آراء المراجعين",
+        reviewsTitle: "كلمات طيبة من مراجِعينا.",
+        reviewsBody: "مجموعة مختارة من آراء المراجعين.",
+        reviewsImageAlt: "صورة لآراء أحد المراجعين",
 
         before: "قبل",
         after: "بعد",
@@ -476,7 +502,13 @@ const translations = {
         fillerEyebrow: "تجميل الحقن",
         fillerBody:
             "يساعد الفيلر الموضوع بدقة على استعادة التوازن والتحديد مع الحفاظ على خصوصية ملامحك.",
-
+        fillerLipGalleryTitle: "نتائج فيلر الشفاه",
+        fillerFaceEyebrow: "ما بعد فيلر الشفاه",
+        fillerFaceTitle: "فيلر الوجه بتوازن وعناية.",
+        fillerFaceBody:
+            "يمكن التفكير بالفيلر أيضاً لمناطق مثل الخدود والذقن والأنف وتحت العينين عندما يكون ذلك مناسباً طبياً. جوفيديرم من أليرجان هو مجموعة من أنواع الفيلر بحمض الهيالورونيك؛ ويُحدد المنتج والخطة بعد تقييم دقيق لملامحك.",
+        fillerFaceNote: "يُخطط لكل علاج بما يناسب الحالة.",
+        fillerFaceGalleryTitle: "نتائج فيلر الوجه",
         botoxTitle: "علاج وتخفيف التجاعيد",
         botoxEyebrow: "علاج يحافظ على تعبيرات الوجه",
         botoxBody:
@@ -589,32 +621,35 @@ const setupProjectDropdown = () => {
 ========================================================= */
 
 const initializeProcedureGallery = () => {
-    const galleryImages = document.body.dataset.gallery;
-    if (!galleryImages) return;
+    const defaultGalleryImages = document.body.dataset.gallery;
+    if (!defaultGalleryImages) return;
 
-    const images = galleryImages
+    const parseImages = (galleryImages) => galleryImages
         .split(",")
         .map((image) => image.trim())
         .filter(Boolean);
 
+    const defaultImages = parseImages(defaultGalleryImages);
     const modal = document.getElementById("procedure-image-modal");
     const modalImage = document.getElementById("procedure-modal-image");
     const modalPrev = document.getElementById("procedure-modal-prev");
     const modalNext = document.getElementById("procedure-modal-next");
 
     let currentModalIndex = 0;
+    let currentModalImages = defaultImages;
 
     const showModalImage = (index) => {
-        currentModalIndex = (index + images.length) % images.length;
+        currentModalIndex = (index + currentModalImages.length) % currentModalImages.length;
         if (!modalImage) return;
 
-        modalImage.src = images[currentModalIndex];
+        modalImage.src = currentModalImages[currentModalIndex];
         modalImage.alt = `Treatment result ${currentModalIndex + 1}`;
     };
 
-    const openImageModal = (index) => {
+    const openImageModal = (index, images) => {
         if (!modal || !modalImage) return;
 
+        currentModalImages = images;
         showModalImage(index);
 
         if (typeof bootstrap !== "undefined") {
@@ -649,81 +684,70 @@ const initializeProcedureGallery = () => {
     });
 
     document.querySelectorAll(".procedure-carousel").forEach((carousel) => {
+        const carouselInner = carousel.querySelector(".swiper-wrapper");
+        if (!carouselInner) return;
 
-    const carouselInner =
-        carousel.querySelector(".swiper-wrapper");
+        const images = carousel.dataset.gallery
+            ? parseImages(carousel.dataset.gallery)
+            : defaultImages;
+        if (images.length === 0) return;
 
-    if (!carouselInner) return;
+        carouselInner.replaceChildren();
 
-    carouselInner.innerHTML = "";
+        [...images, ...images, ...images].forEach((image, index) => {
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide";
 
-const repeatedImages = [...images, ...images, ...images];
+            const img = document.createElement("img");
+            img.src = image;
+            img.alt = `Treatment result ${(index % images.length) + 1}`;
+            img.className = "procedure-gallery-image";
+            img.loading = "lazy";
+            img.decoding = "async";
+            img.addEventListener("click", () => {
+                openImageModal(index % images.length, images);
+            });
 
-repeatedImages.forEach((image, index) => {
+            slide.appendChild(img);
+            carouselInner.appendChild(slide);
+        });
 
-    const slide = document.createElement("div");
-    slide.className = "swiper-slide";
+        if (images.length <= 1) return;
 
-    const img = document.createElement("img");
-
-    img.src = image;
-    img.alt = `Treatment result ${(index % images.length) + 1}`;
-    img.className = "procedure-gallery-image";
-
-    img.addEventListener("click", () => {
-        openImageModal(index % images.length);
+        new Swiper(carousel, {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            spaceBetween: 25,
+            loop: true,
+            loopAdditionalSlides: images.length,
+            speed: 900,
+            autoplay: {
+                delay: 2600,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 120,
+                modifier: 2.5,
+                slideShadows: true
+            },
+            keyboard: {
+                enabled: true
+            },
+            navigation: {
+                nextEl: carousel.querySelector(".swiper-button-next"),
+                prevEl: carousel.querySelector(".swiper-button-prev")
+            },
+            pagination: {
+                el: carousel.querySelector(".swiper-pagination"),
+                clickable: true
+            }
+        });
     });
-
-    slide.appendChild(img);
-    carouselInner.appendChild(slide);
-});
-
-    if (images.length <= 1) return;
-
-new Swiper(carousel, {
-    effect: "coverflow",
-
-    grabCursor: true,
-    centeredSlides: true,
-
-    slidesPerView: "auto",
-    spaceBetween: 25,
-
-    loop: true,
-    loopAdditionalSlides: images.length,
-
-    speed: 1200,
-
-    autoplay: {
-        delay: 1200,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false
-    },
-
-    coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 120,
-        modifier: 2.5,
-        slideShadows: true
-    },
-
-    keyboard: {
-        enabled: true
-    },
-
-    navigation: {
-        nextEl: carousel.querySelector(".swiper-button-next"),
-        prevEl: carousel.querySelector(".swiper-button-prev")
-    },
-
-    pagination: {
-        el: carousel.querySelector(".swiper-pagination"),
-        clickable: true
-    }
-});
-
-});
 };
 /* =========================================================
    LANGUAGE
@@ -765,6 +789,13 @@ const setLanguage = (language) => {
         const translation = content[element.dataset.i18n];
         if (translation !== undefined) {
             element.textContent = translation;
+        }
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const translation = content[element.dataset.i18nAlt];
+        if (translation !== undefined) {
+            element.setAttribute("alt", translation);
         }
     });
 

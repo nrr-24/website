@@ -1,7 +1,12 @@
 {
 	"folders": [
 		{
+			"name": "website",
 			"path": "."
+		},
+		{
+			"name": "reviews",
+			"path": "../../../Downloads/reviews"
 		}
 	],
 	"settings": {}

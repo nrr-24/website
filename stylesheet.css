@@ -4191,3 +4191,375 @@ iframe {
         bottom: 0.85rem;
       }
     }
+
+.reviews-section,
+.credentials-section {
+    padding: 5rem 0 5.5rem;
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--gold-soft);
+}
+
+.credentials-section {
+    background: var(--paper);
+    color: var(--ink);
+    padding-top: 6.5rem;
+}
+
+.reviews-section__intro,
+.credentials-section__intro {
+    margin-bottom: 3rem;
+}
+
+.reviews-section__intro .section-label {
+    color: var(--gold);
+}
+
+.reviews-section__intro h2,
+.credentials-section__intro h2 {
+    margin: 0 auto 1rem;
+    color: var(--gold-soft);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 600;
+    line-height: 0.95;
+}
+
+.reviews-section__intro > p:last-child {
+    margin: 0;
+    color: rgba(238, 212, 154, 0.72);
+}
+
+.credentials-section__intro .section-label {
+    color: var(--accent);
+}
+
+.credentials-section__intro h2 {
+    color: var(--ink);
+}
+
+.credentials-section__intro > p:last-child {
+    margin: 0;
+    color: #635b52;
+}
+
+.infinite-carousel {
+    overflow: hidden;
+    direction: ltr;
+    mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+
+.infinite-carousel:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: -2px;
+}
+
+.infinite-carousel__track,
+.infinite-carousel__group {
+    display: flex;
+    width: max-content;
+    direction: ltr;
+}
+
+.infinite-carousel__track {
+    animation: reviews-marquee 55s linear infinite;
+    will-change: transform;
+}
+
+.infinite-carousel__group {
+    flex: 0 0 auto;
+    gap: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.infinite-carousel__slide {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    max-width: min(26rem, 70vw);
+    height: 26rem;
+    margin: 0;
+}
+
+.infinite-carousel__slide img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    border: 1px solid rgba(214, 179, 106, 0.32);
+    border-radius: 0.65rem;
+    background: #fff;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+.infinite-carousel:hover .infinite-carousel__track,
+.infinite-carousel:focus-within .infinite-carousel__track {
+    animation-play-state: paused;
+}
+
+@keyframes reviews-marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .reviews-section {
+        padding: 4rem 0;
+    }
+
+    .credentials-section {
+        padding: 5.5rem 0 4rem;
+    }
+
+    .reviews-section__intro,
+    .credentials-section__intro {
+        margin-bottom: 2rem;
+    }
+
+    .infinite-carousel__slide {
+        height: 22rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .infinite-carousel {
+        overflow-x: auto;
+        mask-image: none;
+        scrollbar-color: var(--gold) var(--ink);
+        scrollbar-width: thin;
+    }
+
+    .infinite-carousel__track {
+        animation: none;
+        will-change: auto;
+    }
+
+    .infinite-carousel__group[aria-hidden="true"] {
+        display: none;
+    }
+}
+
+.credentials-section .infinite-carousel__slide img {
+    border-color: rgba(114, 27, 38, 0.18);
+    box-shadow: 0 1rem 2.5rem rgba(23, 19, 15, 0.12);
+}
+
+.treatment-card__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    gap: 0.85rem;
+    min-height: 3.1rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    background: var(--accent);
+    color: var(--cream);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: background 220ms ease, border-color 220ms ease, color 220ms ease, transform 220ms ease;
+    text-decoration: none;
+}
+
+.treatment-card__link > span:last-child {
+    font-size: 1.15rem;
+    transition: transform 220ms ease;
+}
+
+.treatment-card:hover .treatment-card__link,
+.treatment-card:focus-visible .treatment-card__link {
+    border-color: #8a3541;
+    background: #8a3541;
+    color: var(--cream);
+    transform: translateY(-2px);
+}
+
+.treatment-card:hover .treatment-card__link > span:last-child,
+.treatment-card:focus-visible .treatment-card__link > span:last-child {
+    transform: translate(2px, -2px);
+}
+
+.treatment-card--dark .treatment-card__link {
+    border-color: #9b535d;
+    background: #8a3541;
+}
+
+.treatment-card--dark:hover .treatment-card__link,
+.treatment-card--dark:focus-visible .treatment-card__link {
+    border-color: #a75d67;
+    background: #a75d67;
+}
+
+.project__actions .treatment-result__link {
+    flex: 1 1 100%;
+    justify-content: space-between;
+    width: min(100%, 26rem);
+    min-height: 3.6rem;
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+}
+
+.project--dark .treatment-result__link {
+    border-color: #9b535d;
+    background: #8a3541;
+    color: var(--cream);
+}
+
+.project--dark .treatment-result__link:hover,
+.project--dark .treatment-result__link:focus-visible {
+    border-color: #a75d67;
+    background: #a75d67;
+    color: var(--cream);
+}
+
+.home-contact__actions .book-button,
+.home-contact__actions .text-link {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--cream);
+}
+
+.home-contact__actions .book-button:hover,
+.home-contact__actions .book-button:focus-visible,
+.home-contact__actions .text-link:hover,
+.home-contact__actions .text-link:focus-visible {
+    border-color: #8a3541;
+    background: #8a3541;
+    color: var(--cream);
+}
+
+.procedure-carousel {
+    width: min(100%, 1480px);
+    max-width: none;
+    padding-block: 2.5rem 4.5rem;
+}
+
+.procedure-carousel .swiper-slide {
+    width: min(52vw, 560px);
+    height: clamp(32rem, 68vh, 48rem);
+    border: 1px solid rgba(238, 212, 154, 0.22);
+    border-radius: 0.75rem;
+    background: #211b16;
+}
+
+.procedure-carousel .swiper-slide img {
+    object-fit: contain;
+}
+
+.filler-face-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+    padding: clamp(3.5rem, 7vw, 6rem) max(1.5rem, calc((100% - 76rem) / 2));
+    background: var(--paper);
+}
+
+.filler-face-intro__content {
+    max-width: 42rem;
+}
+
+.filler-face-intro__content .section-label {
+    color: var(--accent);
+}
+
+.filler-face-intro__content h2 {
+    margin: 0 0 1.25rem;
+    color: var(--ink);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 600;
+    line-height: 0.95;
+}
+
+.filler-face-intro__content > p:not(.section-label) {
+    margin: 0;
+    color: #635b52;
+    line-height: 1.8;
+}
+
+.filler-face-intro__note {
+    display: inline-flex;
+    margin-top: 1.25rem;
+    padding: 0.65rem 0.9rem;
+    border-left: 3px solid var(--accent);
+    background: rgba(114, 27, 38, 0.08);
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.filler-face-intro__images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 22rem;
+    padding: 1rem 0;
+}
+
+.filler-face-intro__images img {
+    display: block;
+    width: 100%;
+    height: 17rem;
+    border: 0.5rem solid var(--cream);
+    border-radius: 0.65rem;
+    box-shadow: 0 1.2rem 2.5rem rgba(23, 19, 15, 0.16);
+    object-fit: cover;
+}
+
+.filler-face-intro__images img:first-child {
+    transform: rotate(-5deg);
+}
+
+.filler-face-intro__images img:last-child {
+    transform: rotate(4deg);
+}
+
+@media (max-width: 768px) {
+    .procedure-carousel .swiper-slide {
+        width: 82vw;
+        height: min(68vh, 38rem);
+    }
+
+    .filler-face-intro {
+        grid-template-columns: 1fr;
+        padding: 3.5rem 1.25rem;
+    }
+
+    .filler-face-intro__images {
+        width: min(100%, 34rem);
+        min-height: 18rem;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .procedure-carousel {
+        padding-block: 1.5rem 3.5rem;
+    }
+
+    .procedure-carousel .swiper-slide {
+        width: 86vw;
+        height: min(64vh, 32rem);
+    }
+
+    .filler-face-intro__images {
+        min-height: 14rem;
+    }
+
+    .filler-face-intro__images img {
+        height: clamp(11rem, 46vw, 14rem);
+        border-width: 0.35rem;
+    }
+}
